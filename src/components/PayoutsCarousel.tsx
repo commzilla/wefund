@@ -5,6 +5,11 @@ import canadaFlag from "@/assets/flags/Canada.png";
 import germanyFlag from "@/assets/flags/Germany.png";
 import indiaFlag from "@/assets/flags/India.png";
 import ukFlag from "@/assets/flags/UK.png";
+import norwayFlag from "@/assets/flags/Norway.png";
+import omanFlag from "@/assets/flags/Oman.png";
+import pakistanFlag from "@/assets/flags/Pakistan.png";
+import singaporeFlag from "@/assets/flags/Singapore.png";
+import uaeFlag from "@/assets/flags/UAE.png";
 import flag2 from "@/assets/flags/flag-2.png";
 import flag4 from "@/assets/flags/flag-4.png";
 import flag5 from "@/assets/flags/flag-5.png";
@@ -14,18 +19,18 @@ export const PayoutsCarousel = () => {
   const payouts = [
     { amount: "$2,284.38", name: "Yassine", flag: canadaFlag },
     { amount: "$4,953.00", name: "Muammer", flag: germanyFlag },
-    { amount: "$3,000.00", name: "Bernard", flag: flag2 },
-    { amount: "$4,583.97", name: "Kashif", flag: flag4 },
+    { amount: "$3,000.00", name: "Bernard", flag: uaeFlag },
+    { amount: "$4,583.97", name: "Kashif", flag: pakistanFlag },
     { amount: "$2,808.70", name: "Vaibhav", flag: indiaFlag },
-    { amount: "$5,782.50", name: "Mohamed", flag: flag5 },
+    { amount: "$5,782.50", name: "Mohamed", flag: singaporeFlag },
     { amount: "$2,486.25", name: "Jack", flag: ukFlag },
     { amount: "$4,091.68", name: "Imran", flag: ukFlag },
-    { amount: "$3,730.08", name: "Faisal", flag: flag6 },
+    { amount: "$3,730.08", name: "Faisal", flag: norwayFlag },
     { amount: "$4,803.28", name: "Hamza", flag: australiaFlag },
   ];
 
   const payouts2 = [
-    { amount: "$3,124.50", name: "Ahmed", flag: flag2 },
+    { amount: "$3,124.50", name: "Ahmed", flag: omanFlag },
     { amount: "$5,291.80", name: "Carlos", flag: flag4 },
     { amount: "$2,750.00", name: "Emma", flag: ukFlag },
     { amount: "$4,125.90", name: "Raj", flag: indiaFlag },
@@ -34,7 +39,7 @@ export const PayoutsCarousel = () => {
     { amount: "$2,950.75", name: "David", flag: australiaFlag },
     { amount: "$5,100.50", name: "Nina", flag: flag5 },
     { amount: "$3,825.40", name: "Viktor", flag: flag6 },
-    { amount: "$4,250.00", name: "Sarah", flag: ukFlag },
+    { amount: "$4,250.00", name: "Sarah", flag: singaporeFlag },
   ];
 
   return (
