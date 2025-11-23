@@ -10,7 +10,7 @@ import futureImage from "@/assets/future-prop-trading.png";
 import payoutsProcessedImage from "@/assets/payouts-processed-bg.png";
 import highestPayoutImage from "@/assets/highest-payout-bg.png";
 import avgPayoutImage from "@/assets/avg-payout-bg.png";
-import mt5Logo from "@/assets/mt5-logo.png";
+import mt5Badge from "@/assets/mt5-badge.png";
 import heroTrustBadge from "@/assets/hero-trust.png";
 
 export const Hero = () => {
@@ -27,9 +27,7 @@ export const Hero = () => {
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {/* MetaTrader 5 Badge */}
-          <div className="px-3 py-2 bg-card/40 backdrop-blur-sm rounded-full border border-primary/40">
-            <img src={mt5Logo} alt="MetaTrader 5" className="h-6" />
-          </div>
+          <img src={mt5Badge} alt="MetaTrader 5" className="h-10" />
           
           {/* TTP Trustpilot Badge */}
           <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-10" />
