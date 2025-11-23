@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import wefundTextLogo from "@/assets/wefund-text-logo.png";
 import heroBackground from "@/assets/hero-background.png";
+import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png";
+import communityUsersImage from "@/assets/Group-48161.webp";
+import countriesImage from "@/assets/bg-image-countries.png";
 
 export const Hero = () => {
   return (
@@ -59,17 +62,30 @@ export const Hero = () => {
               <div className="w-5 h-5 bg-primary/20 rounded-full" />
               <span className="text-sm">Community</span>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-4xl font-bold text-foreground">180+</span>
+            
+            {/* Top Section - 180+ Traders Max Funded */}
+            <div className="relative mb-4">
+              <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-lg" />
+              <div className="absolute top-4 left-4">
+                <div className="text-4xl font-bold text-foreground mb-1">180+</div>
                 <div className="text-sm text-muted-foreground">Traders Max Funded</div>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-4xl font-bold text-foreground">2,000+</span>
+            </div>
+
+            {/* Middle Section - 2,000+ Active Traders */}
+            <div className="relative mb-4">
+              <img src={communityUsersImage} alt="" className="w-full h-auto rounded-lg" />
+              <div className="absolute top-1/2 right-4 -translate-y-1/2 text-right">
+                <div className="text-4xl font-bold text-foreground mb-1">2,000+</div>
                 <div className="text-sm text-muted-foreground">Active Traders</div>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-4xl font-bold text-foreground">128</span>
+            </div>
+
+            {/* Bottom Section - 128 Countries */}
+            <div className="relative">
+              <img src={countriesImage} alt="" className="w-full h-auto rounded-lg" />
+              <div className="absolute top-1/2 left-4 -translate-y-1/2">
+                <div className="text-4xl font-bold text-foreground mb-1">128</div>
                 <div className="text-sm text-muted-foreground">Countries</div>
               </div>
             </div>
