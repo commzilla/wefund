@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import paymentsImage from "@/assets/payments.png";
+import mt5LogoNew from "@/assets/mt5-logo-new.png";
 
 export const AccountSelector = () => {
   const accountSizes = ["$10k", "$25k", "$50k", "$100k", "$200k"];
@@ -15,14 +17,8 @@ export const AccountSelector = () => {
               <CardTitle className="text-white text-3xl mb-6">Configure your Challenge</CardTitle>
               
               {/* Trader MT5 */}
-              <div className="bg-blue-800/30 backdrop-blur-sm border border-blue-700/40 rounded-xl p-4 flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-2xl">5️⃣</span>
-                </div>
-                <div>
-                  <div className="text-muted-foreground text-sm">Trader</div>
-                  <div className="text-white font-semibold text-lg">MT5</div>
-                </div>
+              <div className="bg-blue-800/30 backdrop-blur-sm border border-blue-700/40 rounded-xl p-4 flex items-center justify-center mb-6">
+                <img src={mt5LogoNew} alt="MT5" className="h-16 w-auto" />
               </div>
             </CardHeader>
             
@@ -57,15 +53,8 @@ export const AccountSelector = () => {
               </Button>
 
               {/* Payment Icons */}
-              <div className="flex items-center justify-center gap-3 pt-4">
-                <div className="w-10 h-8 bg-white rounded flex items-center justify-center text-xs">GPay</div>
-                <div className="w-10 h-8 bg-black rounded flex items-center justify-center text-white text-xs">Pay</div>
-                <div className="w-10 h-8 bg-blue-900 rounded flex items-center justify-center text-white text-xs font-bold">VISA</div>
-                <div className="w-10 h-8 bg-gradient-to-br from-red-500 to-orange-500 rounded-full"></div>
-                <div className="w-10 h-8 bg-blue-700 rounded flex items-center justify-center text-white text-xs">P</div>
-                <div className="w-10 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs">◆</div>
-                <div className="w-10 h-8 bg-teal-600 rounded-full flex items-center justify-center text-white text-xs">T</div>
-                <div className="w-10 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs">B</div>
+              <div className="flex items-center justify-center pt-4">
+                <img src={paymentsImage} alt="Payment Methods" className="h-8 w-auto" />
               </div>
             </CardContent>
           </Card>
