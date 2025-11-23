@@ -18,7 +18,7 @@ export const AccountSelector = () => {
               
               {/* Trader MT5 */}
               <div className="bg-blue-800/30 backdrop-blur-sm border border-blue-700/40 rounded-xl p-4 flex items-center justify-center mb-6">
-                <img src={mt5LogoNew} alt="MT5" className="h-16 w-auto" />
+                <img src={mt5LogoNew} alt="MT5" className="h-10 w-auto" />
               </div>
             </CardHeader>
             
@@ -54,7 +54,7 @@ export const AccountSelector = () => {
 
               {/* Payment Icons */}
               <div className="flex items-center justify-center pt-4">
-                <img src={paymentsImage} alt="Payment Methods" className="h-8 w-auto" />
+                <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto" />
               </div>
             </CardContent>
           </Card>
