@@ -8,7 +8,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="WeFund" className="h-10" />
+              <img src={logo} alt="WeFund" className="h-6" />
               <span className="text-xl font-bold text-foreground">WeFund</span>
             </div>
             
