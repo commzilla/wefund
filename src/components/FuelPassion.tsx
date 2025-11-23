@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const FuelPassion = () => {
   return (
     <section 
-      className="relative py-20 px-4 bg-black overflow-hidden"
+      className="relative min-h-screen flex items-center px-4 bg-black overflow-hidden"
       style={{
         backgroundImage: `url(${heroBg})`,
         backgroundSize: 'cover',
@@ -16,7 +16,7 @@ export const FuelPassion = () => {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/60"></div>
       
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="relative w-full max-w-7xl mx-auto py-12 z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
