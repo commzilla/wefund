@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export const AccountSelector = () => {
   const accountSizes = ["$10k", "$25k", "$50k", "$100k", "$200k"];
@@ -43,63 +44,56 @@ export const AccountSelector = () => {
               </div>
             </div>
 
-            <div className="bg-card border border-border rounded-lg p-6 space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Phase 1</div>
-                  <div className="font-semibold">Unlimited</div>
+            <div className="bg-[#1a2332] border border-border/40 rounded-2xl overflow-hidden">
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableHead className="text-muted-foreground font-medium">Category</TableHead>
+                    <TableHead className="text-muted-foreground font-medium text-center">Phase 1</TableHead>
+                    <TableHead className="text-primary font-medium text-center">Live Trader</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Trading Period</TableCell>
+                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
+                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
+                  </TableRow>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Minimum Trading Days</TableCell>
+                    <TableCell className="text-foreground text-center">0 days</TableCell>
+                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
+                  </TableRow>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Maximum Daily Loss (4%)</TableCell>
+                    <TableCell className="text-foreground text-center">$400</TableCell>
+                    <TableCell className="text-foreground text-center">$400</TableCell>
+                  </TableRow>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Maximum Loss (8%)</TableCell>
+                    <TableCell className="text-foreground text-center">$800</TableCell>
+                    <TableCell className="text-foreground text-center">$800</TableCell>
+                  </TableRow>
+                  <TableRow className="border-border/40 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Profit Target (10%)</TableCell>
+                    <TableCell className="text-foreground text-center">$1,000</TableCell>
+                    <TableCell className="text-foreground text-center">N/A</TableCell>
+                  </TableRow>
+                  <TableRow className="border-b-2 border-primary/60 hover:bg-transparent">
+                    <TableCell className="text-muted-foreground">Price</TableCell>
+                    <TableCell className="text-foreground text-center">$147</TableCell>
+                    <TableCell className="text-foreground text-center">Free</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              
+              <div className="p-6 border-t border-border/40 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">See all trading rules</span>
+                  <span className="text-sm">💎 Bi-weekly payout and <span className="text-primary">90% profit split</span> add-ons available</span>
                 </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Phase 2</div>
-                  <div className="font-semibold">Unlimited</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Min Trading Days</div>
-                  <div className="font-semibold">0 days</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Price</div>
-                  <div className="font-semibold text-primary">$547</div>
-                </div>
+                <span className="text-sm">🔧 Profit Split</span>
               </div>
-
-              <div className="space-y-2 pt-4 border-t border-border">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Maximum Daily Loss (4%)</span>
-                  <span className="font-semibold">$4,000</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Maximum Loss (8%)</span>
-                  <span className="font-semibold">$8,000</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Profit Target (10%)</span>
-                  <span className="font-semibold">$10,000</span>
-                </div>
-              </div>
-
-              <ul className="space-y-2 pt-4">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span className="text-sm">Bi-weekly payout and 90% profit split add-ons available</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span className="text-sm">Profit Splits of up to 100%</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span className="text-sm">Get Funded up to $400k</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span className="text-sm">Payouts on demand</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span className="text-sm">24/7 Support</span>
-                </li>
-              </ul>
             </div>
 
             <Button className="w-full" size="lg">Start Challenge</Button>
