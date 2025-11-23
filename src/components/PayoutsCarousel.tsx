@@ -1,5 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
 import cardBg from "@/assets/cards-carousel-bg-2.png";
+import arrowLogo from "@/assets/arrow-logo.png";
 import australiaFlag from "@/assets/flags/Australia.png";
 import canadaFlag from "@/assets/flags/Canada.png";
 import germanyFlag from "@/assets/flags/Germany.png";
@@ -82,8 +82,8 @@ export const PayoutsCarousel = () => {
                   <div className="text-2xl font-bold text-white mb-1">{payout.amount}</div>
                   <div className="text-gray-400 text-base">{payout.name}</div>
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                  <img src={arrowLogo} alt="Arrow" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -112,8 +112,8 @@ export const PayoutsCarousel = () => {
                   <div className="text-2xl font-bold text-white mb-1">{payout.amount}</div>
                   <div className="text-gray-400 text-base">{payout.name}</div>
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                  <img src={arrowLogo} alt="Arrow" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
