@@ -9,7 +9,7 @@ export const Hero = () => {
       <img 
         src={heroBackground} 
         alt="" 
-        className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+        className="absolute inset-0 w-full h-full object-cover object-[center_50%]"
       />
 
       <div className="relative z-10 container mx-auto px-4 py-32 text-center">
