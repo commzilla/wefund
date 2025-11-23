@@ -13,7 +13,7 @@ import avgPayoutImage from "@/assets/avg-payout-bg.png";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Hero Background */}
       <img 
         src={heroBackground} 
