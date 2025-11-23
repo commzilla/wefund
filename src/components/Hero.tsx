@@ -66,7 +66,7 @@ export const Hero = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px] mx-auto mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mt-16 px-4">
           {/* Community Card */}
           <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all">
             <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
