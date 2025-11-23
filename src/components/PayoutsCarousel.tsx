@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import cardBg from "@/assets/cards-carousel-bg-2.png";
 
 export const PayoutsCarousel = () => {
   const payouts = [
@@ -38,7 +39,12 @@ export const PayoutsCarousel = () => {
           {[...payouts, ...payouts].map((payout, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all shadow-xl"
+              className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all shadow-xl relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${cardBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="text-5xl flex-shrink-0">{payout.country}</div>
