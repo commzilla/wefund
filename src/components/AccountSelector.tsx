@@ -8,9 +8,9 @@ export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-20 px-4 bg-gradient-to-b from-background to-card">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0 bg-gradient-to-br from-blue-900/40 to-blue-950/60 border border-primary/20 rounded-2xl overflow-hidden">
           {/* Left Column - Configure Challenge */}
-          <Card className="bg-gradient-to-br from-blue-900/40 to-blue-950/60 border-primary/20 backdrop-blur-sm">
+          <Card className="bg-transparent border-0 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-white text-3xl mb-6">Configure your Challenge</CardTitle>
               
@@ -71,7 +71,7 @@ export const AccountSelector = () => {
           </Card>
 
           {/* Right Column - Table */}
-          <div className="bg-[#1a2332] border border-border/40 rounded-2xl overflow-hidden">
+          <div className="bg-transparent border-l border-primary/20 overflow-hidden">
             <Table>
               <TableHeader>
                 <TableRow className="border-border/40 hover:bg-transparent">
