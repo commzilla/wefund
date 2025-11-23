@@ -4,6 +4,9 @@ import heroBackground from "@/assets/hero-background.png";
 import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png";
 import communityUsersImage from "@/assets/Group-48161.webp";
 import countriesImage from "@/assets/bg-image-countries.png";
+import aBookImage from "@/assets/traders-max-fund-bg-image.png";
+import scalingPlanImage from "@/assets/trader-max-fund-bg-image-1.png";
+import futureImage from "@/assets/Div.elementor-element-9.png";
 
 export const Hero = () => {
   return (
@@ -97,18 +100,36 @@ export const Hero = () => {
               <div className="w-5 h-5 bg-primary/20 rounded-full" />
               <span className="text-sm">10X Trader</span>
             </div>
-            <div className="space-y-6">
-              <div>
-                <div className="text-4xl font-bold text-foreground mb-2">A-Book</div>
-                <div className="text-sm text-muted-foreground">Execution</div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              {/* Left Column - A-Book and $2m */}
+              <div className="space-y-4">
+                {/* A-Book Execution */}
+                <div className="relative">
+                  <img src={aBookImage} alt="" className="w-full h-auto rounded-lg" />
+                  <div className="absolute top-4 left-4">
+                    <div className="text-4xl font-bold text-foreground mb-1">A-Book</div>
+                    <div className="text-sm text-muted-foreground">Execution</div>
+                  </div>
+                </div>
+
+                {/* $2m Scaling Plan */}
+                <div className="relative">
+                  <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-lg" />
+                  <div className="absolute top-4 left-4">
+                    <div className="text-4xl font-bold text-foreground mb-1">$2m</div>
+                    <div className="text-sm text-muted-foreground">Scaling Plan</div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-foreground mb-2">$2m</div>
-                <div className="text-sm text-muted-foreground">Scaling Plan</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-foreground">The Future</div>
-                <div className="text-sm text-muted-foreground">of Prop Trading</div>
+
+              {/* Right Column - The Future */}
+              <div className="relative flex items-center justify-center">
+                <img src={futureImage} alt="" className="w-full h-full object-cover rounded-lg" />
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center w-full px-4">
+                  <div className="text-2xl font-bold text-foreground mb-1">The Future</div>
+                  <div className="text-sm text-muted-foreground">of Prop Trading</div>
+                </div>
               </div>
             </div>
           </div>
