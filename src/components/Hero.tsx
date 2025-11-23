@@ -7,6 +7,9 @@ import countriesImage from "@/assets/bg-image-countries.png";
 import aBookImage from "@/assets/traders-max-fund-bg-image.png";
 import scalingPlanImage from "@/assets/trader-max-fund-bg-image-1.png";
 import futureImage from "@/assets/Div.elementor-element-9.png";
+import payoutsProcessedImage from "@/assets/payouts-processed-bg.png";
+import highestPayoutImage from "@/assets/highest-payout-bg.png";
+import avgPayoutImage from "@/assets/avg-payout-bg.png";
 
 export const Hero = () => {
   return (
@@ -140,18 +143,33 @@ export const Hero = () => {
               <div className="w-5 h-5 bg-primary/20 rounded-full" />
               <span className="text-sm">Payouts</span>
             </div>
+            
             <div className="space-y-4">
-              <div>
-                <span className="text-4xl font-bold text-foreground">500+</span>
-                <div className="text-sm text-muted-foreground mt-1">Payouts Processed</div>
+              {/* 500+ Payouts Processed */}
+              <div className="relative">
+                <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-lg" />
+                <div className="absolute top-4 left-4">
+                  <div className="text-4xl font-bold text-foreground mb-1">500+</div>
+                  <div className="text-sm text-muted-foreground">Payouts Processed</div>
+                </div>
               </div>
-              <div>
-                <span className="text-4xl font-bold text-primary">$5,782.50</span>
-                <div className="text-sm text-muted-foreground mt-1">Highest Payout</div>
+
+              {/* Highest Payout */}
+              <div className="relative">
+                <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-lg" />
+                <div className="absolute top-4 left-4">
+                  <div className="text-4xl font-bold text-primary mb-1">$5,782.50</div>
+                  <div className="text-sm text-muted-foreground">Highest Payout</div>
+                </div>
               </div>
-              <div>
-                <span className="text-4xl font-bold text-foreground">$1,228</span>
-                <div className="text-sm text-muted-foreground mt-1">Average Payout</div>
+
+              {/* Average Payout */}
+              <div className="relative">
+                <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-lg" />
+                <div className="absolute top-4 left-4">
+                  <div className="text-4xl font-bold text-foreground mb-1">$1,228</div>
+                  <div className="text-sm text-muted-foreground">Average Payout</div>
+                </div>
               </div>
             </div>
           </div>
