@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { AccountSelector } from "@/components/AccountSelector";
 import { PayoutsCarousel } from "@/components/PayoutsCarousel";
+import { FuelPassion } from "@/components/FuelPassion";
 import { PricingPlans } from "@/components/PricingPlans";
 import { PayoutsSection } from "@/components/PayoutsSection";
 import { WhyWeFund } from "@/components/WhyWeFund";
@@ -16,6 +17,7 @@ const Index = () => {
       <Hero />
       <AccountSelector />
       <PayoutsCarousel />
+      <FuelPassion />
       <PricingPlans />
       <PayoutsSection />
       <WhyWeFund />
