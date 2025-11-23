@@ -29,130 +29,135 @@ export const FuelPassion = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* 2-Step Account */}
-          <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-            <h3 className="text-white text-2xl font-bold mb-2">2-Step Account</h3>
-            <p className="text-gray-400 mb-6">The Traditional Way of Prop Trading</p>
+          <div className="bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-sm border border-cyan-500/30 rounded-3xl p-8 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+            <h3 className="text-white text-3xl font-bold mb-2">2-Step Account</h3>
+            <p className="text-gray-400 text-sm mb-8">The Traditional Way of Prop Trading</p>
             
-            <div className="mb-6">
-              <span className="text-cyan-400 text-4xl font-bold">$35</span>
-              <span className="text-gray-400 text-sm ml-2">/starting</span>
+            <div className="mb-2">
+              <span className="text-white text-5xl font-bold">$35</span>
+              <span className="text-gray-400 text-base ml-2">/starting</span>
             </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Payout on Demand</span>
+            <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-8"></div>
+
+            <div className="space-y-4 mb-12">
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Payout on Demand</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">8% + 5% Profit Targets</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">8% + 5% Profit Targets</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Up to 90% Profit Split</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Up to 90% Profit Split</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Unlimited Trading Days</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Unlimited Trading Days</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Refundable Fee</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Refundable Fee</span>
               </div>
             </div>
 
-            <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-xl py-6">
+            <Button className="w-full bg-cyan-900/40 hover:bg-cyan-900/60 text-white border border-cyan-500/30 rounded-xl py-7 text-base font-medium">
               Join the Challenge
             </Button>
           </div>
 
           {/* 1-Step Account - Most Popular */}
-          <div className="bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-8 relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span className="bg-cyan-400 text-slate-900 px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
+          <div className="bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-sm border-2 border-cyan-400/50 rounded-3xl p-8 shadow-[0_0_50px_rgba(34,211,238,0.3)] relative">
+            <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-white text-3xl font-bold">1-Step Account</h3>
+              <span className="bg-cyan-400 text-slate-900 px-3 py-1 rounded-full text-xs font-semibold">
+                Most popular
               </span>
             </div>
-
-            <h3 className="text-white text-2xl font-bold mb-2">1-Step Account</h3>
-            <p className="text-gray-400 mb-6">Your Fast-Track to Trading Success</p>
+            <p className="text-gray-400 text-sm mb-8">Your Fast-Track to Trading Success</p>
             
-            <div className="mb-6">
-              <span className="text-cyan-400 text-4xl font-bold">$110</span>
-              <span className="text-gray-400 text-sm ml-2">/starting</span>
+            <div className="mb-2">
+              <span className="text-white text-5xl font-bold">$110</span>
+              <span className="text-gray-400 text-base ml-2">/starting</span>
             </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">HFT/Algo Allowed</span>
+            <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent my-8"></div>
+
+            <div className="space-y-4 mb-12">
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">HFT/Algo Allowed</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">$400k Max Allocation</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">$400k Max Allocation</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">No News Restrictions</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">No News Restrictions</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">No Minimum Trading days</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">No Minimum Trading days</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Bi-weekly Add-on available</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Bi-weekly Add-on available</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Crypto Weekend Trading</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Crypto Weekend Trading</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Scale Your Payout into 10X</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Scale Your Payout into 10X</span>
               </div>
             </div>
 
-            <Button className="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-900 rounded-xl py-6 font-semibold">
+            <Button className="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-900 rounded-xl py-7 text-base font-semibold">
               Join the Challenge
             </Button>
           </div>
 
           {/* 10X Trader */}
-          <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-            <h3 className="text-white text-2xl font-bold mb-2">10X Trader</h3>
-            <p className="text-gray-400 mb-6">Introducing the Future of Prop Trading</p>
+          <div className="bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-sm border border-cyan-500/30 rounded-3xl p-8 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+            <h3 className="text-white text-3xl font-bold mb-2">10X Trader</h3>
+            <p className="text-gray-400 text-sm mb-8">Introducing the Future of Prop Trading</p>
             
-            <div className="mb-6">
-              <span className="text-cyan-400 text-2xl font-bold">Deposit with Your Broker</span>
+            <div className="mb-8">
+              <span className="text-cyan-400 text-xl font-normal">Deposit with Your Broker</span>
             </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Daily Payouts</span>
+            <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-8"></div>
+
+            <div className="space-y-4 mb-12">
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Daily Payouts</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">100% Profit Split</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">100% Profit Split</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">No Trading Restrictions</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">No Trading Restrictions</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Scale up to $2m</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Scale up to $2m</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Only 1 Trading Rule</span>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white">Only 1 Trading Rule</span>
               </div>
             </div>
 
-            <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-xl py-6">
+            <Button className="w-full bg-cyan-900/40 hover:bg-cyan-900/60 text-white border border-cyan-500/30 rounded-xl py-7 text-base font-medium">
               Join the Challenge
             </Button>
           </div>
