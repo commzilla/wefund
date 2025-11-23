@@ -22,6 +22,8 @@ export const Hero = () => {
         alt="" 
         className="absolute inset-0 w-full h-full object-cover object-[center_15%]"
       />
+      {/* Fade to black gradient at bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-[1]" />
 
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         {/* Trust Badges */}

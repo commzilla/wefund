@@ -8,7 +8,7 @@ export const Features = () => {
   ];
 
   return (
-    <section className="py-12 px-4">
+    <section className="py-12 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Get Funded with the <span className="text-primary">Most Trusted Prop Firm</span>
