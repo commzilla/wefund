@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import wefundTextLogo from "@/assets/wefund-text-logo.png";
-import heroBackground from "@/assets/hero-background.png";
+import heroBackground from "@/assets/hero-background-new.png";
 import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png";
 import communityUsersImage from "@/assets/Group-48161.webp";
 import countriesImage from "@/assets/bg-image-countries.png";
