@@ -10,6 +10,8 @@ import futureImage from "@/assets/future-prop-trading.png";
 import payoutsProcessedImage from "@/assets/payouts-processed-bg.png";
 import highestPayoutImage from "@/assets/highest-payout-bg.png";
 import avgPayoutImage from "@/assets/avg-payout-bg.png";
+import mt5Logo from "@/assets/mt5-logo.png";
+import trustStars from "@/assets/trust-stars.png";
 
 export const Hero = () => {
   return (
@@ -24,22 +26,15 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-          <div className="px-4 py-2 bg-card/40 backdrop-blur-sm rounded-full border border-primary/40 flex items-center gap-2.5">
-            <div className="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-background rounded-full" />
-            </div>
-            <span className="text-xs font-medium text-foreground">MetaTrader 5</span>
+          {/* MetaTrader 5 Badge */}
+          <div className="px-3 py-2 bg-card/40 backdrop-blur-sm rounded-full border border-primary/40">
+            <img src={mt5Logo} alt="MetaTrader 5" className="h-6" />
           </div>
+          
+          {/* TTP Trustpilot Badge */}
           <div className="px-4 py-2 bg-card/40 backdrop-blur-sm rounded-full border border-primary/40 flex items-center gap-2.5">
             <span className="text-xs font-medium text-foreground">TTP The Trusted Prop</span>
-            <div className="flex items-center gap-0.5 px-2 py-0.5 bg-green-600 rounded">
-              <span className="text-[10px] font-bold text-white">Trustpilot</span>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-3 h-3 fill-white" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
-            </div>
+            <img src={trustStars} alt="Trustpilot 5 stars" className="h-4" />
           </div>
         </div>
 
