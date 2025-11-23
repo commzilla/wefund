@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/wefund-logo.png";
 
 export const Hero = () => {
   return (
@@ -29,9 +28,8 @@ export const Hero = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
-          <span>You Trade,</span>
-          <img src={logo} alt="We Fund" className="h-16 md:h-20 inline-block" style={{ filter: 'brightness(0) invert(1)' }} />
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+          You Trade, WeFund
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
