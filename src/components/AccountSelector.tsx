@@ -8,6 +8,31 @@ export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
+        {/* Header and Features */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Get Funded with the <span className="text-primary">Most Trusted Prop Firm</span>
+        </h2>
+        <div className="flex flex-col md:flex-row justify-center gap-8 mt-12 mb-16">
+          <div className="flex items-center gap-4 text-foreground">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl">
+              🛡️
+            </div>
+            <span className="text-lg">Zero reward denials</span>
+          </div>
+          <div className="flex items-center gap-4 text-foreground">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl">
+              ⚖️
+            </div>
+            <span className="text-lg">Fair and simple trading rules</span>
+          </div>
+          <div className="flex items-center gap-4 text-foreground">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-2xl">
+              💰
+            </div>
+            <span className="text-lg">Keep up to 100% of your profits</span>
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0">
           {/* Left Column - Configure Challenge */}
           <Card className="bg-transparent border-0 backdrop-blur-sm">
