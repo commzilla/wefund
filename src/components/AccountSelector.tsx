@@ -8,7 +8,7 @@ export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0 bg-card border border-primary/20 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0">
           {/* Left Column - Configure Challenge */}
           <Card className="bg-transparent border-0 backdrop-blur-sm">
             <CardHeader>
