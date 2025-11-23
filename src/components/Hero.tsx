@@ -11,7 +11,7 @@ import payoutsProcessedImage from "@/assets/payouts-processed-bg.png";
 import highestPayoutImage from "@/assets/highest-payout-bg.png";
 import avgPayoutImage from "@/assets/avg-payout-bg.png";
 import mt5Logo from "@/assets/mt5-logo.png";
-import trustStars from "@/assets/trust-stars.png";
+import heroTrustBadge from "@/assets/hero-trust.png";
 
 export const Hero = () => {
   return (
@@ -32,10 +32,7 @@ export const Hero = () => {
           </div>
           
           {/* TTP Trustpilot Badge */}
-          <div className="px-4 py-2 bg-card/40 backdrop-blur-sm rounded-full border border-primary/40 flex items-center gap-2.5">
-            <span className="text-xs font-medium text-foreground">TTP The Trusted Prop</span>
-            <img src={trustStars} alt="Trustpilot 5 stars" className="h-4" />
-          </div>
+          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-10" />
         </div>
 
         {/* Main Headline */}
