@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/wefund-logo.png";
 
 export const Navigation = () => {
   return (
@@ -6,10 +7,8 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">W</span>
-              </div>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="WeFund" className="h-10" />
               <span className="text-xl font-bold text-foreground">WeFund</span>
             </div>
             
