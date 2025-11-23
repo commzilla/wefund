@@ -8,7 +8,7 @@ export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-20 px-4 bg-gradient-to-b from-background to-card">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-6">
           {/* Left Column - Configure Challenge */}
           <Card className="bg-gradient-to-br from-blue-900/40 to-blue-950/60 border-primary/20 backdrop-blur-sm">
             <CardHeader>
