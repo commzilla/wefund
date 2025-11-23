@@ -6,9 +6,9 @@ export const AccountSelector = () => {
   const accountSizes = ["$10k", "$25k", "$50k", "$100k", "$200k"];
   
   return (
-    <section id="objectives" className="py-20 px-4 bg-gradient-to-b from-background to-card">
+    <section id="objectives" className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0 bg-gradient-to-br from-blue-900/40 to-blue-950/60 border border-primary/20 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-0 bg-card border border-primary/20 rounded-2xl overflow-hidden">
           {/* Left Column - Configure Challenge */}
           <Card className="bg-transparent border-0 backdrop-blur-sm">
             <CardHeader>
