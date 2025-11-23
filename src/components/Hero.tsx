@@ -170,7 +170,7 @@ export const Hero = () => {
                 <div className="relative">
                   <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl" />
                   <div className="absolute bottom-4 left-4">
-                    <div className="text-3xl font-bold text-primary mb-1">$5,782.50</div>
+                    <div className="text-3xl font-bold text-foreground mb-1">$5,782.50</div>
                     <div className="text-sm text-muted-foreground">Highest Payout</div>
                   </div>
                 </div>
