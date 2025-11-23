@@ -118,7 +118,7 @@ export const Hero = () => {
                 {/* A-Book Execution */}
                 <div className="relative">
                   <img src={aBookImage} alt="" className="w-full h-auto rounded-xl" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">A-Book</div>
                     <div className="text-sm text-muted-foreground">Execution</div>
                   </div>
@@ -127,7 +127,7 @@ export const Hero = () => {
                 {/* $2m Scaling Plan */}
                 <div className="relative">
                   <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">$2m</div>
                     <div className="text-sm text-muted-foreground">Scaling Plan</div>
                   </div>
@@ -169,7 +169,7 @@ export const Hero = () => {
                 {/* Highest Payout */}
                 <div className="relative">
                   <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-primary mb-1">$5,782.50</div>
                     <div className="text-sm text-muted-foreground">Highest Payout</div>
                   </div>
@@ -178,7 +178,7 @@ export const Hero = () => {
                 {/* Average Payout */}
                 <div className="relative">
                   <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">$1,228</div>
                     <div className="text-sm text-muted-foreground">Average Payout</div>
                   </div>
