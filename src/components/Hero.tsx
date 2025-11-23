@@ -27,7 +27,11 @@ export const Hero = () => {
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {/* MetaTrader 5 Badge */}
-          <img src={mt5Badge} alt="MetaTrader 5" className="h-12" />
+          <img 
+            src={mt5Badge} 
+            alt="MetaTrader 5" 
+            className="h-12 animate-glow" 
+          />
           
           {/* TTP Trustpilot Badge */}
           <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-12" />
