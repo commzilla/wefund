@@ -46,7 +46,7 @@ export const Hero = () => {
         {/* Main Headline */}
         <h1 className="flex items-center justify-center gap-4 text-6xl md:text-8xl font-bold text-foreground mb-6 leading-none flex-wrap">
           <span>You Trade,</span>
-          <img src={wefundTextLogo} alt="We Fund" className="h-[1em] inline-block align-baseline" />
+          <img src={wefundTextLogo} alt="We Fund" className="h-[0.7em] inline-block align-baseline" />
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
