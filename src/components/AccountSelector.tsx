@@ -48,51 +48,55 @@ export const AccountSelector = () => {
               <Table>
                 <TableHeader>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableHead className="text-muted-foreground font-medium">Category</TableHead>
-                    <TableHead className="text-muted-foreground font-medium text-center">Phase 1</TableHead>
-                    <TableHead className="text-primary font-medium text-center">Live Trader</TableHead>
+                    <TableHead className="text-muted-foreground font-normal text-base py-5">Category</TableHead>
+                    <TableHead className="text-muted-foreground font-normal text-base text-right py-5">Phase 1</TableHead>
+                    <TableHead className="text-primary font-normal text-base text-right py-5">Live Trader</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Trading Period</TableCell>
-                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
-                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
+                    <TableCell className="text-muted-foreground py-5">Trading Period</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">Unlimited</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">Unlimited</TableCell>
                   </TableRow>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Minimum Trading Days</TableCell>
-                    <TableCell className="text-foreground text-center">0 days</TableCell>
-                    <TableCell className="text-foreground text-center">Unlimited</TableCell>
+                    <TableCell className="text-muted-foreground py-5">Minimum Trading Days</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">0 days</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">Unlimited</TableCell>
                   </TableRow>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Maximum Daily Loss (4%)</TableCell>
-                    <TableCell className="text-foreground text-center">$400</TableCell>
-                    <TableCell className="text-foreground text-center">$400</TableCell>
+                    <TableCell className="text-muted-foreground py-5">Maximum Daily Loss (4%)</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$400</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$400</TableCell>
                   </TableRow>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Maximum Loss (8%)</TableCell>
-                    <TableCell className="text-foreground text-center">$800</TableCell>
-                    <TableCell className="text-foreground text-center">$800</TableCell>
+                    <TableCell className="text-muted-foreground py-5">Maximum Loss (8%)</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$800</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$800</TableCell>
                   </TableRow>
                   <TableRow className="border-border/40 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Profit Target (10%)</TableCell>
-                    <TableCell className="text-foreground text-center">$1,000</TableCell>
-                    <TableCell className="text-foreground text-center">N/A</TableCell>
+                    <TableCell className="text-muted-foreground py-5">Profit Target (10%)</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$1,000</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">N/A</TableCell>
                   </TableRow>
-                  <TableRow className="border-b-2 border-primary/60 hover:bg-transparent">
-                    <TableCell className="text-muted-foreground">Price</TableCell>
-                    <TableCell className="text-foreground text-center">$147</TableCell>
-                    <TableCell className="text-foreground text-center">Free</TableCell>
+                  <TableRow className="border-b-2 border-primary hover:bg-transparent">
+                    <TableCell className="text-muted-foreground py-5">Price</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">$147</TableCell>
+                    <TableCell className="text-muted-foreground text-right py-5">Free</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
               
-              <div className="p-6 border-t border-border/40 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">See all trading rules</span>
-                  <span className="text-sm">💎 Bi-weekly payout and <span className="text-primary">90% profit split</span> add-ons available</span>
+              <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3">
+                <span className="text-sm text-foreground">See all trading rules</span>
+                <div className="flex items-center gap-2 text-sm">
+                  <span>💎</span>
+                  <span className="text-foreground">Bi-weekly payout and <span className="text-primary">90% profit split</span> add-ons available</span>
                 </div>
-                <span className="text-sm">🔧 Profit Split</span>
+                <div className="flex items-center gap-2 text-sm text-foreground">
+                  <span>🔧</span>
+                  <span>Profit Split</span>
+                </div>
               </div>
             </div>
 
