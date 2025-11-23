@@ -77,7 +77,7 @@ export const Hero = () => {
             
             {/* Top Section - 180+ Traders Max Funded */}
             <div className="relative mb-2">
-              <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-xl" />
+              <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
               <div className="absolute top-4 left-4">
                 <div className="text-4xl font-bold text-foreground mb-1">180+</div>
                 <div className="text-sm text-muted-foreground">Traders Max Funded</div>
@@ -86,7 +86,7 @@ export const Hero = () => {
 
             {/* Middle Section - 2,000+ Active Traders */}
             <div className="relative mb-2">
-              <img src={communityUsersImage} alt="" className="w-full h-auto rounded-xl" />
+              <img src={communityUsersImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
               <div className="absolute top-1/2 right-4 -translate-y-1/2 text-right">
                 <div className="text-4xl font-bold text-foreground mb-1">2,000+</div>
                 <div className="text-sm text-muted-foreground">Active Traders</div>
@@ -95,7 +95,7 @@ export const Hero = () => {
 
             {/* Bottom Section - 128 Countries */}
             <div className="relative">
-              <img src={countriesImage} alt="" className="w-full h-auto rounded-xl" />
+              <img src={countriesImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
               <div className="absolute top-1/2 left-4 -translate-y-1/2">
                 <div className="text-4xl font-bold text-foreground mb-1">128</div>
                 <div className="text-sm text-muted-foreground">Countries</div>
@@ -117,7 +117,7 @@ export const Hero = () => {
               <div className="space-y-2">
                 {/* A-Book Execution */}
                 <div className="relative">
-                  <img src={aBookImage} alt="" className="w-full h-auto rounded-xl" />
+                  <img src={aBookImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
                   <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">A-Book</div>
                     <div className="text-sm text-muted-foreground">Execution</div>
@@ -126,7 +126,7 @@ export const Hero = () => {
 
                 {/* $2m Scaling Plan */}
                 <div className="relative">
-                  <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl" />
+                  <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
                   <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">$2m</div>
                     <div className="text-sm text-muted-foreground">Scaling Plan</div>
@@ -136,7 +136,7 @@ export const Hero = () => {
 
               {/* Right Column - The Future */}
               <div className="relative flex items-end justify-center pb-5">
-                <img src={futureImage} alt="" className="w-full h-full object-cover rounded-xl" />
+                <img src={futureImage} alt="" className="w-full h-full object-cover rounded-xl border border-border/20" />
                 <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-center w-full px-4">
                   <div className="text-2xl font-bold text-foreground mb-1">The Future</div>
                   <div className="text-sm text-muted-foreground">of Prop Trading</div>
@@ -157,7 +157,7 @@ export const Hero = () => {
             <div className="space-y-2">
               {/* 500+ Payouts Processed */}
               <div className="relative">
-                <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-xl" />
+                <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
                 <div className="absolute top-4 left-4">
                   <div className="text-4xl font-bold text-foreground mb-1">500+</div>
                   <div className="text-sm text-muted-foreground">Payouts Processed</div>
@@ -168,7 +168,7 @@ export const Hero = () => {
               <div className="grid grid-cols-2 gap-2">
                 {/* Highest Payout */}
                 <div className="relative">
-                  <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl" />
+                  <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
                   <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">$5,782.50</div>
                     <div className="text-sm text-muted-foreground">Highest Payout</div>
@@ -177,7 +177,7 @@ export const Hero = () => {
 
                 {/* Average Payout */}
                 <div className="relative">
-                  <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl" />
+                  <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/20" />
                   <div className="absolute bottom-4 left-4">
                     <div className="text-3xl font-bold text-foreground mb-1">$1,228</div>
                     <div className="text-sm text-muted-foreground">Average Payout</div>
