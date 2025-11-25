@@ -9,23 +9,19 @@ import { WhyWeFund } from "@/components/WhyWeFund";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
       <AccountSelector />
       <PayoutsCarousel />
       <FuelPassion />
-      <PricingPlans />
+      
       <PayoutsSection />
       <WhyWeFund />
       <HowItWorks />
       <FAQ />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

@@ -3,12 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import paymentsImage from "@/assets/payments.png";
 import mt5LogoNew from "@/assets/mt5-logo-new.png";
-
 export const AccountSelector = () => {
   const accountSizes = ["$10k", "$25k", "$50k", "$100k", "$200k"];
-  
-  return (
-    <section id="objectives" className="py-20 px-4 bg-black">
+  return <section id="objectives" className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[450px_1fr] gap-0">
           {/* Left Column - Configure Challenge */}
@@ -18,10 +15,7 @@ export const AccountSelector = () => {
             {/* Trader MT5 */}
             <div className="bg-blue-800/40 backdrop-blur-sm border border-blue-600/40 rounded-2xl p-5 flex items-center gap-4 mb-8">
               <img src={mt5LogoNew} alt="MT5" className="h-12 w-auto" />
-              <div>
-                <div className="text-gray-300 text-sm">Trader</div>
-                <div className="text-white font-bold text-xl">MT5</div>
-              </div>
+              
             </div>
 
             {/* Account Type */}
@@ -135,6 +129,5 @@ export const AccountSelector = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
