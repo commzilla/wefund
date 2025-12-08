@@ -29,7 +29,7 @@ export const FuelPassion = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-end">
           {/* 2-Step Account */}
           <div className="bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-sm border border-cyan-500/30 rounded-3xl p-8 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
             <h3 className="text-white text-3xl font-bold mb-2">2-Step Account</h3>
