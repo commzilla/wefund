@@ -179,7 +179,7 @@ export const Hero = () => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden mt-4 px-0">
+        <div className="md:hidden mt-4 px-0 min-h-[315px]">
           <Carousel
             opts={{
               align: "center",
