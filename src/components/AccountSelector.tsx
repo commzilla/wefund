@@ -32,7 +32,7 @@ export const AccountSelector = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-8">
           
           {/* Left Column - Configure Challenge */}
           <div className="relative p-[2px] rounded-[36px] bg-gradient-to-br from-cyan-400/60 via-cyan-500/40 via-30% to-slate-900/80 overflow-hidden">
