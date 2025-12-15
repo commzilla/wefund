@@ -83,90 +83,85 @@ export const PricingPlans = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-[2px] rounded-[36px] bg-gradient-to-br from-cyan-400/60 via-cyan-500/40 via-30% to-slate-900/80 overflow-hidden ${
-                plan.popular ? "scale-105 z-10" : ""
-              }`}
+              className={`relative ${plan.popular ? "scale-105 z-10" : ""}`}
             >
-              {/* Border glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-blue-900/40 to-cyan-400/50 blur-[1px]" />
-              
-              {/* Card inner content */}
+              {/* Most Popular Badge - outside the card */}
+              {plan.popular && (
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                  <span className="text-[11px] px-4 py-1.5 bg-slate-900/70 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/30 shadow-lg backdrop-blur-md">
+                    Most Popular
+                  </span>
+                  <div className="w-px h-3 bg-cyan-400/40"></div>
+                </div>
+              )}
+
+              {/* Card wrapper with border */}
               <div 
-                className="relative rounded-[34px] bg-gradient-to-br from-slate-900/98 via-slate-950/95 to-blue-950/90 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] h-full flex flex-col"
+                className="rounded-[24px] border border-slate-700/50 overflow-hidden h-full"
                 style={{ 
                   backgroundImage: `url(${cardsCarouselBg})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               >
-                {/* Strong Black Overlay */}
-                <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40 pointer-events-none" />
-                
-                {/* Internal Stars Effect */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  {[...Array(25)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute rounded-full bg-white animate-pulse"
-                      style={{
-                        width: `${Math.random() * 2 + 1}px`,
-                        height: `${Math.random() * 2 + 1}px`,
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        opacity: Math.random() * 0.4 + 0.1,
-                        animationDelay: `${Math.random() * 3}s`,
-                        animationDuration: `${Math.random() * 2 + 2}s`
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Subtle Cyan/Blue Glows */}
-                <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-
-                {/* Most Popular Badge */}
-                {plan.popular && (
-                  <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-                    <div className="w-px h-3 bg-cyan-400/40"></div>
-                    <span className="text-[11px] px-4 py-1.5 bg-slate-900/70 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/30 shadow-lg backdrop-blur-md">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                {/* Content */}
-                <div className="relative z-10 p-8 pt-10 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-slate-400 text-sm mb-4">{plan.subtitle}</p>
+                {/* Inner card with gradient overlay */}
+                <div className="relative h-full bg-gradient-to-br from-slate-800/70 via-slate-900/80 to-blue-950/70 backdrop-blur-sm">
+                  {/* Dark overlay for depth */}
+                  <div className="absolute inset-0 bg-black/40 pointer-events-none" />
                   
-                  <div className="mb-6">
-                    <span className="text-3xl font-bold text-cyan-400">{plan.price}</span>
-                    {plan.price.startsWith("$") && (
-                      <span className="text-sm text-slate-500 ml-1">/starting</span>
-                    )}
-                  </div>
-
-                  <div className="space-y-3 flex-grow">
-                    {plan.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-3">
-                        <span className="text-cyan-400 mt-0.5">✓</span>
-                        <span className="text-sm text-slate-300">{feature}</span>
-                      </div>
+                  {/* Internal Stars Effect */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {[...Array(20)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute rounded-full bg-white animate-pulse"
+                        style={{
+                          width: `${Math.random() * 2 + 1}px`,
+                          height: `${Math.random() * 2 + 1}px`,
+                          top: `${Math.random() * 100}%`,
+                          left: `${Math.random() * 100}%`,
+                          opacity: Math.random() * 0.3 + 0.1,
+                          animationDelay: `${Math.random() * 3}s`,
+                          animationDuration: `${Math.random() * 2 + 2}s`
+                        }}
+                      />
                     ))}
                   </div>
 
-                  <Button 
-                    className={`w-full mt-8 rounded-xl py-6 font-semibold text-base transition-all ${
-                      plan.popular 
-                        ? "bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white shadow-[0_0_30px_rgba(6,182,212,0.4)]" 
-                        : "bg-slate-800/60 hover:bg-slate-700/60 text-white border border-cyan-500/30"
-                    }`}
-                  >
-                    Join the Challenge
-                  </Button>
+                  {/* Subtle glow */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+                  {/* Content */}
+                  <div className="relative z-10 p-8 flex flex-col h-full">
+                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <p className="text-slate-400 text-sm mb-4">{plan.subtitle}</p>
+                    
+                    <div className="mb-6">
+                      <span className="text-3xl font-bold text-cyan-400">{plan.price}</span>
+                      {plan.price.startsWith("$") && (
+                        <span className="text-sm text-slate-500 ml-1">/starting</span>
+                      )}
+                    </div>
+
+                    <div className="space-y-3 flex-grow">
+                      {plan.features.map((feature, fIndex) => (
+                        <div key={fIndex} className="flex items-start gap-3">
+                          <span className="text-cyan-400 mt-0.5">✓</span>
+                          <span className="text-sm text-slate-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <Button 
+                      className={`w-full mt-8 rounded-xl py-6 font-semibold text-base tracking-wider transition-all ${
+                        plan.popular 
+                          ? "bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white shadow-[0_0_30px_rgba(6,182,212,0.3)]" 
+                          : "bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600/50"
+                      }`}
+                    >
+                      Join the Challenge
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
