@@ -108,27 +108,32 @@ export const AccountSelector = () => {
               {/* Account Size */}
               <div className="mb-5">
                 <h4 className="text-slate-400 text-[12px] font-medium mb-2 uppercase tracking-wider">Account Size</h4>
-                <div className="rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5 grid grid-cols-5 gap-1">
-                  <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
-                    $10k
-                  </Button>
-                  <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
-                    $25k
-                  </Button>
-                  <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
-                    $50k
-                  </Button>
-                  <div className="relative pt-2">
-                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-4 py-1 bg-slate-800 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/50 shadow-lg z-10">
+                <div className="relative rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5">
+                  {/* Most Popular Badge - positioned above grid */}
+                  <div className="absolute -top-3 left-1/2 translate-x-[10%] z-20 flex flex-col items-center">
+                    <span className="text-[10px] px-3 py-1 bg-slate-800/95 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/40 shadow-lg backdrop-blur-sm">
                       Most popular
                     </span>
-                    <Button className="w-full bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 px-0 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                    <div className="w-px h-2 bg-cyan-400/40"></div>
+                  </div>
+                  
+                  <div className="grid grid-cols-5 gap-1">
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
+                      $10k
+                    </Button>
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
+                      $25k
+                    </Button>
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
+                      $50k
+                    </Button>
+                    <Button className="bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 px-0 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
                       $100k
                     </Button>
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
+                      $200k
+                    </Button>
                   </div>
-                  <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
-                    $200k
-                  </Button>
                 </div>
               </div>
 
