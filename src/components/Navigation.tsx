@@ -28,19 +28,19 @@ export const Navigation = () => {
             </div>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="#home" className="text-base text-foreground hover:text-primary transition-colors flex items-center gap-1">
+              <a href="#home" className="text-base font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
                 Home
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              <a href="#affiliates" className="text-base text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#affiliates" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Affiliates
               </a>
-              <a href="#support" className="text-base text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#support" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Support
               </a>
-              <a href="#faq" className="text-base text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#faq" className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 FAQ
               </a>
             </div>
