@@ -43,9 +43,9 @@ All colors MUST be HSL.
     --gradient-start: 220 45% 6%;
     --gradient-end: 220 40% 3%;
 
-    /* Footer (deep navy like reference) */
-    --footer: 214 60% 14%;
-    --footer-2: 220 65% 9%;
+    /* Footer (pure black with cyan glow) */
+    --footer: 0 0% 0%;
+    --footer-2: 0 0% 0%;
   }
 }
 
