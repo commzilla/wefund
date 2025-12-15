@@ -139,6 +139,7 @@ export const Hero = () => {
         src={heroBackground} 
         alt="" 
         className="absolute inset-0 w-full h-full object-cover object-[center_15%]"
+        fetchPriority="high"
       />
       {/* Fade to black gradient at bottom */}
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-[1]" />
