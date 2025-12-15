@@ -217,20 +217,36 @@ export const AccountSelector = () => {
             </Table>
             
             {/* Footer */}
-            <div className="relative z-10 px-8 py-5 bg-slate-900/60 border-t border-slate-600/40">
+            <div className="relative z-10 px-6 py-5 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/80 border-t border-slate-600/40">
               <div className="flex items-center justify-between flex-wrap gap-4">
-                <span className="text-white font-semibold text-[16px]">See all trading rules</span>
-                <div className="flex items-center gap-6 text-[14px]">
-                  <span className="text-slate-400">add-ons available</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-cyan-400">⚡</span>
-                    <span className="text-slate-300">Profit Splits of up to</span>
-                    <span className="text-cyan-400 font-semibold">100%</span>
+                {/* See all trading rules button */}
+                <button className="group flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                  <span className="text-white font-semibold text-[14px]">See all trading rules</span>
+                  <svg className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                
+                {/* Feature badges */}
+                <div className="flex items-center gap-3">
+                  {/* Add-ons badge */}
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-600/30">
+                    <span className="text-purple-400 text-sm">🎁</span>
+                    <span className="text-slate-300 text-[12px]">add-ons available</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-yellow-500">💰</span>
-                    <span className="text-slate-300">Get Funded up to</span>
-                    <span className="text-cyan-400 font-semibold">$400</span>
+                  
+                  {/* Profit split badge */}
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20">
+                    <span className="text-yellow-400 text-sm">⚡</span>
+                    <span className="text-slate-300 text-[12px]">Profit Splits up to</span>
+                    <span className="text-cyan-400 font-bold text-[13px]">100%</span>
+                  </div>
+                  
+                  {/* Get funded badge */}
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-600/5 border border-green-500/20">
+                    <span className="text-green-400 text-sm">💰</span>
+                    <span className="text-slate-300 text-[12px]">Get Funded up to</span>
+                    <span className="text-green-400 font-bold text-[13px]">$400K</span>
                   </div>
                 </div>
               </div>
