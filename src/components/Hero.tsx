@@ -133,7 +133,7 @@ const PayoutsCard = () => (
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
       {/* Hero Background */}
       <img 
         src={heroBackground} 
@@ -143,7 +143,7 @@ export const Hero = () => {
       {/* Fade to black gradient at bottom */}
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-[1]" />
 
-      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 text-center">
+      <div className="relative z-10 container mx-auto px-4 py-6 md:py-12 text-center">
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
           <img 
