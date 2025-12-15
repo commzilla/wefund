@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
-import wefundTextLogo from "@/assets/wefund-text-logo.png";
+import wefundTextLogo from "@/assets/wefund-text-logo.png?format=webp&quality=80";
 import heroBackground from "@/assets/hero-background-new.png?format=webp&quality=80";
-import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png";
+import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png?format=webp&quality=75";
 import communityUsersImage from "@/assets/Group-48161.webp";
-import countriesImage from "@/assets/bg-image-countries.png";
-import aBookImage from "@/assets/a-book-execution.png";
-import scalingPlanImage from "@/assets/scaling-plan.png";
-import futureImage from "@/assets/future-prop-trading.png";
-import payoutsProcessedImage from "@/assets/payouts-processed-bg.png";
-import highestPayoutImage from "@/assets/highest-payout-bg.png";
-import avgPayoutImage from "@/assets/avg-payout-bg.png";
-import mt5Badge from "@/assets/mt5-badge.png";
-import heroTrustBadge from "@/assets/hero-trust.png";
+import countriesImage from "@/assets/bg-image-countries.png?format=webp&quality=75";
+import aBookImage from "@/assets/a-book-execution.png?format=webp&quality=75";
+import scalingPlanImage from "@/assets/scaling-plan.png?format=webp&quality=75";
+import futureImage from "@/assets/future-prop-trading.png?format=webp&quality=75";
+import payoutsProcessedImage from "@/assets/payouts-processed-bg.png?format=webp&quality=75";
+import highestPayoutImage from "@/assets/highest-payout-bg.png?format=webp&quality=75";
+import avgPayoutImage from "@/assets/avg-payout-bg.png?format=webp&quality=75";
+import mt5Badge from "@/assets/mt5-badge.png?format=webp&quality=80";
+import heroTrustBadge from "@/assets/hero-trust.png?format=webp&quality=80";
 import {
   Carousel,
   CarouselContent,
@@ -138,6 +138,8 @@ export const Hero = () => {
       <img 
         src={heroBackground} 
         alt="" 
+        width={1920}
+        height={1080}
         className="absolute inset-0 w-full h-full object-cover object-[center_15%]"
         fetchPriority="high"
       />

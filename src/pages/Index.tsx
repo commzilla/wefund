@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
-import { AccountSelector } from "@/components/AccountSelector";
 
 // Lazy load below-fold components to improve TTI
+const AccountSelector = lazy(() => import("@/components/AccountSelector").then(m => ({ default: m.AccountSelector })));
 const PayoutsCarousel = lazy(() => import("@/components/PayoutsCarousel").then(m => ({ default: m.PayoutsCarousel })));
 const FuelPassion = lazy(() => import("@/components/FuelPassion").then(m => ({ default: m.FuelPassion })));
 const PayoutsSection = lazy(() => import("@/components/PayoutsSection").then(m => ({ default: m.PayoutsSection })));
@@ -20,8 +20,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <AccountSelector />
-      <Suspense fallback={<div className="min-h-[200px]" />}>
+      <Suspense fallback={<div className="min-h-[600px] bg-black" />}>
+        <AccountSelector />
         <PayoutsCarousel />
         <FuelPassion />
         <PayoutsSection />

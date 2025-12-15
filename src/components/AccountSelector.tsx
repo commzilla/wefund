@@ -7,24 +7,8 @@ import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
 export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-16 md:py-24 px-4 bg-black relative overflow-hidden">
-      {/* Animated Stars Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white animate-pulse"
-            style={{
-              width: `${Math.random() * 2 + 1}px`,
-              height: `${Math.random() * 2 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: Math.random() * 0.5 + 0.2,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 2 + 2}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Static Stars Background - CSS pattern for performance */}
+      <div className="absolute inset-0 stars-pattern pointer-events-none" />
       
       {/* Subtle Glow Effects */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/3 rounded-full blur-3xl pointer-events-none" />
@@ -49,24 +33,8 @@ export const AccountSelector = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30 pointer-events-none" />
             
-            {/* Internal Stars Effect */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(25)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-full bg-white animate-pulse"
-                  style={{
-                    width: `${Math.random() * 2 + 1}px`,
-                    height: `${Math.random() * 2 + 1}px`,
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    opacity: Math.random() * 0.4 + 0.1,
-                    animationDelay: `${Math.random() * 3}s`,
-                    animationDuration: `${Math.random() * 2 + 2}s`
-                  }}
-                />
-              ))}
-            </div>
+            {/* Static Stars Effect - CSS pattern for performance */}
+            <div className="absolute inset-0 stars-pattern-subtle pointer-events-none" />
             {/* Subtle Cyan/Blue Glows */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -148,24 +116,8 @@ export const AccountSelector = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-cyan-500/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                 
                 <Button className="relative w-full overflow-hidden bg-gradient-to-b from-slate-800/95 via-slate-900/95 to-slate-950/95 text-white py-6 lg:py-8 text-base lg:text-[18px] font-bold rounded-xl uppercase tracking-[0.15em] lg:tracking-[0.2em] border border-cyan-500/40 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 transition-all duration-300">
-                  {/* Stars inside button */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    {[...Array(15)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute rounded-full bg-cyan-300 animate-pulse"
-                        style={{
-                          width: `${Math.random() * 2 + 1}px`,
-                          height: `${Math.random() * 2 + 1}px`,
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                          opacity: Math.random() * 0.5 + 0.2,
-                          animationDelay: `${Math.random() * 2}s`,
-                          animationDuration: `${Math.random() * 1.5 + 1.5}s`
-                        }}
-                      />
-                    ))}
-                  </div>
+                  {/* Static Stars - CSS pattern for performance */}
+                  <div className="absolute inset-0 stars-pattern-cyan" />
                   {/* Subtle top highlight */}
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
                   <span className="relative z-10 text-cyan-50">GET FUNDED NOW</span>
@@ -196,24 +148,8 @@ export const AccountSelector = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40 pointer-events-none" />
             
-            {/* Internal Stars Effect */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(25)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-full bg-white animate-pulse"
-                  style={{
-                    width: `${Math.random() * 2 + 1}px`,
-                    height: `${Math.random() * 2 + 1}px`,
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    opacity: Math.random() * 0.4 + 0.1,
-                    animationDelay: `${Math.random() * 3}s`,
-                    animationDuration: `${Math.random() * 2 + 2}s`
-                  }}
-                />
-              ))}
-            </div>
+            {/* Static Stars Effect - CSS pattern for performance */}
+            <div className="absolute inset-0 stars-pattern-subtle pointer-events-none" />
             {/* Subtle Cyan/Blue Glows */}
             <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />

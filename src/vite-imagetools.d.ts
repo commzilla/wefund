@@ -1,20 +1,27 @@
 /// <reference types="vite-imagetools/client" />
 
-declare module '*?format=webp' {
+// Handle all image imports with query parameters
+declare module '*.png?format=webp&quality=75' {
   const src: string;
   export default src;
 }
 
-declare module '*?format=webp&quality=*' {
+declare module '*.png?format=webp&quality=80' {
   const src: string;
   export default src;
 }
 
-declare module '*&format=webp' {
+declare module '*.jpg?format=webp&quality=75' {
   const src: string;
   export default src;
 }
 
+declare module '*.jpg?format=webp&quality=80' {
+  const src: string;
+  export default src;
+}
+
+// Generic fallbacks
 declare module '*.png?*' {
   const src: string;
   export default src;
@@ -26,6 +33,16 @@ declare module '*.jpg?*' {
 }
 
 declare module '*.webp?*' {
+  const src: string;
+  export default src;
+}
+
+declare module '*?format=webp' {
+  const src: string;
+  export default src;
+}
+
+declare module '*&format=webp' {
   const src: string;
   export default src;
 }

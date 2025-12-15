@@ -1,10 +1,10 @@
-import technologyBadge from "@/assets/technology-badge.png";
-import mt5LogoText from "@/assets/mt5-logo-text.png";
-import mt5Dashboard from "@/assets/mt5-dashboard.png";
-import tradingviewLogo from "@/assets/tradingview-logo.png";
-import tradingviewDashboard from "@/assets/tradingview-dashboard.png";
-import monitorIcon from "@/assets/monitor-icon.png";
-import widgetIcon from "@/assets/widget-icon.png";
+import technologyBadge from "@/assets/technology-badge.png?format=webp&quality=80";
+import mt5LogoText from "@/assets/mt5-logo-text.png?format=webp&quality=80";
+import mt5Dashboard from "@/assets/mt5-dashboard.png?format=webp&quality=75";
+import tradingviewLogo from "@/assets/tradingview-logo.png?format=webp&quality=80";
+import tradingviewDashboard from "@/assets/tradingview-dashboard.png?format=webp&quality=75";
+import monitorIcon from "@/assets/monitor-icon.png?format=webp&quality=80";
+import widgetIcon from "@/assets/widget-icon.png?format=webp&quality=80";
 
 export const TechnologySection = () => {
   return (
