@@ -110,7 +110,7 @@ export const AccountSelector = () => {
                 <h4 className="text-slate-400 text-[12px] font-medium mb-2 uppercase tracking-wider">Account Size</h4>
                 <div className="relative rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5">
                   {/* Most Popular Badge - positioned above grid */}
-                  <div className="absolute -top-3 left-1/2 translate-x-[10%] z-20 flex flex-col items-center">
+                  <div className="absolute -top-3 left-[70%] -translate-x-1/2 z-20 flex flex-col items-center">
                     <span className="text-[10px] px-3 py-1 bg-slate-800/95 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/40 shadow-lg backdrop-blur-sm">
                       Most popular
                     </span>
