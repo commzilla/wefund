@@ -42,6 +42,10 @@ All colors MUST be HSL.
     --glow-primary: 190 100% 50%;
     --gradient-start: 220 45% 6%;
     --gradient-end: 220 40% 3%;
+
+    /* Footer (deep navy like reference) */
+    --footer: 214 60% 14%;
+    --footer-2: 220 65% 9%;
   }
 }
 

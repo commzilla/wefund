@@ -6,9 +6,12 @@ import paymentsImage from "@/assets/payments.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0b1929] pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
+    <footer className="relative overflow-hidden bg-[hsl(var(--footer))] pt-16 pb-8 px-6">
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_-10%,hsla(var(--primary)/0.16),transparent_60%),linear-gradient(to_bottom,hsl(var(--footer))_0%,hsl(var(--footer))_55%,hsl(var(--footer-2))_100%)]" />
+      <div className="pointer-events-none absolute -bottom-28 left-1/2 h-[420px] w-[1400px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,hsla(var(--primary)/0.55),transparent_72%)]" />
+
+      <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
           {/* Left Column - Logo & Trust Badges */}
           <div className="lg:col-span-4 space-y-6">
@@ -159,8 +162,7 @@ export const Footer = () => {
         </div>
 
         {/* Separator */}
-        <div className="border-t border-cyan-500/30 mb-6" />
-
+        <div className="border-t border-[hsla(var(--primary)/0.35)] mb-6" />
         {/* Disclaimer */}
         <div className="text-gray-500 text-xs space-y-3">
           <div className="flex items-start gap-4">
