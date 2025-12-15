@@ -47,7 +47,7 @@ export const PricingPlans = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-black relative overflow-hidden">
+    <section className="py-12 md:py-20 px-4 bg-black relative overflow-hidden">
       {/* Background stars */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(50)].map((_, i) => (
@@ -65,39 +65,39 @@ export const PricingPlans = () => {
       </div>
 
       {/* Glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]" />
+      <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-cyan-500/10 rounded-full blur-[100px] md:blur-[120px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-56 md:w-80 h-56 md:h-80 bg-blue-500/10 rounded-full blur-[80px] md:blur-[100px]" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 md:mb-4 text-white">
             Fuel Your Passion. Fund Your Potential.
           </h2>
-          <p className="text-lg font-normal text-slate-400 max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg font-normal text-slate-400 max-w-3xl mx-auto px-4">
             Choose the program that fits your strategy, risk profile, and goals. Whether you're
             starting out or scaling up — we've built a path for you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative ${plan.popular ? "scale-105 z-10" : ""}`}
+              className={`relative ${plan.popular ? "md:scale-105 z-10" : ""}`}
             >
               {/* Most Popular Badge - outside the card */}
               {plan.popular && (
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-                  <span className="text-[11px] px-4 py-1.5 bg-slate-900/70 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/30 shadow-lg backdrop-blur-md">
+                <div className="absolute -top-4 md:-top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                  <span className="text-[10px] md:text-[11px] px-3 md:px-4 py-1 md:py-1.5 bg-slate-900/70 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/30 shadow-lg backdrop-blur-md">
                     Most Popular
                   </span>
-                  <div className="w-px h-3 bg-cyan-400/40"></div>
+                  <div className="w-px h-2 md:h-3 bg-cyan-400/40"></div>
                 </div>
               )}
 
               {/* Card wrapper with border */}
               <div 
-                className="rounded-[24px] border border-slate-700/50 overflow-hidden h-full"
+                className="rounded-[20px] md:rounded-[24px] border border-slate-700/50 overflow-hidden h-full"
                 style={{ 
                   backgroundImage: `url(${cardsCarouselBg})`,
                   backgroundSize: 'cover',
@@ -129,31 +129,31 @@ export const PricingPlans = () => {
                   </div>
 
                   {/* Subtle glow */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
                   {/* Content */}
-                  <div className="relative z-10 p-8 flex flex-col h-full">
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-slate-400 text-sm font-normal mb-4">{plan.subtitle}</p>
+                  <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">{plan.name}</h3>
+                    <p className="text-slate-400 text-xs md:text-sm font-normal mb-3 md:mb-4">{plan.subtitle}</p>
                     
-                    <div className="mb-6">
-                      <span className="text-3xl font-bold text-cyan-400">{plan.price}</span>
+                    <div className="mb-4 md:mb-6">
+                      <span className="text-2xl md:text-3xl font-bold text-cyan-400">{plan.price}</span>
                       {plan.price.startsWith("$") && (
-                        <span className="text-sm text-slate-500 ml-1">/starting</span>
+                        <span className="text-xs md:text-sm text-slate-500 ml-1">/starting</span>
                       )}
                     </div>
 
-                    <div className="space-y-3 flex-grow">
+                    <div className="space-y-2 md:space-y-3 flex-grow">
                       {plan.features.map((feature, fIndex) => (
-                        <div key={fIndex} className="flex items-start gap-3">
-                          <span className="text-cyan-400 mt-0.5">✓</span>
-                          <span className="text-sm text-slate-300">{feature}</span>
+                        <div key={fIndex} className="flex items-start gap-2 md:gap-3">
+                          <span className="text-cyan-400 mt-0.5 text-sm">✓</span>
+                          <span className="text-xs md:text-sm text-slate-300">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <Button 
-                      className={`w-full mt-8 rounded-xl py-6 font-semibold text-base tracking-wider transition-all ${
+                      className={`w-full mt-6 md:mt-8 rounded-xl py-5 md:py-6 font-semibold text-sm md:text-base tracking-wider transition-all ${
                         plan.popular 
                           ? "bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white shadow-[0_0_30px_rgba(6,182,212,0.3)]" 
                           : "bg-slate-800/80 hover:bg-slate-700/80 text-white border border-slate-600/50"
