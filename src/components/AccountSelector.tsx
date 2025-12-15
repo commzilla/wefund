@@ -13,30 +13,30 @@ export const AccountSelector = () => {
             <h2 className="text-white text-3xl font-bold mb-8">Configure your Challenge</h2>
             
             {/* Trader MT5 */}
-            <div className="bg-[#0d1a2d] border border-slate-600/50 rounded-2xl p-5 flex items-center gap-4 mb-8">
-              <img src={mt5LogoNew} alt="MT5" className="h-12 w-auto" />
+            <div className="bg-[#1a2942] border border-slate-600/40 rounded-2xl p-4 flex items-center gap-4 mb-6">
+              <img src={mt5LogoNew} alt="MT5" className="h-10 w-auto" />
               <div className="flex flex-col">
-                <span className="text-gray-400 text-sm">Trader</span>
-                <span className="text-white text-xl font-bold">MT5</span>
+                <span className="text-slate-400 text-xs">Trader</span>
+                <span className="text-white text-lg font-bold">MT5</span>
               </div>
             </div>
 
             {/* Account Type */}
             <div className="mb-8">
-              <h4 className="text-white font-semibold mb-4 text-lg">Account Type</h4>
-              <div className="bg-slate-800/90 rounded-2xl p-1.5 grid grid-cols-3 gap-1.5">
-                <Button className="bg-slate-950 hover:bg-slate-900 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+              <h4 className="text-slate-400 font-medium mb-3 text-sm">Account Type</h4>
+              <div className="bg-[#c8cdd4] rounded-2xl p-1.5 grid grid-cols-3 gap-1.5">
+                <Button className="bg-[#1e293b] hover:bg-[#263344] text-white border-0 rounded-xl py-5 font-semibold text-sm">
                   1 Step - Algo
                 </Button>
                 <div className="relative">
-                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-600/80 text-slate-300 rounded-full whitespace-nowrap border border-slate-500/50">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-2.5 py-0.5 bg-[#9ca3af]/60 text-slate-600 rounded-full whitespace-nowrap">
                     Coming Soon
                   </span>
-                  <Button className="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                  <Button className="w-full bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 font-semibold text-sm shadow-none">
                     1 Step Pro
                   </Button>
                 </div>
-                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 font-semibold text-sm shadow-none">
                   2 Step
                 </Button>
               </div>
@@ -44,33 +44,33 @@ export const AccountSelector = () => {
 
             {/* Account Size */}
             <div className="mb-8">
-              <h4 className="text-white font-semibold mb-4 text-lg">Account Size</h4>
-              <div className="bg-slate-800/90 rounded-2xl p-1.5 grid grid-cols-5 gap-1.5 relative">
-                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+              <h4 className="text-slate-400 font-medium mb-3 text-sm">Account Size</h4>
+              <div className="bg-[#c8cdd4] rounded-2xl p-1.5 grid grid-cols-5 gap-1 relative">
+                <Button className="bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 px-2 font-semibold text-sm shadow-none">
                   $10k
                 </Button>
-                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 px-2 font-semibold text-sm shadow-none">
                   $25k
                 </Button>
-                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 px-2 font-semibold text-sm shadow-none">
                   $50k
                 </Button>
                 <div className="relative">
-                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-600/80 text-slate-300 rounded-full whitespace-nowrap border border-slate-500/50">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-2.5 py-0.5 bg-[#9ca3af]/60 text-slate-600 rounded-full whitespace-nowrap">
                     Most popular
                   </span>
-                  <Button className="w-full bg-slate-950 hover:bg-slate-900 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+                  <Button className="w-full bg-[#1e293b] hover:bg-[#263344] text-white border-0 rounded-xl py-5 px-2 font-semibold text-sm">
                     $100k
                   </Button>
                 </div>
-                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-[#e2e5e9] hover:bg-[#d1d5db] text-slate-600 border-0 rounded-xl py-5 px-2 font-semibold text-sm shadow-none">
                   $200k
                 </Button>
               </div>
             </div>
 
             {/* Start Challenge Button with Cyan Glow */}
-            <Button className="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white py-7 text-lg font-bold rounded-2xl mb-6 uppercase tracking-wide shadow-[0_0_30px_rgba(6,182,212,0.5),0_0_60px_rgba(6,182,212,0.25)] border-2 border-cyan-400/50 hover:shadow-[0_0_40px_rgba(6,182,212,0.6),0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300">
+            <Button className="w-full bg-[#0c1929] hover:bg-[#142236] text-white py-7 text-lg font-bold rounded-2xl mb-6 uppercase tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.4),inset_0_0_60px_rgba(6,182,212,0.1)] border border-cyan-500/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300">
               GET FUNDED NOW
             </Button>
 
