@@ -145,29 +145,30 @@ export const Hero = () => {
 
       <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 text-center">
         {/* Trust Badges */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-8 flex-wrap">
+        <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
           <img 
             src={mt5Badge} 
             alt="MetaTrader 5" 
-            className="h-8 md:h-12 animate-glow" 
+            className="h-10 md:h-12 animate-glow" 
           />
-          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-8 md:h-12" />
+          {/* Hide second badge on mobile */}
+          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="hidden md:block h-12" />
         </div>
 
         {/* Main Headline */}
-        <h1 className="flex items-center justify-center gap-2 md:gap-4 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-4 md:mb-6 leading-none flex-wrap">
+        <h1 className="flex items-center justify-center gap-2 md:gap-4 text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-3 md:mb-6 leading-none flex-wrap">
           <span>You Trade,</span>
           <img src={wefundTextLogo} alt="We Fund" className="h-[0.7em] inline-block align-baseline" />
         </h1>
 
-        <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed px-2">
+        <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto mb-4 md:mb-8 leading-relaxed px-2">
           Get Funded up to $400K with the Most Trusted Prop Firm, Get Payouts with Profit Splits Up To 100%,
           <br className="hidden md:block" />
           And Scale Up to $2M – <span className="text-foreground font-semibold">This Is The Future Of Prop Trading</span>
         </p>
 
         {/* CTAs */}
-        <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap mb-8 md:mb-12">
+        <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap mb-6 md:mb-12">
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold rounded-lg">
             Start Now
           </Button>
@@ -177,7 +178,7 @@ export const Hero = () => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden mt-8 px-2">
+        <div className="md:hidden mt-4 px-0">
           <Carousel
             opts={{
               align: "center",
@@ -186,13 +187,13 @@ export const Hero = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2">
-              <CarouselItem className="pl-2 basis-[90%]">
+              <CarouselItem className="pl-2 basis-[95%]">
                 <CommunityCard />
               </CarouselItem>
-              <CarouselItem className="pl-2 basis-[90%]">
+              <CarouselItem className="pl-2 basis-[95%]">
                 <TraderCard />
               </CarouselItem>
-              <CarouselItem className="pl-2 basis-[90%]">
+              <CarouselItem className="pl-2 basis-[95%]">
                 <PayoutsCard />
               </CarouselItem>
             </CarouselContent>
