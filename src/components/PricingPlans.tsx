@@ -83,46 +83,49 @@ export const PricingPlans = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-[2px] rounded-[28px] bg-gradient-to-br ${
-                plan.popular 
-                  ? "from-cyan-400/80 via-cyan-500/60 via-30% to-slate-900/80" 
-                  : "from-cyan-400/40 via-cyan-500/20 via-30% to-slate-900/80"
-              } overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] ${
+              className={`relative p-[2px] rounded-[36px] bg-gradient-to-br from-cyan-400/60 via-cyan-500/40 via-30% to-slate-900/80 overflow-hidden ${
                 plan.popular ? "scale-105 z-10" : ""
               }`}
             >
               {/* Border glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-blue-900/40 to-cyan-400/30 blur-[1px]" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-blue-900/40 to-cyan-400/50 blur-[1px]" />
               
               {/* Card inner content */}
               <div 
-                className="relative rounded-[26px] bg-gradient-to-br from-slate-900/98 via-slate-950/95 to-blue-950/90 backdrop-blur-sm overflow-hidden h-full"
+                className="relative rounded-[34px] bg-gradient-to-br from-slate-900/98 via-slate-950/95 to-blue-950/90 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] h-full flex flex-col"
                 style={{ 
                   backgroundImage: `url(${cardsCarouselBg})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
               >
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/60" />
+                {/* Strong Black Overlay */}
+                <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40 pointer-events-none" />
                 
-                {/* Inner stars */}
-                <div className="absolute inset-0 overflow-hidden">
-                  {[...Array(15)].map((_, i) => (
+                {/* Internal Stars Effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  {[...Array(25)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-[1px] h-[1px] bg-white/30 rounded-full animate-pulse"
+                      className="absolute rounded-full bg-white animate-pulse"
                       style={{
-                        left: `${Math.random() * 100}%`,
+                        width: `${Math.random() * 2 + 1}px`,
+                        height: `${Math.random() * 2 + 1}px`,
                         top: `${Math.random() * 100}%`,
-                        animationDelay: `${Math.random() * 2}s`,
+                        left: `${Math.random() * 100}%`,
+                        opacity: Math.random() * 0.4 + 0.1,
+                        animationDelay: `${Math.random() * 3}s`,
+                        animationDuration: `${Math.random() * 2 + 2}s`
                       }}
                     />
                   ))}
                 </div>
 
-                {/* Inner glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-[60px]" />
+                {/* Subtle Cyan/Blue Glows */}
+                <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
                 {/* Most Popular Badge */}
                 {plan.popular && (
