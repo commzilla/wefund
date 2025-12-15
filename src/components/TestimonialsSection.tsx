@@ -61,7 +61,7 @@ export const TestimonialsSection = () => {
                 
                 {/* Play button overlay - centered */}
                 <button
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500 hover:bg-cyan-400 flex items-center justify-center transition-all duration-300 shadow-lg shadow-cyan-500/30 group-hover:scale-110"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500/70 hover:bg-cyan-400/80 flex items-center justify-center transition-all duration-300 shadow-lg shadow-cyan-500/30 group-hover:scale-110 backdrop-blur-sm"
                   onClick={() => {/* Video link will be added later */}}
                 >
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
