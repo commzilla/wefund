@@ -16,6 +16,7 @@ export const TechnologySection = () => {
             src={technologyBadge} 
             alt="Technology" 
             className="h-8 md:h-10 mx-auto mb-6 md:mb-8"
+            loading="lazy"
           />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5">
             Trade on the <span className="text-cyan-400">best trading platform</span>
@@ -31,7 +32,7 @@ export const TechnologySection = () => {
           <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/60 to-slate-950/80 overflow-hidden">
             {/* Badge */}
             <div className="flex items-center gap-2 px-4 md:px-6 pt-4 md:pt-5">
-              <img src={monitorIcon} alt="" className="w-3 md:w-4 h-3 md:h-4 opacity-60" />
+              <img src={monitorIcon} alt="" className="w-3 md:w-4 h-3 md:h-4 opacity-60" loading="lazy" />
               <span className="text-slate-400 text-xs md:text-sm">Trading Platform</span>
             </div>
 
@@ -42,6 +43,7 @@ export const TechnologySection = () => {
                   src={mt5LogoText} 
                   alt="MetaTrader 5" 
                   className="h-7 md:h-9 mb-6 md:mb-12"
+                  loading="lazy"
                 />
                 <h3 className="text-white text-sm md:text-base font-semibold mb-2">
                   Power your Trading with MT5
@@ -57,6 +59,7 @@ export const TechnologySection = () => {
                   src={mt5Dashboard} 
                   alt="MT5 Dashboard" 
                   className="w-full h-auto object-cover object-left rounded-tl-lg"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -66,7 +69,7 @@ export const TechnologySection = () => {
           <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/60 to-slate-950/80 overflow-hidden">
             {/* Badge */}
             <div className="flex items-center gap-2 px-4 md:px-6 pt-4 md:pt-5">
-              <img src={widgetIcon} alt="" className="w-3 md:w-4 h-3 md:h-4 opacity-60" />
+              <img src={widgetIcon} alt="" className="w-3 md:w-4 h-3 md:h-4 opacity-60" loading="lazy" />
               <span className="text-slate-400 text-xs md:text-sm">Integration</span>
             </div>
 
@@ -77,6 +80,7 @@ export const TechnologySection = () => {
                   src={tradingviewLogo} 
                   alt="TradingView" 
                   className="h-6 md:h-7 mb-6 md:mb-12"
+                  loading="lazy"
                 />
                 <h3 className="text-white text-sm md:text-base font-semibold mb-2">
                   Level your analysis game with Tradingview
@@ -92,6 +96,7 @@ export const TechnologySection = () => {
                   src={tradingviewDashboard} 
                   alt="TradingView Dashboard" 
                   className="w-full h-auto object-cover object-left rounded-tl-lg"
+                  loading="lazy"
                 />
               </div>
             </div>

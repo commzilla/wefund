@@ -14,6 +14,7 @@ export const PayoutsSection = () => {
             src={payoutBadge} 
             alt="Payout System" 
             className="h-6 md:h-8 mx-auto mb-4 md:mb-6"
+            loading="lazy"
           />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 text-white">
             Payouts Made Easy
@@ -32,6 +33,7 @@ export const PayoutsSection = () => {
               src={dailyPayoutBg} 
               alt="Daily Payouts" 
               className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy"
             />
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
@@ -55,6 +57,7 @@ export const PayoutsSection = () => {
               src={lightningFastBg} 
               alt="Lightning Fast Payouts" 
               className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy"
             />
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
@@ -72,6 +75,7 @@ export const PayoutsSection = () => {
               src={keepProfitBg} 
               alt="Keep your profits" 
               className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy"
             />
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
@@ -91,6 +95,7 @@ export const PayoutsSection = () => {
               src={riseScaled} 
               alt="Rise Background" 
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           
