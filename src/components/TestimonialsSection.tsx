@@ -82,7 +82,7 @@ export const TestimonialsSection = () => {
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity duration-300"
           >
-            <img src={youtubeBtn} alt="Check YouTube" className="h-10" />
+            <img src={youtubeBtn} alt="Check YouTube" className="h-14" />
           </a>
         </div>
       </div>
