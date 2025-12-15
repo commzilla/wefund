@@ -13,6 +13,8 @@ export const PayoutsSection = () => {
           <img 
             src={payoutBadge} 
             alt="Payout System" 
+            width={120}
+            height={32}
             className="h-6 md:h-8 mx-auto mb-4 md:mb-6"
             loading="lazy"
           />
