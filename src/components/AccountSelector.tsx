@@ -1,31 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import paymentsImage from "@/assets/payments.png";
 import mt5LogoNew from "@/assets/mt5-logo-new.png";
+
 export const AccountSelector = () => {
-  const accountSizes = ["$10k", "$25k", "$50k", "$100k", "$200k"];
-  return <section id="objectives" className="py-20 px-4 bg-black">
+  return (
+    <section id="objectives" className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[450px_1fr] gap-0">
           {/* Left Column - Configure Challenge */}
-          <div className="bg-gradient-to-br from-blue-900/40 via-blue-800/30 to-blue-950/40 backdrop-blur-sm border border-blue-700/30 rounded-3xl p-8">
+          <div className="bg-gradient-to-br from-[#0a1628] to-[#0d1a2d] border border-cyan-500/20 rounded-3xl p-8">
             <h2 className="text-white text-3xl font-bold mb-8">Configure your Challenge</h2>
             
             {/* Trader MT5 */}
-            <div className="bg-blue-800/40 backdrop-blur-sm border border-blue-600/40 rounded-2xl p-5 flex items-center gap-4 mb-8">
+            <div className="bg-[#0d1a2d] border border-slate-700/50 rounded-2xl p-5 flex items-center gap-4 mb-8">
               <img src={mt5LogoNew} alt="MT5" className="h-12 w-auto" />
-              
+              <div className="flex flex-col">
+                <span className="text-gray-400 text-sm">Trader</span>
+                <span className="text-white text-xl font-bold">MT5</span>
+              </div>
             </div>
 
             {/* Account Type */}
             <div className="mb-8">
               <h4 className="text-white font-semibold mb-4 text-lg">Account Type</h4>
-              <div className="bg-black/40 backdrop-blur-sm border border-blue-700/30 rounded-2xl p-2 grid grid-cols-2 gap-2">
-                <Button className="bg-blue-600 hover:bg-blue-500 text-white border-0 rounded-xl py-6 font-semibold">
-                  1 Step - HFT
+              <div className="bg-white/90 rounded-2xl p-2 grid grid-cols-3 gap-2">
+                <Button className="bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+                  1 Step - Algo
                 </Button>
-                <Button variant="ghost" className="bg-transparent text-white hover:bg-blue-800/30 rounded-xl py-6 font-semibold">
+                <div className="relative">
+                  <Button className="w-full bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                    1 Step Pro
+                  </Button>
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-cyan-500 text-white rounded-full whitespace-nowrap">
+                    Coming Soon
+                  </span>
+                </div>
+                <Button className="bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   2 Step
                 </Button>
               </div>
@@ -33,34 +44,34 @@ export const AccountSelector = () => {
 
             {/* Account Size */}
             <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-white font-semibold text-lg">Account Size</h4>
-                <span className="text-xs px-3 py-1.5 bg-blue-700/50 border border-blue-600/40 rounded-full text-gray-300">
-                  Most popular
-                </span>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm border border-blue-700/30 rounded-2xl p-2 grid grid-cols-5 gap-2">
-                <Button variant="ghost" className="bg-transparent text-white hover:bg-blue-800/30 rounded-xl py-6 font-semibold">
+              <h4 className="text-white font-semibold mb-4 text-lg">Account Size</h4>
+              <div className="bg-white/90 rounded-2xl p-2 grid grid-cols-5 gap-1.5 relative">
+                <Button className="bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $10k
                 </Button>
-                <Button variant="ghost" className="bg-transparent text-white hover:bg-blue-800/30 rounded-xl py-6 font-semibold">
+                <Button className="bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $25k
                 </Button>
-                <Button variant="ghost" className="bg-transparent text-white hover:bg-blue-800/30 rounded-xl py-6 font-semibold">
+                <Button className="bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $50k
                 </Button>
-                <Button className="bg-blue-600 hover:bg-blue-500 text-white border-0 rounded-xl py-6 font-semibold relative">
-                  $100k
-                </Button>
-                <Button variant="ghost" className="bg-transparent text-white hover:bg-blue-800/30 rounded-xl py-6 font-semibold">
+                <div className="relative">
+                  <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+                    $100k
+                  </Button>
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-cyan-500 text-white rounded-full whitespace-nowrap">
+                    Most popular
+                  </span>
+                </div>
+                <Button className="bg-white hover:bg-gray-100 text-slate-900 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $200k
                 </Button>
               </div>
             </div>
 
-            {/* Start Challenge Button */}
-            <Button className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white py-7 text-lg font-bold rounded-2xl mb-6">
-              Start Challenge
+            {/* Start Challenge Button with Cyan Glow */}
+            <Button className="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white py-7 text-lg font-bold rounded-2xl mb-6 uppercase tracking-wide shadow-[0_0_25px_rgba(6,182,212,0.5)] border border-cyan-400/30">
+              GET FUNDED NOW
             </Button>
 
             {/* Payment Icons */}
@@ -129,5 +140,6 @@ export const AccountSelector = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
