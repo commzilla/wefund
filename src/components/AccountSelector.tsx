@@ -111,7 +111,7 @@ export const AccountSelector = () => {
                 <div className="relative rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5">
                   {/* Most Popular Badge - positioned above grid */}
                   <div className="absolute -top-3 left-[70%] -translate-x-1/2 z-20 flex flex-col items-center">
-                    <span className="text-[10px] px-3 py-1 bg-slate-800/95 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/40 shadow-lg backdrop-blur-sm">
+                    <span className="text-[10px] px-3 py-1 bg-slate-900/70 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/30 shadow-lg backdrop-blur-md">
                       Most popular
                     </span>
                     <div className="w-px h-2 bg-cyan-400/40"></div>
