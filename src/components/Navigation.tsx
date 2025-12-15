@@ -46,7 +46,7 @@ export const Navigation = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6 lg:gap-10">
               <div className="flex items-center">
-                <img src={logo} alt="WeFund" width={151} height={24} className="h-6 md:h-7" />
+                <img src={logo} alt="WeFund" className="h-6 md:h-7" />
               </div>
               
               {/* Desktop Menu */}

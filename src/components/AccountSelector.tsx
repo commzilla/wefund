@@ -44,7 +44,7 @@ export const AccountSelector = () => {
               
               {/* MT5 Card */}
               <div className="relative rounded-2xl bg-gradient-to-br from-slate-800/60 via-slate-900/50 to-blue-950/40 border border-blue-500/20 p-3 flex items-center gap-4 mb-4">
-                <img src={mt5Logo} alt="MT5" width={80} height={40} className="h-8 lg:h-10 w-auto" />
+                <img src={mt5Logo} alt="MT5" className="h-8 lg:h-10 w-auto" />
                 <div className="flex flex-col">
                   <span className="text-slate-400 text-[10px] font-medium uppercase tracking-wider">Trader</span>
                   <span className="text-white text-sm lg:text-base font-semibold">MT5</span>
@@ -126,7 +126,7 @@ export const AccountSelector = () => {
 
               {/* Payment Icons */}
               <div className="flex items-center justify-center">
-                <img src={paymentsImage} alt="Payment Methods" width={360} height={40} className="w-full h-auto max-w-[300px] lg:max-w-[360px] opacity-90" />
+                <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[300px] lg:max-w-[360px] opacity-90" />
               </div>
             </div>
             </div>

@@ -19,15 +19,15 @@ export const Footer = () => {
           <div className="lg:col-span-4 space-y-4 md:space-y-6 text-center lg:text-left">
             {/* Logo */}
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-              <img src={wefundLogo} alt="WeFund" width={151} height={24} className="h-7 md:h-8" />
+              <img src={wefundLogo} alt="WeFund" className="h-7 md:h-8" />
               <span className="text-lg md:text-xl font-bold text-white">WeFund</span>
             </div>
             <p className="text-gray-400 text-sm">support@we-fund.com</p>
 
             {/* Trust Badges */}
             <div className="flex flex-row lg:flex-col gap-3 justify-center lg:justify-start">
-              <img src={trustpilotBadge} alt="Trustpilot Rating" width={200} height={56} className="h-10 md:h-14" />
-              <img src={ttpBadge} alt="The Trusted Prop Rating" width={200} height={56} className="h-10 md:h-14" />
+              <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-10 md:h-14" />
+              <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-10 md:h-14" />
             </div>
 
             {/* Copyright */}
@@ -160,7 +160,7 @@ export const Footer = () => {
         {/* Payment Methods */}
         <div className="mb-6 md:mb-8 text-center lg:text-left">
           <p className="text-gray-500 text-xs md:text-sm mb-3 md:mb-4">Payment Methods:</p>
-          <img src={paymentsImage} alt="Payment Methods" width={300} height={40} className="h-8 md:h-10 mx-auto lg:mx-0" />
+          <img src={paymentsImage} alt="Payment Methods" className="h-8 md:h-10 mx-auto lg:mx-0" />
         </div>
 
         {/* Separator */}
