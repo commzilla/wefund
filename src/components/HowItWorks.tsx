@@ -56,27 +56,30 @@ export const HowItWorks = () => {
             return (
               <div
                 key={step.number}
-                className="bg-gradient-to-b from-slate-800/40 to-slate-900/60 border border-slate-700/50 rounded-3xl overflow-hidden"
+                className="relative bg-gradient-to-b from-slate-800/40 to-slate-900/60 border border-slate-700/50 rounded-3xl overflow-hidden min-h-[420px] flex flex-col"
               >
-                {/* Step Badge */}
-                <div className="p-4 pb-0">
-                  <div className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-600/40 rounded-full px-3 py-1.5">
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+
+                {/* Step Badge - positioned on top */}
+                <div className="relative z-10 p-4">
+                  <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-600/40 rounded-full px-3 py-1.5">
                     <IconComponent className="w-4 h-4 text-cyan-400" />
                     <span className="text-white text-sm font-medium">Step {step.number}</span>
                   </div>
                 </div>
 
-                {/* Image */}
-                <div className="h-56 flex items-center justify-center p-4">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
+                {/* Spacer to push content down */}
+                <div className="flex-1" />
 
-                {/* Content */}
-                <div className="p-6 pt-2">
+                {/* Content at bottom */}
+                <div className="relative z-10 p-6 pt-0">
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     {step.description}
