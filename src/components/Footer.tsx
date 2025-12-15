@@ -8,8 +8,10 @@ export const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[hsl(var(--footer))] pt-16 pb-8 px-6">
       {/* Background */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_-10%,hsla(var(--primary)/0.16),transparent_60%),linear-gradient(to_bottom,hsl(var(--footer))_0%,hsl(var(--footer))_55%,hsl(var(--footer-2))_100%)]" />
-      <div className="pointer-events-none absolute -bottom-28 left-1/2 h-[420px] w-[1400px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,hsla(var(--primary)/0.55),transparent_72%)]" />
+      {/* Background - pure black */}
+      <div className="pointer-events-none absolute inset-0 bg-black" />
+      {/* Bottom glow only - subtle */}
+      <div className="pointer-events-none absolute -bottom-32 left-1/2 h-[300px] w-[1000px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,hsla(var(--primary)/0.15),transparent_70%)]" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
