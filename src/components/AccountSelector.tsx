@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import paymentsImage from "@/assets/payments.png";
-import mt5LogoNew from "@/assets/mt5-logo-new.png";
+import mt5Logo from "@/assets/metatrader5-logo.webp";
 
 export const AccountSelector = () => {
   return (
@@ -17,7 +17,7 @@ export const AccountSelector = () => {
             
             {/* Trader MT5 */}
             <div className="bg-[#0c1525] border border-slate-600/30 rounded-2xl p-4 flex items-center gap-4 mb-6">
-              <img src={mt5LogoNew} alt="MT5" className="h-10 w-auto" />
+              <img src={mt5Logo} alt="MT5" className="h-12 w-auto" />
               <div className="flex flex-col">
                 <span className="text-slate-500 text-xs">Trader</span>
                 <span className="text-white text-lg font-bold">MT5</span>
