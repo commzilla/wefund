@@ -24,19 +24,19 @@ export const AccountSelector = () => {
             {/* Account Type */}
             <div className="mb-8">
               <h4 className="text-white font-semibold mb-4 text-lg">Account Type</h4>
-              <div className="bg-slate-300/90 rounded-2xl p-1.5 grid grid-cols-3 gap-1.5">
-                <Button className="bg-slate-800 hover:bg-slate-700 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+              <div className="bg-slate-800/90 rounded-2xl p-1.5 grid grid-cols-3 gap-1.5">
+                <Button className="bg-slate-950 hover:bg-slate-900 text-white border-0 rounded-xl py-6 font-semibold text-sm">
                   1 Step - Algo
                 </Button>
                 <div className="relative">
-                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-400/80 text-slate-800 rounded-full whitespace-nowrap border border-slate-500/50">
+                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-600/80 text-slate-300 rounded-full whitespace-nowrap border border-slate-500/50">
                     Coming Soon
                   </span>
-                  <Button className="w-full bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                  <Button className="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                     1 Step Pro
                   </Button>
                 </div>
-                <Button className="bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   2 Step
                 </Button>
               </div>
@@ -45,25 +45,25 @@ export const AccountSelector = () => {
             {/* Account Size */}
             <div className="mb-8">
               <h4 className="text-white font-semibold mb-4 text-lg">Account Size</h4>
-              <div className="bg-slate-300/90 rounded-2xl p-1.5 grid grid-cols-5 gap-1.5 relative">
-                <Button className="bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+              <div className="bg-slate-800/90 rounded-2xl p-1.5 grid grid-cols-5 gap-1.5 relative">
+                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $10k
                 </Button>
-                <Button className="bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $25k
                 </Button>
-                <Button className="bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $50k
                 </Button>
                 <div className="relative">
-                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-400/80 text-slate-800 rounded-full whitespace-nowrap border border-slate-500/50">
+                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] px-2 py-0.5 bg-slate-600/80 text-slate-300 rounded-full whitespace-nowrap border border-slate-500/50">
                     Most popular
                   </span>
-                  <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white border-0 rounded-xl py-6 font-semibold text-sm">
+                  <Button className="w-full bg-slate-950 hover:bg-slate-900 text-white border-0 rounded-xl py-6 font-semibold text-sm">
                     $100k
                   </Button>
                 </div>
-                <Button className="bg-slate-200 hover:bg-slate-300 text-slate-700 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
+                <Button className="bg-slate-700 hover:bg-slate-600 text-slate-300 border-0 rounded-xl py-6 font-semibold text-sm shadow-none">
                   $200k
                 </Button>
               </div>
