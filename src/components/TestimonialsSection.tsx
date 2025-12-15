@@ -48,16 +48,8 @@ export const TestimonialsSection = () => {
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[350px] md:w-[400px] flex flex-col gap-3"
+                className="flex-shrink-0 w-[350px] md:w-[400px] relative group cursor-pointer"
               >
-                {/* Blue brand button above card */}
-                <button
-                  className="w-full py-2 px-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-colors duration-300"
-                  onClick={() => {/* Video link will be added later */}}
-                >
-                  Watch Video
-                </button>
-                
                 {/* Testimonial card */}
                 <div className="rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
                   <img
@@ -66,6 +58,16 @@ export const TestimonialsSection = () => {
                     className="w-full h-auto object-cover"
                   />
                 </div>
+                
+                {/* Play button overlay - centered */}
+                <button
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500 hover:bg-cyan-400 flex items-center justify-center transition-all duration-300 shadow-lg shadow-cyan-500/30 group-hover:scale-110"
+                  onClick={() => {/* Video link will be added later */}}
+                >
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
               </div>
             ))}
           </div>
