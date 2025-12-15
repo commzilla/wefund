@@ -38,13 +38,18 @@ export const AccountSelector = () => {
           <div className="relative p-[1px] rounded-[28px] bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-blue-900/30 blur-sm" />
             <div 
-              className="relative rounded-[27px] bg-gradient-to-br from-slate-800/95 via-slate-900/90 to-blue-950/80 backdrop-blur-sm p-10 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]"
+              className="relative rounded-[27px] bg-gradient-to-br from-slate-900/98 via-slate-950/95 to-blue-950/90 backdrop-blur-sm p-10 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]"
               style={{
                 backgroundImage: `url(${cardsCarouselBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             >
+            {/* Strong Black Overlay */}
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30 pointer-events-none" />
+            
             {/* Internal Stars Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(25)].map((_, i) => (
@@ -63,10 +68,9 @@ export const AccountSelector = () => {
                 />
               ))}
             </div>
-            {/* Internal Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            {/* Subtle Cyan/Blue Glows */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
             
             <div className="relative z-10">
               <h2 className="text-white text-[32px] font-semibold mb-10">Configure your Challenge</h2>
@@ -149,13 +153,18 @@ export const AccountSelector = () => {
           <div className="relative p-[1px] rounded-[28px] bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-blue-900/30 blur-sm" />
             <div 
-              className="relative rounded-[27px] bg-gradient-to-br from-slate-800/95 via-slate-900/90 to-blue-950/80 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] flex flex-col"
+              className="relative rounded-[27px] bg-gradient-to-br from-slate-900/98 via-slate-950/95 to-blue-950/90 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] flex flex-col"
               style={{
                 backgroundImage: `url(${cardsCarouselBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             >
+            {/* Strong Black Overlay */}
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40 pointer-events-none" />
+            
             {/* Internal Stars Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(25)].map((_, i) => (
@@ -174,10 +183,9 @@ export const AccountSelector = () => {
                 />
               ))}
             </div>
-            {/* Internal Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none" />
-            <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            {/* Subtle Cyan/Blue Glows */}
+            <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
             
             <Table className="relative z-10 flex-1">
               <TableHeader>
