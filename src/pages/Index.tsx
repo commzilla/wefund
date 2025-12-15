@@ -5,6 +5,7 @@ import { PayoutsCarousel } from "@/components/PayoutsCarousel";
 import { FuelPassion } from "@/components/FuelPassion";
 import { PricingPlans } from "@/components/PricingPlans";
 import { PayoutsSection } from "@/components/PayoutsSection";
+import { TechnologySection } from "@/components/TechnologySection";
 import { WhyWeFund } from "@/components/WhyWeFund";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
@@ -18,6 +19,7 @@ const Index = () => {
       <FuelPassion />
       
       <PayoutsSection />
+      <TechnologySection />
       <WhyWeFund />
       <HowItWorks />
       <FAQ />
