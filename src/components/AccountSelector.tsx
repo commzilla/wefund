@@ -189,47 +189,50 @@ export const AccountSelector = () => {
             
             <Table className="relative z-10 flex-1">
               <TableHeader>
-                <TableRow className="border-blue-500/20 hover:bg-transparent">
-                  <TableHead className="text-slate-400 font-medium text-[15px] py-7 pl-10">Category</TableHead>
-                  <TableHead className="text-slate-400 font-medium text-[15px] text-center py-7">Phase 1</TableHead>
-                  <TableHead className="text-cyan-400 font-medium text-[15px] text-center py-7 pr-10">Live Trader</TableHead>
+                <TableRow className="border-b border-slate-600/50 hover:bg-transparent">
+                  <TableHead className="text-slate-300 font-medium text-[17px] py-6 pl-8">Category</TableHead>
+                  <TableHead className="text-slate-400 font-medium text-[17px] text-center py-6">Phase 1</TableHead>
+                  <TableHead className="text-cyan-400 font-medium text-[17px] text-center py-6 pr-8">Live Trader</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {[
                   { label: "Trading Period", p1: "Unlimited", live: "Unlimited" },
                   { label: "Minimum Trading Days", p1: "0 days", live: "Unlimited" },
-                  { label: "Maximum Daily Loss (4%)", p1: "$4,000", live: "$4,000" },
-                  { label: "Maximum Loss (8%)", p1: "$8,000", live: "$8,000" },
-                  { label: "Profit Target (10%)", p1: "$10,000", live: "N/A" },
+                  { label: "Maximum Daily Loss (4%)", p1: "$4000", live: "$4000" },
+                  { label: "Maximum Loss (8%)", p1: "$8000", live: "$8000" },
+                  { label: "Profit Target (10%)", p1: "$10.000", live: "N/A" },
                   { label: "Price", p1: "$547", live: "Free", isLast: true },
                 ].map((row, i) => (
                   <TableRow 
                     key={i} 
-                    className={`border-blue-500/10 hover:bg-slate-800/30 transition-colors ${row.isLast ? 'border-b border-blue-500/20' : ''}`}
+                    className="border-b border-slate-600/40 hover:bg-slate-800/30 transition-colors"
                   >
-                    <TableCell className="text-slate-300 py-6 pl-10 font-medium text-[15px]">{row.label}</TableCell>
-                    <TableCell className="text-slate-400 text-center py-6 text-[15px]">{row.p1}</TableCell>
-                    <TableCell className="text-slate-400 text-center py-6 pr-10 text-[15px]">{row.live}</TableCell>
+                    <TableCell className="text-white py-5 pl-8 font-semibold text-[16px]">{row.label}</TableCell>
+                    <TableCell className="text-slate-300 text-center py-5 text-[16px]">{row.p1}</TableCell>
+                    <TableCell className="text-slate-300 text-center py-5 pr-8 text-[16px]">{row.live}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
             
             {/* Footer */}
-            <div className="relative z-10 px-10 py-7 bg-slate-900/60 border-t border-blue-500/20">
+            <div className="relative z-10 px-8 py-5 bg-slate-900/60 border-t border-slate-600/40">
               <div className="flex items-center justify-between flex-wrap gap-4">
-                <span className="text-white font-medium text-[15px]">See all trading rules</span>
-                <div className="flex items-center gap-2 text-[14px]">
-                  <span className="text-slate-500">bi-weekly payout and</span>
-                  <span className="text-cyan-400 font-medium">90% profit split</span>
-                  <span className="text-slate-500">add-ons available</span>
+                <span className="text-white font-semibold text-[16px]">See all trading rules</span>
+                <div className="flex items-center gap-6 text-[14px]">
+                  <span className="text-slate-400">add-ons available</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-400">⚡</span>
+                    <span className="text-slate-300">Profit Splits of up to</span>
+                    <span className="text-cyan-400 font-semibold">100%</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-yellow-500">💰</span>
+                    <span className="text-slate-300">Get Funded up to</span>
+                    <span className="text-cyan-400 font-semibold">$400</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-2 text-[15px] mt-4">
-                <span className="text-cyan-400">⚡</span>
-                <span className="text-white">Profit Splits of up to</span>
-                <span className="text-cyan-400 font-semibold">100%</span>
               </div>
             </div>
             </div>
