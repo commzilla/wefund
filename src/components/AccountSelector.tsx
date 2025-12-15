@@ -91,8 +91,8 @@ export const AccountSelector = () => {
                   <Button className="bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
                     1 Step - Algo
                   </Button>
-                  <div className="relative">
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[8px] px-2 py-0.5 bg-slate-900 text-slate-300 rounded-full whitespace-nowrap font-semibold border border-slate-500/50 shadow-lg z-10">
+                  <div className="relative pt-2">
+                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-4 py-1 bg-slate-800 text-slate-200 rounded-full whitespace-nowrap font-semibold border border-slate-600/60 shadow-lg z-10">
                       Coming Soon
                     </span>
                     <Button className="w-full bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 font-medium text-sm transition-colors">
@@ -118,8 +118,8 @@ export const AccountSelector = () => {
                   <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 px-0 font-medium text-sm transition-colors">
                     $50k
                   </Button>
-                  <div className="relative">
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[8px] px-2 py-0.5 bg-slate-900 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/50 shadow-lg z-10">
+                  <div className="relative pt-2">
+                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-4 py-1 bg-slate-800 text-cyan-300 rounded-full whitespace-nowrap font-semibold border border-cyan-400/50 shadow-lg z-10">
                       Most popular
                     </span>
                     <Button className="w-full bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 px-0 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
