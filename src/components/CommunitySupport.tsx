@@ -72,12 +72,12 @@ export const CommunitySupport = () => {
 
             {/* Discord Card */}
             <div className="relative bg-gradient-to-br from-slate-900/80 to-purple-900/20 border border-slate-700/50 rounded-3xl overflow-hidden flex-1 min-h-[240px]">
-              {/* Background Image */}
+            {/* Background Image */}
               <div className="absolute inset-0">
                 <img
                   src={discordBg}
                   alt="Discord"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-right-top"
                 />
               </div>
 
