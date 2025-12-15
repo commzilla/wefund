@@ -28,7 +28,7 @@ const CommunityCard = () => (
     </div>
     
     <div className="relative mb-2">
-      <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+      <img src={tradersFundedImage} alt="" width={582} height={144} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
       <div className="absolute top-3 md:top-4 left-3 md:left-4">
         <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">180+</div>
         <div className="text-xs md:text-sm text-muted-foreground">Traders Max Funded</div>
@@ -36,7 +36,7 @@ const CommunityCard = () => (
     </div>
 
     <div className="relative mb-2">
-      <img src={communityUsersImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+      <img src={communityUsersImage} alt="" width={582} height={144} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
       <div className="absolute top-1/2 right-3 md:right-4 -translate-y-1/2 text-right">
         <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">2,000+</div>
         <div className="text-xs md:text-sm text-muted-foreground">Active Traders</div>
@@ -44,7 +44,7 @@ const CommunityCard = () => (
     </div>
 
     <div className="relative">
-      <img src={countriesImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+      <img src={countriesImage} alt="" width={582} height={144} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
       <div className="absolute top-1/2 left-3 md:left-4 -translate-y-1/2">
         <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">128</div>
         <div className="text-xs md:text-sm text-muted-foreground">Countries</div>
@@ -65,7 +65,7 @@ const TraderCard = () => (
     <div className="grid grid-cols-2 gap-2">
       <div className="space-y-2">
         <div className="relative">
-          <img src={aBookImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+          <img src={aBookImage} alt="" width={282} height={219} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
           <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
             <div className="text-xl md:text-3xl font-bold text-foreground mb-1">A-Book</div>
             <div className="text-xs md:text-sm text-muted-foreground">Execution</div>
@@ -73,7 +73,7 @@ const TraderCard = () => (
         </div>
 
         <div className="relative">
-          <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+          <img src={scalingPlanImage} alt="" width={282} height={219} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
           <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
             <div className="text-xl md:text-3xl font-bold text-foreground mb-1">$2m</div>
             <div className="text-xs md:text-sm text-muted-foreground">Scaling Plan</div>
@@ -82,7 +82,7 @@ const TraderCard = () => (
       </div>
 
       <div className="relative flex items-end justify-center pb-5">
-        <img src={futureImage} alt="" className="w-full h-full object-cover rounded-xl border border-border/50" loading="lazy" />
+        <img src={futureImage} alt="" width={163} height={253} className="w-full h-full object-cover rounded-xl border border-border/50" loading="lazy" />
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 text-center w-full px-2 md:px-4">
           <div className="text-lg md:text-2xl font-bold text-foreground mb-1">The Future</div>
           <div className="text-xs md:text-sm text-muted-foreground">of Prop Trading</div>
@@ -103,7 +103,7 @@ const PayoutsCard = () => (
     
     <div className="space-y-2">
       <div className="relative">
-        <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+        <img src={payoutsProcessedImage} alt="" width={582} height={221} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
         <div className="absolute top-3 md:top-4 left-3 md:left-4">
           <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">500+</div>
           <div className="text-xs md:text-sm text-muted-foreground">Payouts Processed</div>
@@ -112,7 +112,7 @@ const PayoutsCard = () => (
 
       <div className="grid grid-cols-2 gap-2">
         <div className="relative">
-          <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+          <img src={highestPayoutImage} alt="" width={282} height={219} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
           <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
             <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$5,782.50</div>
             <div className="text-[10px] md:text-sm text-muted-foreground">Highest Payout</div>
@@ -120,7 +120,7 @@ const PayoutsCard = () => (
         </div>
 
         <div className="relative">
-          <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
+          <img src={avgPayoutImage} alt="" width={282} height={219} className="w-full h-auto rounded-xl border border-border/50" loading="lazy" />
           <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
             <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$1,228</div>
             <div className="text-[10px] md:text-sm text-muted-foreground">Average Payout</div>
@@ -152,16 +152,19 @@ export const Hero = () => {
           <img 
             src={mt5Badge} 
             alt="MetaTrader 5" 
+            width={149}
+            height={40}
             className="h-10 md:h-12 animate-glow" 
+            fetchPriority="high"
           />
           {/* Hide second badge on mobile */}
-          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="hidden md:block h-12" />
+          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" width={220} height={48} className="hidden md:block h-12" />
         </div>
 
         {/* Main Headline */}
         <h1 className="flex items-center justify-center gap-2 md:gap-4 text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-3 md:mb-6 leading-none flex-wrap">
           <span>You Trade,</span>
-          <img src={wefundTextLogo} alt="We Fund" className="h-[0.7em] inline-block align-baseline" />
+          <img src={wefundTextLogo} alt="We Fund" width={314} height={59} className="h-[0.7em] inline-block align-baseline" />
         </h1>
 
         <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto mb-4 md:mb-8 leading-relaxed px-2">
