@@ -10,7 +10,9 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { WhyWeFund } from "@/components/WhyWeFund";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
+import { CommunitySupport } from "@/components/CommunitySupport";
 import { Footer } from "@/components/Footer";
+
 const Index = () => {
   return <div className="min-h-screen bg-background">
       <Navigation />
@@ -25,6 +27,7 @@ const Index = () => {
       <WhyWeFund />
       <HowItWorks />
       <FAQ />
+      <CommunitySupport />
       <Footer />
     </div>;
 };
