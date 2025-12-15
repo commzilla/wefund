@@ -59,6 +59,11 @@ All colors MUST be HSL.
     font-family: 'Inter', sans-serif;
   }
 
+  /* Performance optimizations */
+  img {
+    content-visibility: auto;
+  }
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -79,6 +84,8 @@ All colors MUST be HSL.
 
   .animate-scroll {
     animation: scroll 30s linear infinite;
+    will-change: transform;
+    contain: layout style;
   }
 
   .animate-scroll:hover {
@@ -87,6 +94,8 @@ All colors MUST be HSL.
 
   .animate-scroll-reverse {
     animation: scroll-reverse 30s linear infinite;
+    will-change: transform;
+    contain: layout style;
   }
 
   .animate-scroll-reverse:hover {
@@ -104,6 +113,8 @@ All colors MUST be HSL.
 
   .animate-scroll-testimonials {
     animation: scroll-testimonials 40s linear infinite;
+    will-change: transform;
+    contain: layout style;
   }
 
   .animate-scroll-testimonials:hover {
