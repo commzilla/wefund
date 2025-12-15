@@ -26,17 +26,15 @@ export const PayoutsSection = () => {
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {/* Card 1 - Daily Payouts */}
-          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 flex flex-col">
-            {/* Background Image */}
-            <div className="relative h-72 w-full bg-slate-900/60">
-              <img 
-                src={dailyPayoutBg} 
-                alt="Daily Payouts" 
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 min-h-[420px]">
+            {/* Full Background Image */}
+            <img 
+              src={dailyPayoutBg} 
+              alt="Daily Payouts" 
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
             {/* Content */}
-            <div className="p-6 pt-4 bg-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-lg font-bold text-white mb-2">Daily Payouts</h3>
               <p className="text-slate-500 text-sm font-normal leading-relaxed">
                 No more waiting for your profits. The 10X Trader Program lets you withdraw daily, directly from your broker account – no approval process, no delays.
@@ -45,23 +43,21 @@ export const PayoutsSection = () => {
           </div>
 
           {/* Card 2 - Lightning Fast Payouts */}
-          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 flex flex-col">
+          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 min-h-[420px]">
             {/* Badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className="bg-slate-800/90 text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600/50">
                 3 hours avg. process time
               </span>
             </div>
-            {/* Background Image */}
-            <div className="relative h-72 w-full bg-slate-900/60">
-              <img 
-                src={lightningFastBg} 
-                alt="Lightning Fast Payouts" 
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+            {/* Full Background Image */}
+            <img 
+              src={lightningFastBg} 
+              alt="Lightning Fast Payouts" 
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
             {/* Content */}
-            <div className="p-6 pt-4 bg-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-lg font-bold text-white mb-2">Lightning Fast Payouts</h3>
               <p className="text-slate-500 text-sm font-normal leading-relaxed">
                 Enjoy the industry's fastest payouts – processing that delivers your profits without delay. Fast, easy, and completely hassle-free.
@@ -70,17 +66,15 @@ export const PayoutsSection = () => {
           </div>
 
           {/* Card 3 - Keep up to 100% of your profits */}
-          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 flex flex-col">
-            {/* Background Image */}
-            <div className="relative h-72 w-full bg-slate-900/60">
-              <img 
-                src={keepProfitBg} 
-                alt="Keep your profits" 
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+          <div className="relative rounded-xl overflow-hidden border border-slate-700/40 min-h-[420px]">
+            {/* Full Background Image */}
+            <img 
+              src={keepProfitBg} 
+              alt="Keep your profits" 
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
             {/* Content */}
-            <div className="p-6 pt-4 bg-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-lg font-bold text-white mb-2">Keep up to 100% of your profits</h3>
               <p className="text-slate-500 text-sm font-normal leading-relaxed">
                 Unlock up to 100% of your profits. Every trade you win is yours to withdraw.
