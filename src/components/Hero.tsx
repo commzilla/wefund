@@ -12,6 +12,124 @@ import highestPayoutImage from "@/assets/highest-payout-bg.png";
 import avgPayoutImage from "@/assets/avg-payout-bg.png";
 import mt5Badge from "@/assets/mt5-badge.png";
 import heroTrustBadge from "@/assets/hero-trust.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+const CommunityCard = () => (
+  <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all h-full">
+    <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
+      <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+      <span className="text-xs md:text-sm font-medium">Community</span>
+    </div>
+    
+    <div className="relative mb-2">
+      <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+      <div className="absolute top-3 md:top-4 left-3 md:left-4">
+        <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">180+</div>
+        <div className="text-xs md:text-sm text-muted-foreground">Traders Max Funded</div>
+      </div>
+    </div>
+
+    <div className="relative mb-2">
+      <img src={communityUsersImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+      <div className="absolute top-1/2 right-3 md:right-4 -translate-y-1/2 text-right">
+        <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">2,000+</div>
+        <div className="text-xs md:text-sm text-muted-foreground">Active Traders</div>
+      </div>
+    </div>
+
+    <div className="relative">
+      <img src={countriesImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+      <div className="absolute top-1/2 left-3 md:left-4 -translate-y-1/2">
+        <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">128</div>
+        <div className="text-xs md:text-sm text-muted-foreground">Countries</div>
+      </div>
+    </div>
+  </div>
+);
+
+const TraderCard = () => (
+  <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all h-full">
+    <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
+      <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+      <span className="text-xs md:text-sm font-medium">10X Trader</span>
+    </div>
+    
+    <div className="grid grid-cols-2 gap-2">
+      <div className="space-y-2">
+        <div className="relative">
+          <img src={aBookImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+          <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
+            <div className="text-xl md:text-3xl font-bold text-foreground mb-1">A-Book</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Execution</div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+          <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
+            <div className="text-xl md:text-3xl font-bold text-foreground mb-1">$2m</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Scaling Plan</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative flex items-end justify-center pb-5">
+        <img src={futureImage} alt="" className="w-full h-full object-cover rounded-xl border border-border/50" />
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 text-center w-full px-2 md:px-4">
+          <div className="text-lg md:text-2xl font-bold text-foreground mb-1">The Future</div>
+          <div className="text-xs md:text-sm text-muted-foreground">of Prop Trading</div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const PayoutsCard = () => (
+  <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all h-full">
+    <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
+      <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span className="text-xs md:text-sm font-medium">Payouts</span>
+    </div>
+    
+    <div className="space-y-2">
+      <div className="relative">
+        <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+        <div className="absolute top-3 md:top-4 left-3 md:left-4">
+          <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">500+</div>
+          <div className="text-xs md:text-sm text-muted-foreground">Payouts Processed</div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2">
+        <div className="relative">
+          <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+          <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
+            <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$5,782.50</div>
+            <div className="text-[10px] md:text-sm text-muted-foreground">Highest Payout</div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
+          <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
+            <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$1,228</div>
+            <div className="text-[10px] md:text-sm text-muted-foreground">Average Payout</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export const Hero = () => {
   return (
@@ -28,14 +146,11 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-12 md:py-20 text-center">
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-8 flex-wrap">
-          {/* MetaTrader 5 Badge */}
           <img 
             src={mt5Badge} 
             alt="MetaTrader 5" 
             className="h-8 md:h-12 animate-glow" 
           />
-          
-          {/* TTP Trustpilot Badge */}
           <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-8 md:h-12" />
         </div>
 
@@ -61,128 +176,34 @@ export const Hero = () => {
           </Button>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto mt-8 md:mt-16 px-2 md:px-4">
-          {/* Community Card */}
-          <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
-              <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <span className="text-xs md:text-sm font-medium">Community</span>
-            </div>
-            
-            {/* Top Section - 180+ Traders Max Funded */}
-            <div className="relative mb-2">
-              <img src={tradersFundedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-              <div className="absolute top-3 md:top-4 left-3 md:left-4">
-                <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">180+</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Traders Max Funded</div>
-              </div>
-            </div>
+        {/* Mobile Carousel */}
+        <div className="md:hidden mt-8 px-2">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2">
+              <CarouselItem className="pl-2 basis-[90%]">
+                <CommunityCard />
+              </CarouselItem>
+              <CarouselItem className="pl-2 basis-[90%]">
+                <TraderCard />
+              </CarouselItem>
+              <CarouselItem className="pl-2 basis-[90%]">
+                <PayoutsCard />
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
+        </div>
 
-            {/* Middle Section - 2,000+ Active Traders */}
-            <div className="relative mb-2">
-              <img src={communityUsersImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-              <div className="absolute top-1/2 right-3 md:right-4 -translate-y-1/2 text-right">
-                <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">2,000+</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Active Traders</div>
-              </div>
-            </div>
-
-            {/* Bottom Section - 128 Countries */}
-            <div className="relative">
-              <img src={countriesImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-              <div className="absolute top-1/2 left-3 md:left-4 -translate-y-1/2">
-                <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">128</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Countries</div>
-              </div>
-            </div>
-          </div>
-
-          {/* 10X Trader Card */}
-          <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
-              <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span className="text-xs md:text-sm font-medium">10X Trader</span>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-2">
-              {/* Left Column - A-Book and $2m */}
-              <div className="space-y-2">
-                {/* A-Book Execution */}
-                <div className="relative">
-                  <img src={aBookImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-                  <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
-                    <div className="text-xl md:text-3xl font-bold text-foreground mb-1">A-Book</div>
-                    <div className="text-xs md:text-sm text-muted-foreground">Execution</div>
-                  </div>
-                </div>
-
-                {/* $2m Scaling Plan */}
-                <div className="relative">
-                  <img src={scalingPlanImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-                  <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4">
-                    <div className="text-xl md:text-3xl font-bold text-foreground mb-1">$2m</div>
-                    <div className="text-xs md:text-sm text-muted-foreground">Scaling Plan</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - The Future */}
-              <div className="relative flex items-end justify-center pb-5">
-                <img src={futureImage} alt="" className="w-full h-full object-cover rounded-xl border border-border/50" />
-                <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 text-center w-full px-2 md:px-4">
-                  <div className="text-lg md:text-2xl font-bold text-foreground mb-1">The Future</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">of Prop Trading</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Payouts Card */}
-          <div className="bg-black border border-border/40 rounded-2xl pt-3 px-3 pb-1 hover:border-primary/50 transition-all">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2 px-1">
-              <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-xs md:text-sm font-medium">Payouts</span>
-            </div>
-            
-            <div className="space-y-2">
-              {/* 500+ Payouts Processed */}
-              <div className="relative">
-                <img src={payoutsProcessedImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-                <div className="absolute top-3 md:top-4 left-3 md:left-4">
-                  <div className="text-2xl md:text-4xl font-bold text-foreground mb-1">500+</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Payouts Processed</div>
-                </div>
-              </div>
-
-              {/* Highest and Average in 2 columns */}
-              <div className="grid grid-cols-2 gap-2">
-                {/* Highest Payout */}
-                <div className="relative">
-                  <img src={highestPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-                  <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
-                    <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$5,782.50</div>
-                    <div className="text-[10px] md:text-sm text-muted-foreground">Highest Payout</div>
-                  </div>
-                </div>
-
-                {/* Average Payout */}
-                <div className="relative">
-                  <img src={avgPayoutImage} alt="" className="w-full h-auto rounded-xl border border-border/50" />
-                  <div className="absolute bottom-3 md:bottom-4 left-2 md:left-4">
-                    <div className="text-lg md:text-3xl font-bold text-foreground mb-1">$1,228</div>
-                    <div className="text-[10px] md:text-sm text-muted-foreground">Average Payout</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Desktop Stats Grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto mt-8 md:mt-16 px-2 md:px-4">
+          <CommunityCard />
+          <TraderCard />
+          <PayoutsCard />
         </div>
       </div>
     </section>
