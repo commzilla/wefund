@@ -135,9 +135,31 @@ export const AccountSelector = () => {
 
               {/* CTA Button */}
               <div className="relative mb-5 group mt-auto">
-                <div className="absolute -inset-2 bg-cyan-500/25 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <Button className="relative w-full bg-gradient-to-b from-slate-800/80 to-slate-900/80 text-white py-8 text-[17px] font-bold rounded-xl uppercase tracking-[0.18em] border border-cyan-500/40 shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:shadow-[0_0_40px_rgba(6,182,212,0.25)] transition-all duration-300">
-                  GET FUNDED NOW
+                {/* Outer glow */}
+                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500/40 via-blue-500/40 to-cyan-500/40 rounded-2xl blur-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+                
+                <Button className="relative w-full overflow-hidden bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 text-white py-8 text-[18px] font-black rounded-xl uppercase tracking-[0.2em] border-2 border-cyan-300/50 shadow-[0_0_40px_rgba(6,182,212,0.4)] hover:shadow-[0_0_60px_rgba(6,182,212,0.6)] transition-all duration-300 hover:scale-[1.02]">
+                  {/* Stars inside button */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    {[...Array(20)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute rounded-full bg-white animate-pulse"
+                        style={{
+                          width: `${Math.random() * 3 + 1}px`,
+                          height: `${Math.random() * 3 + 1}px`,
+                          top: `${Math.random() * 100}%`,
+                          left: `${Math.random() * 100}%`,
+                          opacity: Math.random() * 0.7 + 0.3,
+                          animationDelay: `${Math.random() * 2}s`,
+                          animationDuration: `${Math.random() * 1.5 + 1}s`
+                        }}
+                      />
+                    ))}
+                  </div>
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <span className="relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">GET FUNDED NOW</span>
                 </Button>
               </div>
 
