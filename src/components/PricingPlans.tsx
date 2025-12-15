@@ -70,10 +70,10 @@ export const PricingPlans = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
             Fuel Your Passion. Fund Your Potential.
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg font-normal text-slate-400 max-w-3xl mx-auto">
             Choose the program that fits your strategy, risk profile, and goals. Whether you're
             starting out or scaling up — we've built a path for you.
           </p>
@@ -134,7 +134,7 @@ export const PricingPlans = () => {
                   {/* Content */}
                   <div className="relative z-10 p-8 flex flex-col h-full">
                     <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-slate-400 text-sm mb-4">{plan.subtitle}</p>
+                    <p className="text-slate-400 text-sm font-normal mb-4">{plan.subtitle}</p>
                     
                     <div className="mb-6">
                       <span className="text-3xl font-bold text-cyan-400">{plan.price}</span>
