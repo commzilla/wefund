@@ -179,13 +179,13 @@ export const Hero = () => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden mt-4 px-0 min-h-[315px]">
+        <div className="md:hidden mt-4 px-0">
           <Carousel
             opts={{
               align: "center",
               loop: true,
             }}
-            className="w-full"
+            className="w-full min-h-[315px]"
           >
             <CarouselContent className="-ml-2">
               <CarouselItem className="pl-2 basis-[95%]">
