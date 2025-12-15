@@ -43,6 +43,29 @@ export const AccountSelector = () => {
               backgroundPosition: 'center'
             }}
           >
+            {/* Internal Stars Effect */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(25)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-white animate-pulse"
+                  style={{
+                    width: `${Math.random() * 2 + 1}px`,
+                    height: `${Math.random() * 2 + 1}px`,
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                    opacity: Math.random() * 0.4 + 0.1,
+                    animationDelay: `${Math.random() * 3}s`,
+                    animationDuration: `${Math.random() * 2 + 2}s`
+                  }}
+                />
+              ))}
+            </div>
+            {/* Internal Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            
             <div className="relative z-10">
               <h2 className="text-white text-[26px] font-semibold mb-8">Configure your Challenge</h2>
               
@@ -128,6 +151,29 @@ export const AccountSelector = () => {
               backgroundPosition: 'center'
             }}
           >
+            {/* Internal Stars Effect */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(25)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-white animate-pulse"
+                  style={{
+                    width: `${Math.random() * 2 + 1}px`,
+                    height: `${Math.random() * 2 + 1}px`,
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                    opacity: Math.random() * 0.4 + 0.1,
+                    animationDelay: `${Math.random() * 3}s`,
+                    animationDuration: `${Math.random() * 2 + 2}s`
+                  }}
+                />
+              ))}
+            </div>
+            {/* Internal Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+            
             <Table className="relative z-10 flex-1">
               <TableHeader>
                 <TableRow className="border-blue-500/20 hover:bg-transparent">
@@ -158,7 +204,7 @@ export const AccountSelector = () => {
             </Table>
             
             {/* Footer */}
-            <div className="relative px-8 py-6 bg-slate-900/60 border-t border-blue-500/20">
+            <div className="relative z-10 px-8 py-6 bg-slate-900/60 border-t border-blue-500/20">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <span className="text-white font-medium text-[13px]">See all trading rules</span>
                 <div className="flex items-center gap-2 text-[12px]">
