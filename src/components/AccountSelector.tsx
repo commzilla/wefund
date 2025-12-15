@@ -10,11 +10,10 @@ export const AccountSelector = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse,rgba(56,189,248,0.08)_0%,transparent_70%)] pointer-events-none" />
       
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-4">
           
           {/* Left Column - Apple Glass Card */}
           <div className="relative rounded-[32px] p-[1px] bg-gradient-to-b from-slate-500/30 via-slate-600/10 to-slate-800/20">
-            {/* Glass card inner */}
             <div className="relative bg-gradient-to-b from-[#12192a] to-[#0a0f1a] rounded-[31px] p-8 overflow-hidden">
               
               {/* Apple Gloss - Top reflection band */}
@@ -43,7 +42,6 @@ export const AccountSelector = () => {
                   <h4 className="text-slate-400 text-[13px] font-medium mb-3 uppercase tracking-wider">Account Type</h4>
                   <div className="relative rounded-2xl p-[1px] bg-gradient-to-b from-slate-600/30 to-slate-700/10">
                     <div className="bg-[#0d1520] rounded-2xl p-1.5 grid grid-cols-3 gap-1.5">
-                      {/* Selected */}
                       <div className="relative rounded-xl p-[1px] bg-gradient-to-b from-cyan-400/50 to-cyan-500/20">
                         <Button className="w-full bg-gradient-to-b from-[#122030] to-[#0d1825] text-white rounded-xl py-5 font-medium text-sm shadow-[0_0_24px_rgba(6,182,212,0.3)]">
                           <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.08] to-transparent rounded-t-xl pointer-events-none" />
@@ -97,14 +95,11 @@ export const AccountSelector = () => {
                   </div>
                 </div>
 
-                {/* CTA Button with Apple Gloss */}
+                {/* CTA Button */}
                 <div className="relative mb-7 group">
-                  {/* Glow effect */}
                   <div className="absolute -inset-2 bg-cyan-500/30 rounded-2xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                  
                   <div className="relative rounded-xl p-[1px] bg-gradient-to-b from-cyan-400/60 via-cyan-500/30 to-cyan-600/20">
                     <Button className="relative w-full bg-gradient-to-b from-[#0e1822] to-[#080e16] text-white py-8 text-[17px] font-semibold rounded-xl uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:from-[#111d2a] hover:to-[#0a1018]">
-                      {/* Gloss reflection */}
                       <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.12] via-white/[0.03] to-transparent rounded-t-xl pointer-events-none" />
                       <span className="relative z-10">GET FUNDED NOW</span>
                     </Button>
@@ -119,15 +114,19 @@ export const AccountSelector = () => {
             </div>
           </div>
 
-          {/* Right Column - Table */}
-          <div className="relative rounded-r-[32px] p-[1px] pt-0 pb-0 pl-0 bg-gradient-to-b from-slate-500/20 via-slate-600/5 to-slate-800/10">
-            <div className="relative bg-gradient-to-b from-[#10172a] to-[#090e18] rounded-r-[31px] overflow-hidden h-full">
-              {/* Table gloss */}
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
+          {/* Right Column - Table with Apple Glass Effect */}
+          <div className="relative rounded-[32px] p-[1px] bg-gradient-to-b from-slate-500/30 via-slate-600/10 to-slate-800/20">
+            <div className="relative bg-gradient-to-b from-[#12192a] to-[#0a0f1a] rounded-[31px] overflow-hidden h-full flex flex-col">
               
-              <Table className="relative z-10">
+              {/* Apple Gloss - Top reflection band */}
+              <div className="absolute inset-x-0 top-0 h-[100px] bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent rounded-t-[31px] pointer-events-none" />
+              
+              {/* Subtle edge highlight */}
+              <div className="absolute inset-x-4 top-2 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
+              
+              <Table className="relative z-10 flex-1">
                 <TableHeader>
-                  <TableRow className="border-slate-700/15 hover:bg-transparent">
+                  <TableRow className="border-slate-700/20 hover:bg-transparent">
                     <TableHead className="text-slate-400 font-medium text-[13px] py-6 pl-8">Category</TableHead>
                     <TableHead className="text-slate-400 font-medium text-[13px] text-center py-6">Phase 1</TableHead>
                     <TableHead className="text-cyan-400 font-medium text-[13px] text-center py-6 pr-8">Live Trader</TableHead>
@@ -144,7 +143,7 @@ export const AccountSelector = () => {
                   ].map((row, i) => (
                     <TableRow 
                       key={i} 
-                      className={`border-slate-700/10 hover:bg-white/[0.015] transition-colors ${row.isLast ? 'border-b border-slate-600/20' : ''}`}
+                      className={`border-slate-700/15 hover:bg-white/[0.02] transition-colors ${row.isLast ? 'border-b border-slate-600/20' : ''}`}
                     >
                       <TableCell className="text-slate-300 py-5 pl-8 font-medium text-[13px]">{row.label}</TableCell>
                       <TableCell className="text-slate-400 text-center py-5 text-[13px]">{row.p1}</TableCell>
@@ -154,14 +153,18 @@ export const AccountSelector = () => {
                 </TableBody>
               </Table>
               
-              <div className="relative px-8 py-6 flex items-center justify-between flex-wrap gap-4 bg-[#060a12]/80 backdrop-blur-sm">
-                <span className="text-white font-medium text-[13px]">See all trading rules</span>
-                <div className="flex items-center gap-2 text-[12px]">
-                  <span className="text-slate-500">bi-weekly payout and</span>
-                  <span className="text-cyan-400 font-medium">90% profit split</span>
-                  <span className="text-slate-500">add-ons available</span>
+              {/* Footer with glass effect */}
+              <div className="relative px-8 py-6 bg-gradient-to-b from-[#0a101a] to-[#080c14] border-t border-slate-700/20">
+                <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+                <div className="relative z-10 flex items-center justify-between flex-wrap gap-4">
+                  <span className="text-white font-medium text-[13px]">See all trading rules</span>
+                  <div className="flex items-center gap-2 text-[12px]">
+                    <span className="text-slate-500">bi-weekly payout and</span>
+                    <span className="text-cyan-400 font-medium">90% profit split</span>
+                    <span className="text-slate-500">add-ons available</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-[13px]">
+                <div className="relative z-10 flex items-center gap-2 text-[13px] mt-3">
                   <span className="text-cyan-400">⚡</span>
                   <span className="text-white">Profit Splits of up to</span>
                   <span className="text-cyan-400 font-semibold">100%</span>
