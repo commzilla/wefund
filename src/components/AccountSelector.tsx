@@ -9,8 +9,8 @@ export const AccountSelector = () => {
       {/* Effetto glow sfumato sullo sfondo come WeFund */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.08)_0%,transparent_70%)]" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[450px_1fr] gap-0">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-0">
           {/* Left Column - Configure Challenge */}
           <div className="bg-gradient-to-b from-[#070c15] to-[#0a1018] border border-cyan-500/25 rounded-3xl p-8 shadow-[0_0_40px_rgba(6,182,212,0.08)]">
             <h2 className="text-white text-3xl font-bold mb-8">Configure your Challenge</h2>
