@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { RefreshCw, Shield, Wallet, BarChart3 } from "lucide-react";
+import { RefreshCw, CheckCircle, Wallet, BarChart3 } from "lucide-react";
 import createVerifyBg from "@/assets/create-verify-bg-image.png";
 import tradingEarnBg from "@/assets/trading-earn-bg-image.png";
 import scaleCapitalBg from "@/assets/scale-capital-bg-image.png";
@@ -8,7 +8,7 @@ export const HowItWorks = () => {
   const steps = [
     {
       number: 1,
-      icon: Shield,
+      icon: CheckCircle,
       image: createVerifyBg,
       title: "Start Your Evaluation",
       description:
@@ -41,10 +41,10 @@ export const HowItWorks = () => {
             <RefreshCw className="w-4 h-4 text-cyan-400" />
             <span className="text-cyan-400 text-sm font-medium">How it works</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 italic">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
             Your Trading Journey Starts Here
           </h2>
-          <p className="text-xl text-muted-foreground italic">
+          <p className="text-xl md:text-2xl text-cyan-400">
             We Guide You Along the Way, in Every Step
           </p>
         </div>
@@ -56,18 +56,18 @@ export const HowItWorks = () => {
             return (
               <div
                 key={step.number}
-                className="bg-gradient-to-b from-slate-800/60 to-slate-900/80 border border-slate-700/50 rounded-2xl overflow-hidden"
+                className="bg-gradient-to-b from-slate-800/40 to-slate-900/60 border border-slate-700/50 rounded-3xl overflow-hidden"
               >
                 {/* Step Badge */}
                 <div className="p-4 pb-0">
-                  <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-600/50 rounded-full px-3 py-1.5">
+                  <div className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-600/40 rounded-full px-3 py-1.5">
                     <IconComponent className="w-4 h-4 text-cyan-400" />
                     <span className="text-white text-sm font-medium">Step {step.number}</span>
                   </div>
                 </div>
 
                 {/* Image */}
-                <div className="h-48 flex items-center justify-center p-4">
+                <div className="h-56 flex items-center justify-center p-4">
                   <img
                     src={step.image}
                     alt={step.title}
@@ -76,9 +76,9 @@ export const HowItWorks = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 pt-0">
+                <div className="p-6 pt-2">
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-slate-400 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
