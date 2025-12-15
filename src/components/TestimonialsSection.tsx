@@ -57,6 +57,7 @@ export const TestimonialsSection = () => {
                     src={testimonial}
                     alt={`Trader testimonial ${(index % testimonials.length) + 1}`}
                     className="w-full h-auto object-cover"
+                    loading="lazy"
                   />
                 </div>
                 
@@ -82,7 +83,7 @@ export const TestimonialsSection = () => {
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity duration-300"
           >
-            <img src={youtubeBtn} alt="Check YouTube" className="h-10 md:h-14" />
+            <img src={youtubeBtn} alt="Check YouTube" className="h-10 md:h-14" loading="lazy" />
           </a>
         </div>
       </div>
