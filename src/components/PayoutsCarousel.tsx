@@ -43,12 +43,12 @@ export const PayoutsCarousel = () => {
   ];
 
   return (
-    <section className="py-20 px-4 overflow-hidden bg-black">
-      <div className="max-w-7xl mx-auto mb-12 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <section className="py-12 md:py-20 px-4 overflow-hidden bg-black">
+      <div className="max-w-7xl mx-auto mb-8 md:mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
           Real Traders. Real Results.
         </h2>
-        <p className="text-lg text-gray-400">
+        <p className="text-base md:text-lg text-gray-400">
           See all payouts on{" "}
           <a
             href="https://arbiscan.io/tokentxns?a=0xB3a371932142975EE482B2ce63f6e0c8FBb80798&p=1"
@@ -62,27 +62,27 @@ export const PayoutsCarousel = () => {
       </div>
 
       {/* First carousel - scrolls left */}
-      <div className="relative mb-6">
-        <div className="flex gap-6 animate-scroll">
+      <div className="relative mb-4 md:mb-6">
+        <div className="flex gap-4 md:gap-6 animate-scroll">
           {[...payouts, ...payouts].map((payout, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all shadow-xl relative overflow-hidden"
+              className="flex-shrink-0 w-[260px] md:w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-4 md:p-6 hover:border-blue-500/40 transition-all shadow-xl relative overflow-hidden"
               style={{
                 backgroundImage: `url(${cardBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             >
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex-shrink-0 w-16 h-16">
+              <div className="flex items-center justify-between gap-3 md:gap-4">
+                <div className="flex-shrink-0 w-12 md:w-16 h-12 md:h-16">
                   <img src={payout.flag} alt="Country flag" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-2xl font-bold text-white mb-1">{payout.amount}</div>
-                  <div className="text-gray-400 text-base">{payout.name}</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">{payout.amount}</div>
+                  <div className="text-gray-400 text-sm md:text-base">{payout.name}</div>
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                <div className="flex-shrink-0 w-8 md:w-10 h-8 md:h-10 rounded-full flex items-center justify-center overflow-hidden">
                   <img src={arrowLogo} alt="Arrow" className="w-full h-full object-cover" />
                 </div>
               </div>
@@ -93,26 +93,26 @@ export const PayoutsCarousel = () => {
 
       {/* Second carousel - scrolls right */}
       <div className="relative">
-        <div className="flex gap-6 animate-scroll-reverse">
+        <div className="flex gap-4 md:gap-6 animate-scroll-reverse">
           {[...payouts2, ...payouts2].map((payout, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all shadow-xl relative overflow-hidden"
+              className="flex-shrink-0 w-[260px] md:w-80 bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-4 md:p-6 hover:border-blue-500/40 transition-all shadow-xl relative overflow-hidden"
               style={{
                 backgroundImage: `url(${cardBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             >
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex-shrink-0 w-16 h-16">
+              <div className="flex items-center justify-between gap-3 md:gap-4">
+                <div className="flex-shrink-0 w-12 md:w-16 h-12 md:h-16">
                   <img src={payout.flag} alt="Country flag" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-2xl font-bold text-white mb-1">{payout.amount}</div>
-                  <div className="text-gray-400 text-base">{payout.name}</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1">{payout.amount}</div>
+                  <div className="text-gray-400 text-sm md:text-base">{payout.name}</div>
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                <div className="flex-shrink-0 w-8 md:w-10 h-8 md:h-10 rounded-full flex items-center justify-center overflow-hidden">
                   <img src={arrowLogo} alt="Arrow" className="w-full h-full object-cover" />
                 </div>
               </div>

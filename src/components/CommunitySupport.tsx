@@ -6,23 +6,23 @@ import supportBg from "@/assets/support-bg-image.png";
 
 export const CommunitySupport = () => {
   return (
-    <section className="py-24 px-4 bg-black">
+    <section className="py-16 md:py-24 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {/* Left Column - Platform Card */}
-          <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/40 border border-slate-700/50 rounded-3xl overflow-hidden min-h-[580px]">
+          <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/40 border border-slate-700/50 rounded-3xl overflow-hidden min-h-[400px] md:min-h-[580px]">
             {/* Platform Badge */}
-            <div className="absolute top-6 left-6 z-10">
-              <span className="text-slate-400 text-sm">Platform</span>
+            <div className="absolute top-4 md:top-6 left-4 md:left-6 z-10">
+              <span className="text-slate-400 text-xs md:text-sm">Platform</span>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 p-8 pt-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+            <div className="relative z-10 p-6 md:p-8 pt-12 md:pt-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 md:mb-6">
                 Unlock the <span className="text-cyan-400">$7 trillion</span>
                 <br />a day market with wefund
               </h2>
-              <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-6 rounded-lg">
+              <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-6 md:px-8 py-5 md:py-6 rounded-lg text-sm md:text-base">
                 Get Funded Today
               </Button>
             </div>
@@ -38,15 +38,15 @@ export const CommunitySupport = () => {
           </div>
 
           {/* Right Column - Community & Support */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 md:gap-6">
             {/* Header Badge */}
             <div className="flex items-center gap-2">
-              <Users className="w-5 h-5 text-cyan-400" />
-              <span className="text-white font-medium">Community & Support</span>
+              <Users className="w-4 md:w-5 h-4 md:h-5 text-cyan-400" />
+              <span className="text-white font-medium text-sm md:text-base">Community & Support</span>
             </div>
 
             {/* General Support Card */}
-            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/40 border border-slate-700/50 rounded-3xl overflow-hidden flex-1 min-h-[240px]">
+            <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/40 border border-slate-700/50 rounded-3xl overflow-hidden flex-1 min-h-[200px] md:min-h-[240px]">
               {/* Background Image */}
               <div className="absolute inset-0">
                 <img
@@ -57,13 +57,13 @@ export const CommunitySupport = () => {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                <h3 className="text-xl font-bold text-white mb-2">General Support</h3>
-                <div className="flex items-end justify-between">
-                  <p className="text-slate-400 text-sm max-w-[200px]">
+              <div className="relative z-10 p-4 md:p-6 h-full flex flex-col justify-end">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">General Support</h3>
+                <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3">
+                  <p className="text-slate-400 text-xs md:text-sm max-w-[200px]">
                     Get in touch with questions about your account.
                   </p>
-                  <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium px-6 py-5 rounded-lg">
+                  <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium px-4 md:px-6 py-4 md:py-5 rounded-lg text-sm md:text-base w-full sm:w-auto">
                     Get in Touch
                   </Button>
                 </div>
@@ -71,7 +71,7 @@ export const CommunitySupport = () => {
             </div>
 
             {/* Discord Card */}
-            <div className="relative bg-gradient-to-br from-slate-900/80 to-purple-900/20 border border-slate-700/50 rounded-3xl overflow-hidden flex-1 min-h-[240px]">
+            <div className="relative bg-gradient-to-br from-slate-900/80 to-purple-900/20 border border-slate-700/50 rounded-3xl overflow-hidden flex-1 min-h-[200px] md:min-h-[240px]">
             {/* Background Image */}
               <div className="absolute inset-0">
                 <img
@@ -82,10 +82,10 @@ export const CommunitySupport = () => {
               </div>
 
               {/* Discord Icon Badge */}
-              <div className="absolute top-6 left-6 z-10">
-                <div className="w-12 h-12 bg-purple-600/80 rounded-xl flex items-center justify-center">
+              <div className="absolute top-4 md:top-6 left-4 md:left-6 z-10">
+                <div className="w-10 md:w-12 h-10 md:h-12 bg-purple-600/80 rounded-xl flex items-center justify-center">
                   <svg
-                    className="w-7 h-7 text-purple-300"
+                    className="w-5 md:w-7 h-5 md:h-7 text-purple-300"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -95,15 +95,15 @@ export const CommunitySupport = () => {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                <h3 className="text-xl font-bold text-white mb-2">Join Discord</h3>
-                <div className="flex items-end justify-between">
-                  <p className="text-slate-400 text-sm max-w-[240px]">
+              <div className="relative z-10 p-4 md:p-6 h-full flex flex-col justify-end">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">Join Discord</h3>
+                <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3">
+                  <p className="text-slate-400 text-xs md:text-sm max-w-[240px]">
                     Join our the most transparent community out there. Don't miss any of our future updates and discount codes.
                   </p>
                   <Button 
                     variant="outline" 
-                    className="border-slate-600 text-white hover:bg-slate-800 font-medium px-6 py-5 rounded-lg"
+                    className="border-slate-600 text-white hover:bg-slate-800 font-medium px-4 md:px-6 py-4 md:py-5 rounded-lg text-sm md:text-base w-full sm:w-auto"
                   >
                     Join Discord
                   </Button>

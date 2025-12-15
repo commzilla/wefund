@@ -38,21 +38,21 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-black">
+    <section className="py-16 md:py-24 px-4 bg-black">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-6">
-            <HelpCircle className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-400 text-sm font-medium">FAQs</span>
+        <div className="text-center mb-8 md:mb-12">
+          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-3 md:px-4 py-1.5 md:py-2 mb-4 md:mb-6">
+            <HelpCircle className="w-3 md:w-4 h-3 md:h-4 text-cyan-400" />
+            <span className="text-cyan-400 text-xs md:text-sm font-medium">FAQs</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Explore some common questions
           </h2>
         </div>
 
         {/* Accordion */}
-        <div className="space-y-3">
+        <div className="space-y-2 md:space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openItem === index;
             return (
@@ -68,14 +68,14 @@ export const FAQ = () => {
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full flex items-center justify-between p-5 text-left transition-colors"
+                  className="w-full flex items-center justify-between p-4 md:p-5 text-left transition-colors"
                 >
-                  <span className="text-white font-medium pr-4">{faq.question}</span>
+                  <span className="text-white font-medium pr-4 text-sm md:text-base">{faq.question}</span>
                   <div className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                     {isOpen ? (
-                      <Minus className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                      <Minus className="w-4 md:w-5 h-4 md:h-5 text-cyan-400 flex-shrink-0" />
                     ) : (
-                      <Plus className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                      <Plus className="w-4 md:w-5 h-4 md:h-5 text-slate-400 flex-shrink-0" />
                     )}
                   </div>
                 </button>
@@ -86,8 +86,8 @@ export const FAQ = () => {
                   `}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 pb-5">
-                      <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-line">
+                    <div className="px-4 md:px-5 pb-4 md:pb-5">
+                      <p className="text-slate-400 text-xs md:text-sm leading-relaxed whitespace-pre-line">
                         {faq.answer}
                       </p>
                     </div>
@@ -99,10 +99,10 @@ export const FAQ = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-8 md:mt-10">
           <Button 
             variant="outline" 
-            className="border-cyan-500/30 text-white hover:bg-cyan-500/10 hover:border-cyan-500/50 px-8 py-6 rounded-full transition-all duration-300"
+            className="border-cyan-500/30 text-white hover:bg-cyan-500/10 hover:border-cyan-500/50 px-6 md:px-8 py-5 md:py-6 rounded-full transition-all duration-300 text-sm md:text-base"
             asChild
           >
             <a href="https://support.we-fund.com/en/" target="_blank" rel="noopener noreferrer">
