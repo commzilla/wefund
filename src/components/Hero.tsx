@@ -10,7 +10,6 @@ import futureImage from "@/assets/future-prop-trading.png?format=webp&quality=75
 import payoutsProcessedImage from "@/assets/payouts-processed-bg.png?format=webp&quality=75";
 import highestPayoutImage from "@/assets/highest-payout-bg.png?format=webp&quality=75";
 import avgPayoutImage from "@/assets/avg-payout-bg.png?format=webp&quality=75";
-import mt5Badge from "@/assets/mt5-badge.png?format=webp&quality=80";
 import heroTrustBadge from "@/assets/hero-trust.png?format=webp&quality=80";
 import {
   Carousel,
@@ -150,9 +149,12 @@ export const Hero = () => {
         {/* Trust Badges */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
           <img 
-            src={mt5Badge} 
+            src="/images/mt5-badge.webp" 
             alt="MetaTrader 5" 
+            width="149"
+            height="40"
             className="h-10 md:h-12 animate-glow" 
+            fetchPriority="high"
           />
           {/* Hide second badge on mobile */}
           <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="hidden md:block h-12" />
