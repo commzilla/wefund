@@ -216,37 +216,94 @@ export const AccountSelector = () => {
               </TableBody>
             </Table>
             
-            {/* Footer */}
-            <div className="relative z-10 px-6 py-5 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/80 border-t border-slate-600/40">
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                {/* See all trading rules button */}
-                <button className="group flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                  <span className="text-white font-semibold text-[14px]">See all trading rules</span>
-                  <svg className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+            {/* Footer - Premium Design */}
+            <div className="relative z-10 px-6 py-6 bg-gradient-to-b from-transparent via-slate-900/40 to-slate-950/80 border-t border-slate-700/30">
+              {/* Animated glow line */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
+              
+              <div className="flex items-center justify-between flex-wrap gap-5">
+                {/* See all trading rules - Premium Button */}
+                <button className="group relative overflow-hidden px-6 py-3 rounded-2xl transition-all duration-500">
+                  {/* Animated gradient border */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-[1px] rounded-2xl bg-slate-900/95 group-hover:bg-slate-900/80 transition-colors duration-300" />
+                  
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-xl" />
+                  
+                  <div className="relative flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <span className="text-white font-bold text-[15px] tracking-wide">See all trading rules</span>
+                    <svg className="w-5 h-5 text-cyan-400 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
                 </button>
                 
-                {/* Feature badges */}
-                <div className="flex items-center gap-3">
-                  {/* Add-ons badge */}
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-600/30">
-                    <span className="text-purple-400 text-sm">🎁</span>
-                    <span className="text-slate-300 text-[12px]">add-ons available</span>
+                {/* Feature Cards */}
+                <div className="flex items-center gap-4">
+                  {/* Profit Split Card */}
+                  <div className="group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse" />
+                    <div className="relative px-5 py-3 rounded-xl bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-amber-500/30 group-hover:border-amber-400/50 transition-all duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/40">
+                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                          </svg>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-slate-400 text-[11px] uppercase tracking-wider">Profit Splits</span>
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-amber-400 font-black text-xl">100</span>
+                            <span className="text-amber-400 font-bold text-sm">%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  {/* Profit split badge */}
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20">
-                    <span className="text-yellow-400 text-sm">⚡</span>
-                    <span className="text-slate-300 text-[12px]">Profit Splits up to</span>
-                    <span className="text-cyan-400 font-bold text-[13px]">100%</span>
+                  {/* Get Funded Card */}
+                  <div className="group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                    <div className="relative px-5 py-3 rounded-xl bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-emerald-500/30 group-hover:border-emerald-400/50 transition-all duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 via-green-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/40">
+                          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-slate-400 text-[11px] uppercase tracking-wider">Get Funded</span>
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-emerald-400 font-black text-xl">$400</span>
+                            <span className="text-emerald-400 font-bold text-sm">K</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  {/* Get funded badge */}
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-600/5 border border-green-500/20">
-                    <span className="text-green-400 text-sm">💰</span>
-                    <span className="text-slate-300 text-[12px]">Get Funded up to</span>
-                    <span className="text-green-400 font-bold text-[13px]">$400K</span>
+                  {/* Add-ons Card */}
+                  <div className="group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-violet-500 to-fuchsia-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="relative px-5 py-3 rounded-xl bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-purple-500/30 group-hover:border-purple-400/50 transition-all duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-400 via-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-purple-500/40">
+                          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                          </svg>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-slate-400 text-[11px] uppercase tracking-wider">Premium</span>
+                          <span className="text-purple-400 font-bold text-[14px]">Add-ons</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
