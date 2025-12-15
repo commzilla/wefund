@@ -86,22 +86,27 @@ export const AccountSelector = () => {
               {/* Account Type */}
               <div className="mb-4">
                 <h4 className="text-slate-400 text-[12px] font-medium mb-2 uppercase tracking-wider">Account Type</h4>
-                <div className="rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5 grid grid-cols-3 gap-1.5">
-                  {/* Selected */}
-                  <Button className="bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    1 Step - Algo
-                  </Button>
-                  <div className="relative pt-2">
-                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] px-4 py-1 bg-slate-800 text-slate-200 rounded-full whitespace-nowrap font-semibold border border-slate-600/60 shadow-lg z-10">
+                <div className="relative rounded-xl bg-slate-900/60 border border-blue-500/20 p-1.5">
+                  {/* Coming Soon Badge - positioned above grid */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                    <span className="text-[10px] px-3 py-1 bg-slate-900/70 text-slate-300 rounded-full whitespace-nowrap font-semibold border border-slate-500/30 shadow-lg backdrop-blur-md">
                       Coming Soon
                     </span>
-                    <Button className="w-full bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 font-medium text-sm transition-colors">
+                    <div className="w-px h-2 bg-slate-500/40"></div>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {/* Selected */}
+                    <Button className="bg-gradient-to-b from-cyan-500/20 to-cyan-600/10 text-white border border-cyan-500/40 rounded-xl py-3 font-medium text-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                      1 Step - Algo
+                    </Button>
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 font-medium text-sm transition-colors">
                       1 Step Pro
                     </Button>
+                    <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 font-medium text-sm transition-colors">
+                      2 Step
+                    </Button>
                   </div>
-                  <Button className="bg-slate-800/50 hover:bg-slate-700/50 text-slate-500 border border-transparent rounded-xl py-3 font-medium text-sm transition-colors">
-                    2 Step
-                  </Button>
                 </div>
               </div>
 
