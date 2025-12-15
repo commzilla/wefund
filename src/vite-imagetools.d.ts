@@ -1,12 +1,22 @@
 /// <reference types="vite-imagetools/client" />
 
 // Handle all image imports with query parameters
+declare module '*.png?format=webp&quality=70' {
+  const src: string;
+  export default src;
+}
+
 declare module '*.png?format=webp&quality=75' {
   const src: string;
   export default src;
 }
 
 declare module '*.png?format=webp&quality=80' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.jpg?format=webp&quality=70' {
   const src: string;
   export default src;
 }
