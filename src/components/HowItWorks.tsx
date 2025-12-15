@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { RefreshCw, CheckCircle, Wallet, BarChart3 } from "lucide-react";
-import createVerifyBg from "@/assets/create-verify-bg-image.png";
-import tradingEarnBg from "@/assets/trading-earn-bg-image.png";
-import scaleCapitalBg from "@/assets/scale-capital-bg-image.png";
+import createVerifyBg from "@/assets/create-verify-bg-image.png?format=webp&quality=70";
+import tradingEarnBg from "@/assets/trading-earn-bg-image.png?format=webp&quality=70";
+import scaleCapitalBg from "@/assets/scale-capital-bg-image.png?format=webp&quality=70";
 
 export const HowItWorks = () => {
   const steps = [

@@ -1,8 +1,8 @@
-import payoutBadge from "@/assets/payout-badge.png";
-import dailyPayoutBg from "@/assets/daily-payout-bg-image.png";
-import lightningFastBg from "@/assets/lightning-fast-bg-image.png";
-import keepProfitBg from "@/assets/keep-profit-bg-image.png";
-import riseScaled from "@/assets/rise-scaled.png";
+import payoutBadge from "@/assets/payout-badge.png?format=webp&quality=80";
+import dailyPayoutBg from "@/assets/daily-payout-bg-image.png?format=webp&quality=70";
+import lightningFastBg from "@/assets/lightning-fast-bg-image.png?format=webp&quality=70";
+import keepProfitBg from "@/assets/keep-profit-bg-image.png?format=webp&quality=70";
+import riseScaled from "@/assets/rise-scaled.png?format=webp&quality=75";
 
 export const PayoutsSection = () => {
   return (

@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
-import platformCoinsBg from "@/assets/platform-coins-bg.png";
-import discordBg from "@/assets/discord-bg.png";
-import supportBg from "@/assets/support-bg-image.png";
+import platformCoinsBg from "@/assets/platform-coins-bg.png?format=webp&quality=70";
+import discordBg from "@/assets/discord-bg.png?format=webp&quality=75";
+import supportBg from "@/assets/support-bg-image.png?format=webp&quality=70";
 
 export const CommunitySupport = () => {
   return (
