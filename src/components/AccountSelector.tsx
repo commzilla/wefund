@@ -243,44 +243,44 @@ export const AccountSelector = () => {
                 {/* See all trading rules - Simple text */}
                 <span className="text-white font-semibold text-[15px]">See all trading rules</span>
                 
-                {/* Feature Cards - Compact style */}
+                {/* Feature Cards - Cyan themed style */}
                 <div className="flex items-center gap-3">
                   {/* Profit Split */}
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/60 border border-amber-500/30">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-cyan-500/30 backdrop-blur-sm">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                       </svg>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-slate-500 text-[10px] uppercase tracking-wider">Profit Splits</span>
-                      <span className="text-amber-400 font-bold text-[14px]">100%</span>
+                      <span className="text-slate-400 text-[10px] uppercase tracking-wider">Profit Splits</span>
+                      <span className="text-cyan-400 font-bold text-[14px]">100%</span>
                     </div>
                   </div>
                   
                   {/* Get Funded */}
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/60 border border-emerald-500/30">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-cyan-500/30 backdrop-blur-sm">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-slate-500 text-[10px] uppercase tracking-wider">Get Funded</span>
-                      <span className="text-emerald-400 font-bold text-[14px]">$400K</span>
+                      <span className="text-slate-400 text-[10px] uppercase tracking-wider">Get Funded</span>
+                      <span className="text-cyan-400 font-bold text-[14px]">$400K</span>
                     </div>
                   </div>
                   
                   {/* Add-ons */}
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/60 border border-purple-500/30">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-fuchsia-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/60 border border-cyan-500/30 backdrop-blur-sm">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                       </svg>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-slate-500 text-[10px] uppercase tracking-wider">Premium</span>
-                      <span className="text-purple-400 font-bold text-[14px]">Add-ons</span>
+                      <span className="text-slate-400 text-[10px] uppercase tracking-wider">Premium</span>
+                      <span className="text-cyan-400 font-bold text-[14px]">Add-ons</span>
                     </div>
                   </div>
                 </div>
