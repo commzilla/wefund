@@ -35,14 +35,16 @@ export const AccountSelector = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-8">
           
           {/* Left Column - Configure Challenge */}
-          <div 
-            className="relative rounded-2xl bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 p-10 overflow-hidden shadow-xl transition-colors"
-            style={{
-              backgroundImage: `url(${cardsCarouselBg})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
+          <div className="relative p-[1px] rounded-[28px] bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-blue-900/30 blur-sm" />
+            <div 
+              className="relative rounded-[27px] bg-gradient-to-br from-slate-800/95 via-slate-900/90 to-blue-950/80 backdrop-blur-sm p-10 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]"
+              style={{
+                backgroundImage: `url(${cardsCarouselBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
             {/* Internal Stars Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(25)].map((_, i) => (
@@ -140,17 +142,20 @@ export const AccountSelector = () => {
                 <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[400px] opacity-80" />
               </div>
             </div>
+            </div>
           </div>
 
           {/* Right Column - Table */}
-          <div 
-            className="relative rounded-2xl bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-blue-950/60 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 overflow-hidden shadow-xl flex flex-col transition-colors"
-            style={{
-              backgroundImage: `url(${cardsCarouselBg})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
+          <div className="relative p-[1px] rounded-[28px] bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-blue-900/30 blur-sm" />
+            <div 
+              className="relative rounded-[27px] bg-gradient-to-br from-slate-800/95 via-slate-900/90 to-blue-950/80 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] flex flex-col"
+              style={{
+                backgroundImage: `url(${cardsCarouselBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
             {/* Internal Stars Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(25)].map((_, i) => (
@@ -218,6 +223,7 @@ export const AccountSelector = () => {
                 <span className="text-white">Profit Splits of up to</span>
                 <span className="text-cyan-400 font-semibold">100%</span>
               </div>
+            </div>
             </div>
           </div>
         </div>
