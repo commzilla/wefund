@@ -6,7 +6,7 @@ import paymentsImage from "@/assets/payments.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0a1520] pt-16 pb-8 px-6">
+    <footer className="bg-[#0b1929] pt-16 pb-8 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
