@@ -145,7 +145,6 @@ export const AccountSelector = () => {
               <div className="flex items-center justify-center">
                 <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[360px] opacity-90" />
               </div>
-              </div>
             </div>
             </div>
           </div>
