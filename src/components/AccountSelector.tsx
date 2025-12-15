@@ -134,16 +134,17 @@ export const AccountSelector = () => {
               </div>
 
               {/* CTA Button */}
-              <div className="relative mb-4 group">
-                <div className="absolute -inset-1.5 bg-cyan-500/25 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <Button className="relative w-full bg-gradient-to-b from-slate-800/80 to-slate-900/80 text-white py-6 text-[15px] font-semibold rounded-xl uppercase tracking-[0.15em] border border-cyan-500/40 shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:shadow-[0_0_40px_rgba(6,182,212,0.25)] transition-all duration-300">
+              <div className="relative mb-5 group mt-auto">
+                <div className="absolute -inset-2 bg-cyan-500/25 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
+                <Button className="relative w-full bg-gradient-to-b from-slate-800/80 to-slate-900/80 text-white py-8 text-[17px] font-bold rounded-xl uppercase tracking-[0.18em] border border-cyan-500/40 shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:shadow-[0_0_40px_rgba(6,182,212,0.25)] transition-all duration-300">
                   GET FUNDED NOW
                 </Button>
               </div>
 
               {/* Payment Icons */}
               <div className="flex items-center justify-center">
-                <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[280px] opacity-80" />
+                <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[360px] opacity-90" />
+              </div>
               </div>
             </div>
             </div>
