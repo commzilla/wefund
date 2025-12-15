@@ -42,25 +42,30 @@ export const TestimonialsSection = () => {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent mb-12" />
 
         {/* Scrolling Carousel */}
-        <div className="relative">
-          {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          
-          {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-          
+        <div className="relative overflow-hidden">
           {/* Scrolling container */}
           <div className="flex gap-6 animate-scroll-testimonials">
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[300px] md:w-[350px] rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300"
+                className="flex-shrink-0 w-[350px] md:w-[400px] flex flex-col gap-3"
               >
-                <img
-                  src={testimonial}
-                  alt={`Trader testimonial ${(index % testimonials.length) + 1}`}
-                  className="w-full h-auto object-cover"
-                />
+                {/* Blue brand button above card */}
+                <button
+                  className="w-full py-2 px-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-colors duration-300"
+                  onClick={() => {/* Video link will be added later */}}
+                >
+                  Watch Video
+                </button>
+                
+                {/* Testimonial card */}
+                <div className="rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                  <img
+                    src={testimonial}
+                    alt={`Trader testimonial ${(index % testimonials.length) + 1}`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
