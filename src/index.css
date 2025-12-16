@@ -46,6 +46,15 @@ All colors MUST be HSL.
     /* Footer (pure black with cyan glow) */
     --footer: 0 0% 0%;
     --footer-2: 0 0% 0%;
+
+    /* Typography - consistent across all pages */
+    --font-family: 'Inter', sans-serif;
+    
+    /* Text colors */
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --text-muted: 215 15% 50%;
+    --text-accent: 190 100% 50%;
   }
 }
 

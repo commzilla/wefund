@@ -54,6 +54,11 @@ export default {
         glow: {
           DEFAULT: "hsl(var(--glow-primary))",
         },
+        // Text semantic colors
+        "text-primary": "hsl(var(--text-primary))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        "text-muted": "hsl(var(--text-muted))",
+        "text-accent": "hsl(var(--text-accent))",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
