@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
+import { Footer } from "@/components/Footer";
 
 const Checkout = () => {
   const [searchParams] = useSearchParams();
@@ -95,6 +96,9 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
