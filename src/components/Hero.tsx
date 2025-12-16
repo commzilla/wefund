@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import wefundTextLogo from "@/assets/wefund-text-logo.png?format=webp&quality=80";
 import heroBackground from "@/assets/hero-background-new.png?format=webp&quality=80";
@@ -20,6 +21,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 const CommunityCard = () => (
@@ -144,6 +146,18 @@ const MobileFeatureItem = ({ icon, text }: { icon: string; text: string }) => (
 );
 
 export const Hero = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
       {/* Hero Background */}
@@ -241,6 +255,7 @@ export const Hero = () => {
         {/* Mobile Carousel */}
         <div className="md:hidden mt-4 px-0">
           <Carousel
+            setApi={setApi}
             opts={{
               align: "center",
               loop: true,
@@ -259,6 +274,20 @@ export const Hero = () => {
               </CarouselItem>
             </CarouselContent>
           </Carousel>
+          {/* Carousel Dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  current === index 
+                    ? "bg-white w-3" 
+                    : "bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop Stats Grid */}
