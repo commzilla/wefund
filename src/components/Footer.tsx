@@ -24,8 +24,8 @@ export const Footer = () => {
 
             {/* Trust Badges */}
             <div className="flex flex-row lg:flex-col gap-3 justify-center lg:justify-start">
-              <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-10 md:h-14" />
-              <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-10 md:h-14" />
+              <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-10 md:h-14 w-auto object-contain" />
+              <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-10 md:h-14 w-auto object-contain" />
             </div>
 
             {/* Copyright */}
