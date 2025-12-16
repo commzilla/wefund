@@ -275,7 +275,7 @@ export const Hero = () => {
             </CarouselContent>
           </Carousel>
           {/* Carousel Dots */}
-          <div className="flex justify-center gap-2 mt-1">
+          <div className="flex justify-center gap-2 -mt-2">
             {[0, 1, 2].map((index) => (
               <button
                 key={index}
