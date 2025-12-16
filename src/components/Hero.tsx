@@ -11,6 +11,8 @@ import payoutsProcessedImage from "@/assets/payouts-processed-bg.png?format=webp
 import highestPayoutImage from "@/assets/highest-payout-bg.png?format=webp&quality=75";
 import avgPayoutImage from "@/assets/avg-payout-bg.png?format=webp&quality=75";
 import heroTrustBadge from "@/assets/hero-trust.png?format=webp&quality=80";
+import trustpilotBadge from "@/assets/trustpilot-hero.png";
+import ttpBadge from "@/assets/trustedprop-hero.png";
 import itemIcon1 from "@/assets/item-icon-1.png";
 import itemIcon2 from "@/assets/item-icon-2.png";
 import itemIcon3 from "@/assets/item-icon-3.png";
@@ -232,53 +234,11 @@ export const Hero = () => {
 
         {/* Mobile Trust Badges */}
         <div className="md:hidden flex flex-col gap-3 px-2 mb-6">
-          {/* Trustpilot Badge */}
-          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="text-sm text-muted-foreground">Excellent</span>
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-5 h-5 bg-[#00B67A] flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  </div>
-                ))}
-              </div>
-              <svg className="h-5 w-auto" viewBox="0 0 126 31" fill="none">
-                <path d="M21.2 0H126v31H21.2z" fill="#fff"/>
-                <path d="M21.2 0h20.3v31H21.2z" fill="#00B67A"/>
-                <path d="M31.3 20.8l2.5-1.8h-3.1l-.9-3-1 3h-3l2.5 1.8-1 3 2.5-1.9 2.5 1.9z" fill="#fff"/>
-                <path d="M61.5 10.2h-1.8l-1.1 3.6-1.2-3.6h-1.8l2.2 5.5v3.3h1.5v-3.3l2.2-5.5zm7.2 4.5c0-1.6-1-2.7-2.6-2.7-.8 0-1.4.3-1.8.7v-.5h-1.5V19h1.5v-4.1c0-1 .6-1.6 1.5-1.6s1.4.6 1.4 1.5V19h1.5v-4.3zm4.5-2.7c-1.8 0-3.1 1.3-3.1 3.1 0 1.9 1.3 3.2 3.1 3.2 1.2 0 2.2-.6 2.7-1.5l-1.2-.7c-.3.5-.8.8-1.5.8-.9 0-1.5-.5-1.7-1.3h4.6v-.5c0-1.8-1.2-3.1-2.9-3.1zm-1.6 2.5c.2-.8.8-1.2 1.6-1.2.7 0 1.3.5 1.4 1.2h-3zm7.3-2.5c-.7 0-1.2.3-1.5.7v-.5h-1.5V19h1.5v-3.8c0-1.1.5-1.6 1.3-1.6h.6V12h-.5z" fill="#1A1A1A"/>
-                <path d="M47.7 10.2v8.8h1.6v-3.3l2.7 3.3h2.1l-3.1-3.6 2.9-3.4h-2l-2.5 3v-4.8h-1.7z" fill="#1A1A1A"/>
-              </svg>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs">
-              <span className="text-primary font-medium">Rated 4.5/5</span>
-              <span className="text-muted-foreground">based on 154 reviews</span>
-            </div>
+          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3 flex justify-center">
+            <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-12" />
           </div>
-          
-          {/* TTP Badge */}
-          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="text-sm text-muted-foreground">Awesome</span>
-              <div className="flex gap-0.5">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="w-5 h-5 bg-[#00B67A] flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  </div>
-                ))}
-              </div>
-              <span className="text-xs font-medium text-muted-foreground">TTP</span>
-              <span className="text-xs font-semibold text-foreground">The Trusted Prop</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs">
-              <span className="text-primary font-medium">Rated 4.5/5</span>
-              <span className="text-muted-foreground">based on 64 reviews</span>
-            </div>
+          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3 flex justify-center">
+            <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-12" />
           </div>
         </div>
 
