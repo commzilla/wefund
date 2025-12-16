@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import paymentsImage from "@/assets/payments.png";
+import paymentsImage from "@/assets/mobile-pay-methods.png";
+import startChallengeBtn from "@/assets/start-challenge-btn.png";
 import mt5Logo from "@/assets/metatrader5-logo.webp";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
 
@@ -112,17 +113,10 @@ export const AccountSelector = () => {
               </div>
 
               {/* CTA Button */}
-              <div className="relative mb-4 lg:mb-5 group mt-auto">
-                {/* Subtle outer glow */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-cyan-500/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                
-                <Button className="relative w-full overflow-hidden bg-gradient-to-b from-slate-800/95 via-slate-900/95 to-slate-950/95 text-white py-6 lg:py-8 text-base lg:text-[18px] font-bold rounded-xl uppercase tracking-[0.15em] lg:tracking-[0.2em] border border-cyan-500/40 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:border-cyan-400/60 transition-all duration-300">
-                  {/* Static Stars - CSS pattern for performance */}
-                  <div className="absolute inset-0 stars-pattern-cyan" />
-                  {/* Subtle top highlight */}
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
-                  <span className="relative z-10 text-cyan-50">GET FUNDED NOW</span>
-                </Button>
+              <div className="relative mb-4 lg:mb-5 mt-auto">
+                <a href="#" className="block w-full hover:opacity-90 transition-opacity">
+                  <img src={startChallengeBtn} alt="Get Funded Now" className="w-full h-auto" />
+                </a>
               </div>
 
               {/* Payment Icons */}
