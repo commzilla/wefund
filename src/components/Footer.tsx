@@ -23,9 +23,9 @@ export const Footer = () => {
             <p className="text-gray-400 text-sm">support@we-fund.com</p>
 
             {/* Trust Badges */}
-            <div className="flex flex-row lg:flex-col gap-3 justify-center lg:justify-start">
-              <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-10 md:h-14 w-auto object-contain" />
-              <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-10 md:h-14 w-auto object-contain" />
+            <div className="flex flex-col gap-3 items-start">
+              <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-14 md:h-16 w-auto object-contain" />
+              <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-14 md:h-16 w-auto object-contain" />
             </div>
 
             {/* Copyright */}
