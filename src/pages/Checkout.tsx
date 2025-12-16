@@ -1,8 +1,7 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
@@ -10,9 +9,7 @@ import CheckoutForm from "@/components/checkout/CheckoutForm";
 const Checkout = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const isMobile = useIsMobile();
   const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   const type = searchParams.get("type") || "1step-algo";
@@ -28,12 +25,18 @@ const Checkout = () => {
     }
   };
 
-  const handleMobileSubmit = () => {
-    // Trigger the form submit from CheckoutForm
-    const form = document.querySelector('form');
-    if (form) {
-      form.requestSubmit();
-    }
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    
+    // Simulate processing
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    
+    toast({
+      title: "Order Submitted! 🎉",
+      description: "Payment integration coming soon. Your order details have been logged.",
+    });
+    
+    setIsSubmitting(false);
   };
 
   return (
@@ -77,7 +80,6 @@ const Checkout = () => {
               accountType={getAccountTypeName(type)}
               accountSize={size}
               price={price}
-              isMobile={isMobile}
             />
           </div>
 
@@ -87,9 +89,8 @@ const Checkout = () => {
               accountType={getAccountTypeName(type)}
               accountSize={size}
               price={price}
-              showMobileButton={isMobile}
               isSubmitting={isSubmitting}
-              onSubmit={handleMobileSubmit}
+              onSubmit={handleSubmit}
             />
           </div>
         </div>

@@ -2,14 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { ChevronDown, Lock, Tag } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown, Tag } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
-import paymentsImage from "@/assets/payments.png";
-import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
 import PaymentMethods from "./PaymentMethods";
 
 const checkoutSchema = z.object({
@@ -27,8 +24,6 @@ interface CheckoutFormProps {
   accountType: string;
   accountSize: string;
   price: string;
-  onSubmitForm?: () => void;
-  isMobile?: boolean;
 }
 
 const countries = [
@@ -230,9 +225,8 @@ const countries = [
   { code: "ZW", name: "Zimbabwe" },
 ];
 
-const CheckoutForm = ({ accountType, accountSize, price, onSubmitForm, isMobile = false }: CheckoutFormProps) => {
+const CheckoutForm = ({ accountType, accountSize, price }: CheckoutFormProps) => {
   const [showDiscount, setShowDiscount] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const {
@@ -252,19 +246,12 @@ const CheckoutForm = ({ accountType, accountSize, price, onSubmitForm, isMobile 
   });
 
   const onSubmit = async (data: CheckoutFormData) => {
-    setIsSubmitting(true);
-    
-    // Simulate processing
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
     console.log("Checkout data:", { ...data, accountType, accountSize, price });
     
     toast({
-      title: "Order Submitted! 🎉",
-      description: "Payment integration coming soon. Your order details have been logged.",
+      title: "Form Validated! ✓",
+      description: "Your information has been saved. Complete your purchase in the Order Summary.",
     });
-    
-    setIsSubmitting(false);
   };
 
   return (
@@ -397,7 +384,7 @@ const CheckoutForm = ({ accountType, accountSize, price, onSubmitForm, isMobile 
         </div>
 
         {/* Payment Method */}
-        <div className="mb-8">
+        <div>
           <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
             <span className="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 text-sm flex items-center justify-center">2</span>
             Payment Method
@@ -405,47 +392,6 @@ const CheckoutForm = ({ accountType, accountSize, price, onSubmitForm, isMobile 
           
           <PaymentMethods />
         </div>
-
-        {/* Submit Button - Hidden on mobile (shown in OrderSummary) */}
-        {!isMobile && (
-          <>
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-black rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-300"
-            >
-              {isSubmitting ? (
-                <span className="flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                  Processing...
-                </span>
-              ) : (
-                <span className="flex items-center gap-2">
-                  <Lock className="w-5 h-5" />
-                  Complete Purchase - ${price}
-                </span>
-              )}
-            </Button>
-
-            {/* Payment Icons - Desktop */}
-            <div className="flex items-center justify-center mt-6">
-              <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[360px] opacity-90" />
-            </div>
-
-            {/* Security note */}
-            <p className="text-center text-xs text-muted-foreground mt-4 flex items-center justify-center gap-1">
-              <Lock className="w-3 h-3" />
-              Your payment information is encrypted and secure
-            </p>
-          </>
-        )}
-
-        {/* Payment Icons - Mobile only */}
-        {isMobile && (
-          <div className="flex items-center justify-center mt-4">
-            <img src={mobilePaymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[300px] opacity-90" />
-          </div>
-        )}
       </form>
     </div>
   );
