@@ -1,13 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { useNavigate } from "react-router-dom";
 import paymentsImage from "@/assets/payments.png";
 import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
 import startChallengeBtn from "@/assets/start-challenge-btn.png";
 import mt5Logo from "@/assets/metatrader5-logo.webp";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
-
-
 export const AccountSelector = () => {
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/checkout?type=1step-algo&size=100k&price=547");
+  };
+
   return (
     <section id="objectives" className="py-16 md:py-24 px-4 bg-black relative overflow-hidden">
       {/* Static Stars Background - CSS pattern for performance */}
@@ -115,9 +120,12 @@ export const AccountSelector = () => {
 
               {/* CTA Button */}
               <div className="relative mb-4 lg:mb-5 mt-auto">
-                <a href="#" className="block w-full hover:opacity-90 transition-opacity">
+                <button 
+                  onClick={handleCheckout}
+                  className="block w-full hover:opacity-90 transition-opacity"
+                >
                   <img src={startChallengeBtn} alt="Get Funded Now" className="w-full h-auto" />
-                </a>
+                </button>
               </div>
 
               {/* Payment Icons */}
