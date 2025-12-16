@@ -191,9 +191,9 @@ export const Hero = () => {
         </h1>
 
         {/* Main Headline - Mobile */}
-        <h1 className="md:hidden text-5xl font-extrabold text-foreground mb-4 leading-tight">
-          You Trade,<br />
-          <span className="text-primary">We Fund</span>
+        <h1 className="md:hidden flex flex-col items-center text-5xl font-extrabold text-foreground mb-4 leading-tight">
+          <span>You Trade,</span>
+          <img src={wefundTextLogo} alt="We Fund" className="h-[0.7em] mt-1" />
         </h1>
 
         {/* Subtitle - Desktop */}
@@ -234,16 +234,12 @@ export const Hero = () => {
 
         {/* Mobile Trust Badges */}
         <div className="md:hidden flex flex-col gap-3 px-2 mb-6">
-          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3 flex justify-center">
-            <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-12" />
-          </div>
-          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3 flex justify-center">
-            <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-12" />
-          </div>
+          <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-12 mx-auto" />
+          <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-12 mx-auto" />
         </div>
 
-        {/* Mobile Carousel - Hidden on new design, keeping for reference */}
-        <div className="hidden mt-4 px-0">
+        {/* Mobile Carousel */}
+        <div className="md:hidden mt-4 px-0">
           <Carousel
             opts={{
               align: "center",
