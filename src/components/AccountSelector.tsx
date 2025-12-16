@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import paymentsImage from "@/assets/mobile-pay-methods.png";
+import paymentsImage from "@/assets/payments.png";
+import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
 import startChallengeBtn from "@/assets/start-challenge-btn.png";
 import mt5Logo from "@/assets/metatrader5-logo.webp";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
@@ -121,7 +122,8 @@ export const AccountSelector = () => {
 
               {/* Payment Icons */}
               <div className="flex items-center justify-center">
-                <img src={paymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[300px] lg:max-w-[360px] opacity-90" />
+                <img src={mobilePaymentsImage} alt="Payment Methods" className="lg:hidden w-full h-auto max-w-[300px] opacity-90" />
+                <img src={paymentsImage} alt="Payment Methods" className="hidden lg:block w-full h-auto max-w-[360px] opacity-90" />
               </div>
             </div>
             </div>
