@@ -166,7 +166,7 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
           {/* Trust Banner */}
           <div className="mt-6 pt-4 border-t border-white/10">
             <div 
-              className="rounded-xl p-4 flex items-center justify-between gap-4"
+              className="rounded-xl px-4 py-3 flex items-center justify-between gap-3"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
               }}
@@ -175,19 +175,20 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
                 <img 
                   src={trustBadgeIcon} 
                   alt="Trust Badge" 
-                  className="w-10 h-10"
+                  className="w-8 h-8"
                   style={{ filter: 'invert(58%) sepia(89%) saturate(1000%) hue-rotate(155deg) brightness(95%) contrast(101%)' }}
                 />
-                <p className="text-sm text-foreground">
+                <p className="text-xs text-foreground leading-tight">
                   Trusted by traders in 120+<br />
                   countries worldwide
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-lg font-bold text-cyan-400">
-                  $400K+ <span className="text-foreground">Paid Out</span>
+                <p className="text-sm font-semibold">
+                  <span className="text-cyan-400">$400K+</span>{" "}
+                  <span className="text-foreground">Paid Out</span>
                 </p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground">
                   In rewards under 24 hours
                 </p>
               </div>
