@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
-import testimonial1 from "@/assets/testimonials/testimonial-1.png?format=webp&quality=75";
-import testimonial2 from "@/assets/testimonials/testimonial-2.png?format=webp&quality=75";
-import testimonial3 from "@/assets/testimonials/testimonial-3.png?format=webp&quality=75";
-import testimonial4 from "@/assets/testimonials/testimonial-4.png?format=webp&quality=75";
-import testimonial5 from "@/assets/testimonials/testimonial-5.png?format=webp&quality=75";
-import testimonial6 from "@/assets/testimonials/testimonial-6.png?format=webp&quality=75";
+import testimonial1 from "@/assets/testimonials/testimonial-1.webp";
+import testimonial2 from "@/assets/testimonials/testimonial-2.webp";
+import testimonial3 from "@/assets/testimonials/testimonial-3.webp";
+import testimonial4 from "@/assets/testimonials/testimonial-4.webp";
+import testimonial5 from "@/assets/testimonials/testimonial-5.webp";
+import testimonial6 from "@/assets/testimonials/testimonial-6.webp";
 import youtubeBtn from "@/assets/youtube-btn.png?format=webp&quality=80";
 
 const testimonials = [
