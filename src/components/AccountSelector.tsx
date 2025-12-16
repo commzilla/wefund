@@ -4,6 +4,7 @@ import paymentsImage from "@/assets/payments.png";
 import mt5Logo from "@/assets/metatrader5-logo.webp";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
 
+
 export const AccountSelector = () => {
   return (
     <section id="objectives" className="py-16 md:py-24 px-4 bg-black relative overflow-hidden">
