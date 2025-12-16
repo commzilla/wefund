@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Check, Shield, Clock, TrendingUp, Lock, Award } from "lucide-react";
+import { Check, Shield, Clock, TrendingUp, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
 import paymentsImage from "@/assets/payments.png";
 import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
+import trustBadgeIcon from "@/assets/trust-badge-icon.png";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface OrderSummaryProps {
@@ -165,20 +166,29 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
           {/* Trust Banner */}
           <div className="mt-6 pt-4 border-t border-white/10">
             <div 
-              className="rounded-xl p-4 flex items-center gap-4"
+              className="rounded-xl p-4 flex items-center justify-between gap-4"
               style={{
-                background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(23, 37, 84, 0.3) 100%)',
+                background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
               }}
             >
-              <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                <Award className="w-6 h-6 text-cyan-400" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  Trusted by traders in 120+ countries worldwide
+              <div className="flex items-center gap-3">
+                <img 
+                  src={trustBadgeIcon} 
+                  alt="Trust Badge" 
+                  className="w-10 h-10"
+                  style={{ filter: 'invert(58%) sepia(89%) saturate(1000%) hue-rotate(155deg) brightness(95%) contrast(101%)' }}
+                />
+                <p className="text-sm text-foreground">
+                  Trusted by traders in 120+<br />
+                  countries worldwide
                 </p>
+              </div>
+              <div className="text-right">
                 <p className="text-lg font-bold text-cyan-400">
-                  $400K+ Paid Out
+                  $400K+ <span className="text-foreground">Paid Out</span>
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  In rewards under 24 hours
                 </p>
               </div>
             </div>
