@@ -1,13 +1,18 @@
-import { Check, Shield, Clock, TrendingUp } from "lucide-react";
+import { Check, Shield, Clock, TrendingUp, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
+import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
 
 interface OrderSummaryProps {
   accountType: string;
   accountSize: string;
   price: string;
+  showMobileButton?: boolean;
+  isSubmitting?: boolean;
+  onSubmit?: () => void;
 }
 
-const OrderSummary = ({ accountType, accountSize, price }: OrderSummaryProps) => {
+const OrderSummary = ({ accountType, accountSize, price, showMobileButton = false, isSubmitting = false, onSubmit }: OrderSummaryProps) => {
   const benefits = [
     { icon: TrendingUp, text: "100% Profit Split" },
     { icon: Clock, text: "No Time Limit" },
@@ -77,17 +82,54 @@ const OrderSummary = ({ accountType, accountSize, price }: OrderSummaryProps) =>
             </div>
           </div>
 
-          {/* Trust badges */}
-          <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-center gap-4">
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Shield className="w-4 h-4 text-cyan-400" />
-              <span>Secure Payment</span>
+          {/* Mobile Complete Purchase Button */}
+          {showMobileButton && (
+            <div className="mt-6 pt-4 border-t border-white/10">
+              <Button
+                type="button"
+                disabled={isSubmitting}
+                onClick={onSubmit}
+                className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-black rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-300"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                    Processing...
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-2">
+                    <Lock className="w-5 h-5" />
+                    Complete Purchase - ${price}
+                  </span>
+                )}
+              </Button>
+
+              {/* Payment Icons - Mobile */}
+              <div className="flex items-center justify-center mt-4">
+                <img src={mobilePaymentsImage} alt="Payment Methods" className="w-full h-auto max-w-[300px] opacity-90" />
+              </div>
+
+              {/* Security note */}
+              <p className="text-center text-xs text-muted-foreground mt-4 flex items-center justify-center gap-1">
+                <Lock className="w-3 h-3" />
+                Your payment information is encrypted and secure
+              </p>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Check className="w-4 h-4 text-cyan-400" />
-              <span>Instant Access</span>
+          )}
+
+          {/* Trust badges - hide on mobile when button is shown */}
+          {!showMobileButton && (
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-center gap-4">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Shield className="w-4 h-4 text-cyan-400" />
+                <span>Secure Payment</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Check className="w-4 h-4 text-cyan-400" />
+                <span>Instant Access</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
