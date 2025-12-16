@@ -11,6 +11,9 @@ import payoutsProcessedImage from "@/assets/payouts-processed-bg.png?format=webp
 import highestPayoutImage from "@/assets/highest-payout-bg.png?format=webp&quality=75";
 import avgPayoutImage from "@/assets/avg-payout-bg.png?format=webp&quality=75";
 import heroTrustBadge from "@/assets/hero-trust.png?format=webp&quality=80";
+import itemIcon1 from "@/assets/item-icon-1.png";
+import itemIcon2 from "@/assets/item-icon-2.png";
+import itemIcon3 from "@/assets/item-icon-3.png";
 import {
   Carousel,
   CarouselContent,
@@ -130,6 +133,14 @@ const PayoutsCard = () => (
   </div>
 );
 
+// Mobile Feature Item component
+const MobileFeatureItem = ({ icon, text }: { icon: string; text: string }) => (
+  <div className="flex items-center gap-3 bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3">
+    <img src={icon} alt="" className="w-5 h-5" />
+    <span className="text-sm text-muted-foreground">{text}</span>
+  </div>
+);
+
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
@@ -146,44 +157,133 @@ export const Hero = () => {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-[1]" />
 
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-12 text-center">
-        {/* Trust Badges */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
+        {/* Trust Badges - Desktop */}
+        <div className="hidden md:flex items-center justify-center gap-3 mb-8">
           <img 
             src="/images/mt5-badge.webp" 
             alt="MetaTrader 5" 
             width="149"
             height="40"
-            className="h-10 md:h-12 animate-glow" 
+            className="h-12 animate-glow" 
             fetchPriority="high"
           />
-          {/* Hide second badge on mobile */}
-          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="hidden md:block h-12" />
+          <img src={heroTrustBadge} alt="TTP The Trusted Prop - Trustpilot" className="h-12" />
         </div>
 
-        {/* Main Headline */}
-        <h1 className="flex items-center justify-center gap-2 md:gap-4 text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold text-foreground mb-3 md:mb-6 leading-none flex-wrap">
+        {/* MT5 Badge - Mobile Only */}
+        <div className="md:hidden flex justify-center mb-6">
+          <img 
+            src="/images/mt5-badge.webp" 
+            alt="MetaTrader 5" 
+            width="149"
+            height="40"
+            className="h-10 animate-glow" 
+            fetchPriority="high"
+          />
+        </div>
+
+        {/* Main Headline - Desktop */}
+        <h1 className="hidden md:flex items-center justify-center gap-4 text-6xl lg:text-8xl font-extrabold text-foreground mb-6 leading-none flex-wrap">
           <span>You Trade,</span>
           <img src={wefundTextLogo} alt="We Fund" className="h-[0.7em] inline-block align-baseline" />
         </h1>
 
-        <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto mb-4 md:mb-8 leading-relaxed px-2">
+        {/* Main Headline - Mobile */}
+        <h1 className="md:hidden text-5xl font-extrabold text-foreground mb-4 leading-tight">
+          You Trade,<br />
+          <span className="text-primary">We Fund</span>
+        </h1>
+
+        {/* Subtitle - Desktop */}
+        <p className="hidden md:block text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed px-2">
           Get Funded up to $400K with the Most Trusted Prop Firm, Get Payouts with Profit Splits Up To 100%,
-          <br className="hidden md:block" />
+          <br />
           And Scale Up to $2M – <span className="text-foreground font-semibold">This Is The Future Of Prop Trading</span>
         </p>
 
-        {/* CTAs */}
-        <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap mb-6 md:mb-12">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold rounded-lg">
+        {/* Subtitle - Mobile */}
+        <p className="md:hidden text-sm text-muted-foreground mb-6">
+          Get Funded with the <span className="text-foreground font-semibold">Most Trusted Prop Firm</span>
+        </p>
+
+        {/* Mobile Feature Items */}
+        <div className="md:hidden flex flex-col gap-2 mb-6 px-2">
+          <MobileFeatureItem icon={itemIcon1} text="Zero reward denials" />
+          <MobileFeatureItem icon={itemIcon2} text="Fair and simple trading rules" />
+          <MobileFeatureItem icon={itemIcon3} text="Keep up to 100% of your profits" />
+        </div>
+
+        {/* CTAs - Desktop */}
+        <div className="hidden md:flex items-center justify-center gap-4 mb-12">
+          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 px-8 py-6 text-base font-semibold rounded-lg">
             Start Now
           </Button>
-          <Button size="lg" variant="outline" className="border-border/60 bg-card/30 hover:bg-card/50 backdrop-blur-sm px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold rounded-lg">
+          <Button size="lg" variant="outline" className="border-border/60 bg-card/30 hover:bg-card/50 backdrop-blur-sm px-8 py-6 text-base font-semibold rounded-lg">
             Dashboard
           </Button>
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="md:hidden mt-4 px-0">
+        {/* CTA - Mobile */}
+        <div className="md:hidden mb-6 px-2">
+          <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 py-6 text-base font-semibold rounded-xl">
+            Start Now
+          </Button>
+        </div>
+
+        {/* Mobile Trust Badges */}
+        <div className="md:hidden flex flex-col gap-3 px-2 mb-6">
+          {/* Trustpilot Badge */}
+          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <span className="text-sm text-muted-foreground">Excellent</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-5 h-5 bg-[#00B67A] flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </div>
+                ))}
+              </div>
+              <svg className="h-5 w-auto" viewBox="0 0 126 31" fill="none">
+                <path d="M21.2 0H126v31H21.2z" fill="#fff"/>
+                <path d="M21.2 0h20.3v31H21.2z" fill="#00B67A"/>
+                <path d="M31.3 20.8l2.5-1.8h-3.1l-.9-3-1 3h-3l2.5 1.8-1 3 2.5-1.9 2.5 1.9z" fill="#fff"/>
+                <path d="M61.5 10.2h-1.8l-1.1 3.6-1.2-3.6h-1.8l2.2 5.5v3.3h1.5v-3.3l2.2-5.5zm7.2 4.5c0-1.6-1-2.7-2.6-2.7-.8 0-1.4.3-1.8.7v-.5h-1.5V19h1.5v-4.1c0-1 .6-1.6 1.5-1.6s1.4.6 1.4 1.5V19h1.5v-4.3zm4.5-2.7c-1.8 0-3.1 1.3-3.1 3.1 0 1.9 1.3 3.2 3.1 3.2 1.2 0 2.2-.6 2.7-1.5l-1.2-.7c-.3.5-.8.8-1.5.8-.9 0-1.5-.5-1.7-1.3h4.6v-.5c0-1.8-1.2-3.1-2.9-3.1zm-1.6 2.5c.2-.8.8-1.2 1.6-1.2.7 0 1.3.5 1.4 1.2h-3zm7.3-2.5c-.7 0-1.2.3-1.5.7v-.5h-1.5V19h1.5v-3.8c0-1.1.5-1.6 1.3-1.6h.6V12h-.5z" fill="#1A1A1A"/>
+                <path d="M47.7 10.2v8.8h1.6v-3.3l2.7 3.3h2.1l-3.1-3.6 2.9-3.4h-2l-2.5 3v-4.8h-1.7z" fill="#1A1A1A"/>
+              </svg>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-xs">
+              <span className="text-primary font-medium">Rated 4.5/5</span>
+              <span className="text-muted-foreground">based on 154 reviews</span>
+            </div>
+          </div>
+          
+          {/* TTP Badge */}
+          <div className="bg-slate-900/80 border border-slate-700/50 rounded-xl px-4 py-3">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <span className="text-sm text-muted-foreground">Awesome</span>
+              <div className="flex gap-0.5">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="w-5 h-5 bg-[#00B67A] flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </div>
+                ))}
+              </div>
+              <span className="text-xs font-medium text-muted-foreground">TTP</span>
+              <span className="text-xs font-semibold text-foreground">The Trusted Prop</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-xs">
+              <span className="text-primary font-medium">Rated 4.5/5</span>
+              <span className="text-muted-foreground">based on 64 reviews</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Carousel - Hidden on new design, keeping for reference */}
+        <div className="hidden mt-4 px-0">
           <Carousel
             opts={{
               align: "center",
