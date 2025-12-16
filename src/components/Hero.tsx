@@ -234,8 +234,12 @@ export const Hero = () => {
 
         {/* Mobile Trust Badges */}
         <div className="md:hidden flex flex-col gap-3 px-2 mb-6">
-          <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-12 mx-auto" />
-          <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-12 mx-auto" />
+          <div className="w-full bg-slate-900/80 border border-slate-700/50 rounded-xl py-3 flex justify-center">
+            <img src={trustpilotBadge} alt="Trustpilot Rating" className="h-10" />
+          </div>
+          <div className="w-full bg-slate-900/80 border border-slate-700/50 rounded-xl py-3 flex justify-center">
+            <img src={ttpBadge} alt="The Trusted Prop Rating" className="h-10" />
+          </div>
         </div>
 
         {/* Mobile Carousel */}
