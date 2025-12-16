@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import wefundTextLogo from "@/assets/wefund-text-logo.png?format=webp&quality=80";
-import heroBackground from "@/assets/hero-background-new.png?format=webp&quality=80";
+import heroBackground from "@/assets/hero-bg.webp";
 import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png?format=webp&quality=75";
 import communityUsersImage from "@/assets/Group-48161.webp";
 import countriesImage from "@/assets/bg-image-countries.png?format=webp&quality=75";
