@@ -198,7 +198,49 @@ export default function ProductEdit() {
     ));
   };
 
-  const removeAddon = (index: number) => {
+  const removeAddon = async (index: number) => {
+    const addon = addons[index];
+    
+    // If addon has an ID, we need to handle database removal
+    if (addon.id && product.id) {
+      try {
+        // Get current applies_to_products
+        const { data: existingAddon } = await supabase
+          .from('product_addons')
+          .select('applies_to_products')
+          .eq('id', addon.id)
+          .single();
+
+        if (existingAddon?.applies_to_products) {
+          const updatedProducts = existingAddon.applies_to_products.filter(
+            (pid: string) => pid !== product.id
+          );
+
+          if (updatedProducts.length === 0) {
+            // No more products use this addon, delete it entirely
+            await supabase
+              .from('product_addons')
+              .delete()
+              .eq('id', addon.id);
+          } else {
+            // Update to remove this product from the list
+            await supabase
+              .from('product_addons')
+              .update({ applies_to_products: updatedProducts })
+              .eq('id', addon.id);
+          }
+        }
+      } catch (error) {
+        console.error('Error removing addon:', error);
+        toast({
+          title: "Error",
+          description: "Failed to remove add-on from database",
+          variant: "destructive"
+        });
+        return;
+      }
+    }
+
     setAddons(prev => prev.filter((_, i) => i !== index));
   };
 

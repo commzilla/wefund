@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Shield, Clock, TrendingUp, Lock } from "lucide-react";
+import { Check, Shield, Clock, TrendingUp, Lock, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import cardsCarouselBg from "@/assets/cards-carousel-bg-2.png";
@@ -8,17 +8,42 @@ import mobilePaymentsImage from "@/assets/mobile-pay-methods.png";
 import trustBadgeIcon from "@/assets/trust-badge-icon.png";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+interface ProductAddon {
+  id: string;
+  name: string;
+  description: string | null;
+  price_type: string;
+  price_value: number;
+}
+
 interface OrderSummaryProps {
   accountType: string;
   accountSize: string;
   price: string;
+  addons?: ProductAddon[];
+  selectedAddons?: string[];
+  onToggleAddon?: (addonId: string) => void;
+  addonsTotal?: number;
   isSubmitting?: boolean;
   onSubmit?: () => void;
 }
 
-const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, onSubmit }: OrderSummaryProps) => {
+const OrderSummary = ({ 
+  accountType, 
+  accountSize, 
+  price, 
+  addons = [], 
+  selectedAddons = [], 
+  onToggleAddon,
+  addonsTotal = 0,
+  isSubmitting = false, 
+  onSubmit 
+}: OrderSummaryProps) => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const isMobile = useIsMobile();
+
+  const basePrice = parseFloat(price);
+  const totalPrice = (basePrice + addonsTotal).toFixed(2);
 
   const benefits = [
     { icon: TrendingUp, text: "100% Profit Split" },
@@ -83,12 +108,65 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
             </ul>
           </div>
 
+          {/* Add-ons Section */}
+          {addons.length > 0 && (
+            <div className="mb-6">
+              <span className="text-sm text-muted-foreground mb-3 block">Available Add-ons</span>
+              <div className="space-y-3">
+                {addons.map((addon) => (
+                  <div 
+                    key={addon.id}
+                    className={`flex items-start gap-3 p-3 rounded-lg cursor-pointer transition-all ${
+                      selectedAddons.includes(addon.id) 
+                        ? 'bg-cyan-500/10 border border-cyan-500/30' 
+                        : 'bg-black/20 border border-white/5 hover:border-white/10'
+                    }`}
+                    onClick={() => onToggleAddon?.(addon.id)}
+                  >
+                    <Checkbox
+                      checked={selectedAddons.includes(addon.id)}
+                      onCheckedChange={() => onToggleAddon?.(addon.id)}
+                      className="mt-0.5 border-white/20 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-foreground">{addon.name}</span>
+                        <span className={`text-sm font-semibold ${addon.price_type === 'free' ? 'text-green-400' : 'text-cyan-400'}`}>
+                          {addon.price_type === 'free' ? (
+                            <span className="flex items-center gap-1">
+                              <Gift className="w-3 h-3" /> Free
+                            </span>
+                          ) : (
+                            `+$${addon.price_value}`
+                          )}
+                        </span>
+                      </div>
+                      {addon.description && (
+                        <p className="text-xs text-muted-foreground mt-0.5">{addon.description}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Total */}
           <div className="pt-4 border-t border-white/10">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-muted-foreground">Subtotal</span>
+              <span className="text-foreground">${price}</span>
+            </div>
+            {addonsTotal > 0 && (
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-muted-foreground">Add-ons</span>
+                <span className="text-foreground">+${addonsTotal.toFixed(2)}</span>
+              </div>
+            )}
+            <div className="flex items-center justify-between pt-2 border-t border-white/5">
               <span className="text-muted-foreground">Total</span>
               <div className="text-right">
-                <span className="text-3xl font-bold text-foreground">${price}</span>
+                <span className="text-3xl font-bold text-foreground">${totalPrice}</span>
                 <span className="text-sm text-muted-foreground block">One-time payment</span>
               </div>
             </div>
@@ -97,7 +175,7 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
           {/* Privacy Notice */}
           <div className="mt-6 pt-4 border-t border-white/10">
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Your personal data will be used to process your order, support your experience throughout this website, 
+              Your personal data will be used to process your order, support your experience throughout this website,
               and for other purposes described in our{" "}
               <a href="/privacy-policy" className="text-cyan-400 hover:text-cyan-300 underline">
                 privacy policy
@@ -142,7 +220,7 @@ const OrderSummary = ({ accountType, accountSize, price, isSubmitting = false, o
               ) : (
                 <span className="flex items-center gap-2">
                   <Lock className="w-5 h-5" />
-                  Complete Purchase - ${price}
+                  Complete Purchase - ${totalPrice}
                 </span>
               )}
             </Button>
