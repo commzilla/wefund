@@ -1,1 +1,4 @@
 project_id = "kzikopssetqtugtjwhdy"
+
+[functions.import-woo-orders]
+verify_jwt = false

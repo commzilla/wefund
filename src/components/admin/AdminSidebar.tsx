@@ -7,7 +7,8 @@ import {
   Settings, 
   LogOut,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Upload
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
@@ -24,6 +25,7 @@ const navItems = [
   { to: "/admin/products", icon: Package, label: "Products" },
   { to: "/admin/orders", icon: ShoppingCart, label: "Orders" },
   { to: "/admin/discounts", icon: Ticket, label: "Discounts" },
+  { to: "/admin/import", icon: Upload, label: "Import" },
   { to: "/admin/settings", icon: Settings, label: "Settings" },
 ];
 
