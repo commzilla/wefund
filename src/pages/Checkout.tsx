@@ -1,21 +1,66 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
 import { Footer } from "@/components/Footer";
+
+interface ProductAddon {
+  id: string;
+  name: string;
+  description: string | null;
+  price_type: string;
+  price_value: number;
+}
 
 const Checkout = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [addons, setAddons] = useState<ProductAddon[]>([]);
+  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   
   const type = searchParams.get("type") || "1step-algo";
+  const productId = searchParams.get("productId") || "";
   const size = searchParams.get("size") || "100k";
   const price = searchParams.get("price") || "547";
+
+  useEffect(() => {
+    if (productId) {
+      fetchAddons(productId);
+    }
+  }, [productId]);
+
+  const fetchAddons = async (prodId: string) => {
+    const { data, error } = await supabase
+      .from('product_addons')
+      .select('id, name, description, price_type, price_value')
+      .contains('applies_to_products', [prodId])
+      .eq('is_active', true)
+      .order('sort_order', { ascending: true });
+
+    if (!error && data) {
+      setAddons(data);
+    }
+  };
+
+  const toggleAddon = (addonId: string) => {
+    setSelectedAddons(prev => 
+      prev.includes(addonId) 
+        ? prev.filter(id => id !== addonId)
+        : [...prev, addonId]
+    );
+  };
+
+  const calculateAddonsTotal = () => {
+    return addons
+      .filter(addon => selectedAddons.includes(addon.id))
+      .reduce((sum, addon) => sum + (addon.price_type === 'fixed' ? addon.price_value : 0), 0);
+  };
 
   const getAccountTypeName = (type: string) => {
     switch (type) {
@@ -90,6 +135,10 @@ const Checkout = () => {
               accountType={getAccountTypeName(type)}
               accountSize={size}
               price={price}
+              addons={addons}
+              selectedAddons={selectedAddons}
+              onToggleAddon={toggleAddon}
+              addonsTotal={calculateAddonsTotal()}
               isSubmitting={isSubmitting}
               onSubmit={handleSubmit}
             />
