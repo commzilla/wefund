@@ -15,8 +15,21 @@ import {
   TableHeader, 
   TableRow 
 } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Plus, Trash2, Save, Loader2 } from "lucide-react";
+
+const TRADING_PLATFORMS = [
+  { value: 'mt5', label: 'MetaTrader 5' },
+  { value: 'ctrader', label: 'cTrader' },
+  { value: 'tradelocker', label: 'TradeLocker' },
+];
 
 interface Product {
   id?: string;
@@ -428,11 +441,21 @@ export default function ProductEdit() {
                       />
                     </TableCell>
                     <TableCell>
-                      <Input
+                      <Select
                         value={variant.broker_type}
-                        onChange={(e) => updateVariant(index, 'broker_type', e.target.value)}
-                        className="w-20 bg-background/50"
-                      />
+                        onValueChange={(value) => updateVariant(index, 'broker_type', value)}
+                      >
+                        <SelectTrigger className="w-32 bg-background/50">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {TRADING_PLATFORMS.map((platform) => (
+                            <SelectItem key={platform.value} value={platform.value}>
+                              {platform.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </TableCell>
                     <TableCell>
                       <Switch
