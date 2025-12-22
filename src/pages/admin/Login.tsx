@@ -13,41 +13,59 @@ export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password
-      });
+      if (isSignUp) {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: `${window.location.origin}/admin`
+          }
+        });
 
-      if (error) throw error;
+        if (error) throw error;
 
-      // Check if user has admin role
-      const { data: hasRole, error: roleError } = await supabase.rpc('has_role', {
-        _user_id: data.user.id,
-        _role: 'admin'
-      });
+        toast({
+          title: "Account created!",
+          description: "Contact an admin to get access privileges."
+        });
+      } else {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password
+        });
 
-      if (roleError || !hasRole) {
-        await supabase.auth.signOut();
-        throw new Error("You don't have admin privileges.");
+        if (error) throw error;
+
+        // Check if user has admin role
+        const { data: hasRole, error: roleError } = await supabase.rpc('has_role', {
+          _user_id: data.user.id,
+          _role: 'admin'
+        });
+
+        if (roleError || !hasRole) {
+          await supabase.auth.signOut();
+          throw new Error("You don't have admin privileges.");
+        }
+
+        toast({
+          title: "Welcome back!",
+          description: "Successfully logged in to admin panel."
+        });
+
+        navigate('/admin');
       }
-
-      toast({
-        title: "Welcome back!",
-        description: "Successfully logged in to admin panel."
-      });
-
-      navigate('/admin');
     } catch (error: any) {
       toast({
-        title: "Login Failed",
+        title: isSignUp ? "Sign Up Failed" : "Login Failed",
         description: error.message,
         variant: "destructive"
       });
@@ -70,14 +88,14 @@ export default function AdminLogin() {
             <img src={wefundLogo} alt="WeFund" className="h-16 w-16 object-contain mx-auto" />
           </div>
           <div>
-            <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
+            <CardTitle className="text-2xl font-bold">{isSignUp ? 'Create Account' : 'Admin Login'}</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Sign in to access the CMS dashboard
+              {isSignUp ? 'Sign up to request admin access' : 'Sign in to access the CMS dashboard'}
             </CardDescription>
           </div>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -99,6 +117,7 @@ export default function AdminLogin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minLength={6}
                 className="bg-background/50"
               />
             </div>
@@ -112,9 +131,18 @@ export default function AdminLogin() {
               ) : (
                 <Lock className="h-4 w-4 mr-2" />
               )}
-              Sign In
+              {isSignUp ? 'Sign Up' : 'Sign In'}
             </Button>
           </form>
+          <div className="mt-4 text-center">
+            <button
+              type="button"
+              onClick={() => setIsSignUp(!isSignUp)}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+            </button>
+          </div>
         </CardContent>
       </Card>
     </div>
