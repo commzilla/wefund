@@ -53,6 +53,16 @@ interface Variant {
   sort_order: number;
 }
 
+interface Addon {
+  id?: string;
+  name: string;
+  description: string;
+  price_type: string;
+  price_value: number;
+  is_active: boolean;
+  sort_order: number;
+}
+
 const defaultProduct: Product = {
   name: '',
   slug: '',
@@ -73,6 +83,15 @@ const defaultVariant: Variant = {
   sort_order: 0
 };
 
+const defaultAddon: Addon = {
+  name: '',
+  description: '',
+  price_type: 'free',
+  price_value: 0,
+  is_active: true,
+  sort_order: 0
+};
+
 export default function ProductEdit() {
   const { id } = useParams();
   const isNew = id === 'new';
@@ -81,6 +100,7 @@ export default function ProductEdit() {
 
   const [product, setProduct] = useState<Product>(defaultProduct);
   const [variants, setVariants] = useState<Variant[]>([]);
+  const [addons, setAddons] = useState<Addon[]>([]);
   const [isLoading, setIsLoading] = useState(!isNew);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -108,8 +128,18 @@ export default function ProductEdit() {
 
       if (variantsError) throw variantsError;
 
+      // Fetch addons that apply to this product
+      const { data: addonsData, error: addonsError } = await supabase
+        .from('product_addons')
+        .select('*')
+        .contains('applies_to_products', [productId])
+        .order('sort_order', { ascending: true });
+
+      if (addonsError) throw addonsError;
+
       setProduct(productData);
       setVariants(variantsData || []);
+      setAddons(addonsData || []);
     } catch (error) {
       console.error('Error fetching product:', error);
       toast({
@@ -152,6 +182,24 @@ export default function ProductEdit() {
 
   const removeVariant = (index: number) => {
     setVariants(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const addAddon = () => {
+    const newAddon: Addon = {
+      ...defaultAddon,
+      sort_order: addons.length
+    };
+    setAddons([...addons, newAddon]);
+  };
+
+  const updateAddon = (index: number, field: keyof Addon, value: any) => {
+    setAddons(prev => prev.map((a, i) => 
+      i === index ? { ...a, [field]: value } : a
+    ));
+  };
+
+  const removeAddon = (index: number) => {
+    setAddons(prev => prev.filter((_, i) => i !== index));
   };
 
   const handleSave = async () => {
@@ -245,6 +293,49 @@ export default function ProductEdit() {
               currency: variant.currency,
               is_active: variant.is_active,
               sort_order: variant.sort_order
+            });
+        }
+      }
+
+      // Save addons
+      for (const addon of addons) {
+        if (addon.id) {
+          // Update existing addon - update applies_to_products if needed
+          const { data: existingAddon } = await supabase
+            .from('product_addons')
+            .select('applies_to_products')
+            .eq('id', addon.id)
+            .single();
+
+          let appliesTo = existingAddon?.applies_to_products || [];
+          if (!appliesTo.includes(productId)) {
+            appliesTo = [...appliesTo, productId];
+          }
+
+          await supabase
+            .from('product_addons')
+            .update({
+              name: addon.name,
+              description: addon.description,
+              price_type: addon.price_type,
+              price_value: addon.price_value,
+              is_active: addon.is_active,
+              sort_order: addon.sort_order,
+              applies_to_products: appliesTo
+            })
+            .eq('id', addon.id);
+        } else {
+          // Create new addon
+          await supabase
+            .from('product_addons')
+            .insert({
+              name: addon.name,
+              description: addon.description,
+              price_type: addon.price_type,
+              price_value: addon.price_value,
+              is_active: addon.is_active,
+              sort_order: addon.sort_order,
+              applies_to_products: [productId]
             });
         }
       }
@@ -468,6 +559,111 @@ export default function ProductEdit() {
                         variant="ghost"
                         size="icon"
                         onClick={() => removeVariant(index)}
+                        className="text-destructive hover:text-destructive"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Add-ons */}
+      <Card className="bg-card border-border">
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle>Product Add-ons</CardTitle>
+            <p className="text-sm text-muted-foreground mt-1">
+              Optional add-ons that customers can select at checkout
+            </p>
+          </div>
+          <Button onClick={addAddon} size="sm">
+            <Plus className="h-4 w-4 mr-2" /> Add Add-on
+          </Button>
+        </CardHeader>
+        <CardContent>
+          {addons.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground mb-4">No add-ons configured yet</p>
+              <Button onClick={addAddon} variant="outline">
+                <Plus className="h-4 w-4 mr-2" /> Add your first add-on
+              </Button>
+            </div>
+          ) : (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Description</TableHead>
+                  <TableHead>Price Type</TableHead>
+                  <TableHead>Price ($)</TableHead>
+                  <TableHead>Active</TableHead>
+                  <TableHead></TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {addons.map((addon, index) => (
+                  <TableRow key={index}>
+                    <TableCell>
+                      <Input
+                        value={addon.name}
+                        onChange={(e) => updateAddon(index, 'name', e.target.value)}
+                        className="w-40 bg-background/50"
+                        placeholder="Add-on name"
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Input
+                        value={addon.description}
+                        onChange={(e) => updateAddon(index, 'description', e.target.value)}
+                        className="w-48 bg-background/50"
+                        placeholder="Brief description"
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Select
+                        value={addon.price_type}
+                        onValueChange={(value: 'fixed' | 'free') => {
+                          updateAddon(index, 'price_type', value);
+                          if (value === 'free') {
+                            updateAddon(index, 'price_value', 0);
+                          }
+                        }}
+                      >
+                        <SelectTrigger className="w-24 bg-background/50">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="free">Free</SelectItem>
+                          <SelectItem value="fixed">Paid</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </TableCell>
+                    <TableCell>
+                      <Input
+                        type="number"
+                        step="0.01"
+                        value={addon.price_value}
+                        onChange={(e) => updateAddon(index, 'price_value', parseFloat(e.target.value) || 0)}
+                        className="w-24 bg-background/50"
+                        disabled={addon.price_type === 'free'}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Switch
+                        checked={addon.is_active}
+                        onCheckedChange={(checked) => updateAddon(index, 'is_active', checked)}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => removeAddon(index)}
                         className="text-destructive hover:text-destructive"
                       >
                         <Trash2 className="h-4 w-4" />
