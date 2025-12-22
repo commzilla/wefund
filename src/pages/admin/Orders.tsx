@@ -21,6 +21,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { Search, Eye, Download } from "lucide-react";
 import { format } from "date-fns";
 
@@ -41,20 +50,32 @@ interface Order {
   } | null;
 }
 
+const ITEMS_PER_PAGE = 25;
+
 export default function AdminOrders() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, [currentPage, statusFilter]);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, statusFilter]);
 
   const fetchOrders = async () => {
     try {
-      const { data, error } = await supabase
+      setIsLoading(true);
+      
+      // Build the query
+      let query = supabase
         .from('orders')
         .select(`
           id,
@@ -67,11 +88,24 @@ export default function AdminOrders() {
           affiliate_code,
           created_at,
           customer:customers(email, first_name, last_name)
-        `)
-        .order('created_at', { ascending: false });
+        `, { count: 'exact' });
+
+      // Apply status filter at database level
+      if (statusFilter !== 'all') {
+        query = query.eq('status', statusFilter);
+      }
+
+      // Apply pagination and ordering
+      const from = (currentPage - 1) * ITEMS_PER_PAGE;
+      const to = from + ITEMS_PER_PAGE - 1;
+      
+      const { data, error, count } = await query
+        .order('created_at', { ascending: false })
+        .range(from, to);
 
       if (error) throw error;
       setOrders(data || []);
+      setTotalCount(count || 0);
     } catch (error) {
       console.error('Error fetching orders:', error);
     } finally {
@@ -93,24 +127,50 @@ export default function AdminOrders() {
     return customer.email[0].toUpperCase();
   };
 
+  // Client-side search filtering
   const filteredOrders = orders.filter(order => {
+    if (!searchQuery) return true;
     const matchesSearch = 
       order.order_number.toString().includes(searchQuery) ||
       (order.customer?.email || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (order.customer?.first_name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (order.customer?.last_name || '').toLowerCase().includes(searchQuery.toLowerCase());
     
-    const matchesStatus = statusFilter === 'all' || order.status === statusFilter;
-    
-    return matchesSearch && matchesStatus;
+    return matchesSearch;
   });
 
-  const exportCSV = () => {
+  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+
+  const exportCSV = async () => {
+    // Fetch all orders for export (without pagination)
+    let query = supabase
+      .from('orders')
+      .select(`
+        id,
+        order_number,
+        status,
+        subtotal,
+        discount_total,
+        total,
+        payment_method,
+        affiliate_code,
+        created_at,
+        customer:customers(email, first_name, last_name)
+      `);
+
+    if (statusFilter !== 'all') {
+      query = query.eq('status', statusFilter);
+    }
+
+    const { data: allOrders } = await query.order('created_at', { ascending: false });
+
+    if (!allOrders) return;
+
     const headers = ['Order #', 'Customer', 'Email', 'Status', 'Total', 'Date'];
-    const rows = filteredOrders.map(order => [
+    const rows = allOrders.map(order => [
       order.order_number,
-      getCustomerName(order.customer),
-      order.customer?.email || '',
+      getCustomerName(order.customer as Order['customer']),
+      (order.customer as Order['customer'])?.email || '',
       order.status,
       order.total,
       format(new Date(order.created_at), 'yyyy-MM-dd HH:mm')
@@ -123,6 +183,64 @@ export default function AdminOrders() {
     a.href = url;
     a.download = `orders-${format(new Date(), 'yyyy-MM-dd')}.csv`;
     a.click();
+  };
+
+  const renderPaginationItems = () => {
+    const items = [];
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    const endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+    if (endPage - startPage + 1 < maxVisible) {
+      startPage = Math.max(1, endPage - maxVisible + 1);
+    }
+
+    if (startPage > 1) {
+      items.push(
+        <PaginationItem key={1}>
+          <PaginationLink onClick={() => setCurrentPage(1)}>1</PaginationLink>
+        </PaginationItem>
+      );
+      if (startPage > 2) {
+        items.push(
+          <PaginationItem key="ellipsis-start">
+            <PaginationEllipsis />
+          </PaginationItem>
+        );
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      items.push(
+        <PaginationItem key={i}>
+          <PaginationLink 
+            onClick={() => setCurrentPage(i)}
+            isActive={currentPage === i}
+          >
+            {i}
+          </PaginationLink>
+        </PaginationItem>
+      );
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        items.push(
+          <PaginationItem key="ellipsis-end">
+            <PaginationEllipsis />
+          </PaginationItem>
+        );
+      }
+      items.push(
+        <PaginationItem key={totalPages}>
+          <PaginationLink onClick={() => setCurrentPage(totalPages)}>
+            {totalPages}
+          </PaginationLink>
+        </PaginationItem>
+      );
+    }
+
+    return items;
   };
 
   return (
@@ -172,8 +290,11 @@ export default function AdminOrders() {
       {/* Orders Table */}
       <Card className="bg-card border-border">
         <CardHeader>
-          <CardTitle className="text-lg">
-            All Orders ({filteredOrders.length})
+          <CardTitle className="text-lg flex items-center justify-between">
+            <span>All Orders ({totalCount.toLocaleString()})</span>
+            <span className="text-sm font-normal text-muted-foreground">
+              Page {currentPage} of {totalPages}
+            </span>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -188,68 +309,93 @@ export default function AdminOrders() {
               <p className="text-muted-foreground">No orders found</p>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Order</TableHead>
-                    <TableHead>Customer</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Payment</TableHead>
-                    <TableHead>Affiliate</TableHead>
-                    <TableHead className="text-right">Total</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead></TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filteredOrders.map((order) => (
-                    <TableRow 
-                      key={order.id} 
-                      className="hover:bg-muted/50 cursor-pointer"
-                      onClick={() => navigate(`/admin/orders/${order.id}`)}
-                    >
-                      <TableCell className="font-medium">
-                        #{order.order_number}
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                            <span className="text-xs font-medium text-primary">
-                              {getInitials(order.customer)}
-                            </span>
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium">{getCustomerName(order.customer)}</p>
-                            <p className="text-xs text-muted-foreground">{order.customer?.email}</p>
-                          </div>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <StatusBadge status={order.status} />
-                      </TableCell>
-                      <TableCell className="text-muted-foreground">
-                        {order.payment_method || '-'}
-                      </TableCell>
-                      <TableCell className="text-muted-foreground">
-                        {order.affiliate_code || '-'}
-                      </TableCell>
-                      <TableCell className="text-right font-medium">
-                        ${Number(order.total).toFixed(2)}
-                      </TableCell>
-                      <TableCell className="text-muted-foreground">
-                        {format(new Date(order.created_at), 'MMM d, yyyy')}
-                      </TableCell>
-                      <TableCell>
-                        <Button variant="ghost" size="icon" className="h-8 w-8">
-                          <Eye className="h-4 w-4" />
-                        </Button>
-                      </TableCell>
+            <>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Order</TableHead>
+                      <TableHead>Customer</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Payment</TableHead>
+                      <TableHead>Affiliate</TableHead>
+                      <TableHead className="text-right">Total</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead></TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredOrders.map((order) => (
+                      <TableRow 
+                        key={order.id} 
+                        className="hover:bg-muted/50 cursor-pointer"
+                        onClick={() => navigate(`/admin/orders/${order.id}`)}
+                      >
+                        <TableCell className="font-medium">
+                          #{order.order_number}
+                        </TableCell>
+                        <TableCell>
+                          <div className="flex items-center gap-3">
+                            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                              <span className="text-xs font-medium text-primary">
+                                {getInitials(order.customer)}
+                              </span>
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium">{getCustomerName(order.customer)}</p>
+                              <p className="text-xs text-muted-foreground">{order.customer?.email}</p>
+                            </div>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <StatusBadge status={order.status} />
+                        </TableCell>
+                        <TableCell className="text-muted-foreground">
+                          {order.payment_method || '-'}
+                        </TableCell>
+                        <TableCell className="text-muted-foreground">
+                          {order.affiliate_code || '-'}
+                        </TableCell>
+                        <TableCell className="text-right font-medium">
+                          ${Number(order.total).toFixed(2)}
+                        </TableCell>
+                        <TableCell className="text-muted-foreground">
+                          {format(new Date(order.created_at), 'MMM d, yyyy')}
+                        </TableCell>
+                        <TableCell>
+                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Eye className="h-4 w-4" />
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="mt-6 flex justify-center">
+                  <Pagination>
+                    <PaginationContent>
+                      <PaginationItem>
+                        <PaginationPrevious 
+                          onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                          className={currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                        />
+                      </PaginationItem>
+                      {renderPaginationItems()}
+                      <PaginationItem>
+                        <PaginationNext 
+                          onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                          className={currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                        />
+                      </PaginationItem>
+                    </PaginationContent>
+                  </Pagination>
+                </div>
+              )}
+            </>
           )}
         </CardContent>
       </Card>
