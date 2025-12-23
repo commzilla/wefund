@@ -1,6 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 // Lazy load below-fold components to improve TTI
 const AccountSelector = lazy(() => import("@/components/AccountSelector").then(m => ({ default: m.AccountSelector })));
@@ -16,6 +17,29 @@ const CommunitySupport = lazy(() => import("@/components/CommunitySupport").then
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 
 const Index = () => {
+  const { trackScrollDepth } = useAnalytics();
+  const scrollMilestones = useRef<Set<number>>(new Set());
+
+  // Track scroll depth
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+      const milestones = [25, 50, 75, 100];
+      milestones.forEach(milestone => {
+        if (scrollPercent >= milestone && !scrollMilestones.current.has(milestone)) {
+          scrollMilestones.current.add(milestone);
+          trackScrollDepth(milestone);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [trackScrollDepth]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

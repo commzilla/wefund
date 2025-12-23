@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import wefundTextLogo from "@/assets/wefund-text-logo.png?format=webp&quality=80";
 import heroBackground from "@/assets/hero-bg.webp";
 import tradersFundedImage from "@/assets/mobile-traders-funded-image-1.png?format=webp&quality=75";
@@ -148,6 +150,8 @@ const MobileFeatureItem = ({ icon, text }: { icon: string; text: string }) => (
 export const Hero = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
+  const { trackCTAClick } = useAnalytics();
 
   useEffect(() => {
     if (!api) return;
@@ -157,6 +161,16 @@ export const Hero = () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
+
+  const handleStartNow = () => {
+    trackCTAClick('Start Now', 'Hero');
+    document.getElementById('objectives')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleDashboard = () => {
+    trackCTAClick('Dashboard', 'Hero');
+    window.open('https://dashboard.we-fund.com', '_blank');
+  };
 
   return (
     <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
@@ -231,17 +245,30 @@ export const Hero = () => {
 
         {/* CTAs - Desktop */}
         <div className="hidden md:flex items-center justify-center gap-4 mb-12">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 px-8 py-6 text-base font-semibold rounded-lg">
+          <Button 
+            size="lg" 
+            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 px-8 py-6 text-base font-semibold rounded-lg"
+            onClick={handleStartNow}
+          >
             Start Now
           </Button>
-          <Button size="lg" variant="outline" className="border-border/60 bg-card/30 hover:bg-card/50 backdrop-blur-sm px-8 py-6 text-base font-semibold rounded-lg">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-border/60 bg-card/30 hover:bg-card/50 backdrop-blur-sm px-8 py-6 text-base font-semibold rounded-lg"
+            onClick={handleDashboard}
+          >
             Dashboard
           </Button>
         </div>
 
         {/* CTA - Mobile */}
         <div className="md:hidden mb-6 px-2">
-          <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 py-6 text-base font-semibold rounded-xl">
+          <Button 
+            size="lg" 
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/40 py-6 text-base font-semibold rounded-xl"
+            onClick={handleStartNow}
+          >
             Start Now
           </Button>
         </div>
