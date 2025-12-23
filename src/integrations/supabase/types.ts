@@ -14,6 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
+      analytics_events: {
+        Row: {
+          created_at: string | null
+          element_id: string | null
+          element_text: string | null
+          event_name: string | null
+          event_type: string
+          id: string
+          metadata: Json | null
+          page_url: string
+          referrer: string | null
+          screen_height: number | null
+          screen_width: number | null
+          session_id: string
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          element_id?: string | null
+          element_text?: string | null
+          event_name?: string | null
+          event_type: string
+          id?: string
+          metadata?: Json | null
+          page_url: string
+          referrer?: string | null
+          screen_height?: number | null
+          screen_width?: number | null
+          session_id: string
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          element_id?: string | null
+          element_text?: string | null
+          event_name?: string | null
+          event_type?: string
+          id?: string
+          metadata?: Json | null
+          page_url?: string
+          referrer?: string | null
+          screen_height?: number | null
+          screen_width?: number | null
+          session_id?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      analytics_sessions: {
+        Row: {
+          country: string | null
+          device_type: string | null
+          ended_at: string | null
+          first_page: string | null
+          id: string
+          is_completed: boolean | null
+          is_converted: boolean | null
+          last_page: string | null
+          page_count: number | null
+          referrer: string | null
+          session_id: string
+          started_at: string | null
+          total_duration_seconds: number | null
+          user_agent: string | null
+        }
+        Insert: {
+          country?: string | null
+          device_type?: string | null
+          ended_at?: string | null
+          first_page?: string | null
+          id?: string
+          is_completed?: boolean | null
+          is_converted?: boolean | null
+          last_page?: string | null
+          page_count?: number | null
+          referrer?: string | null
+          session_id: string
+          started_at?: string | null
+          total_duration_seconds?: number | null
+          user_agent?: string | null
+        }
+        Update: {
+          country?: string | null
+          device_type?: string | null
+          ended_at?: string | null
+          first_page?: string | null
+          id?: string
+          is_completed?: boolean | null
+          is_converted?: boolean | null
+          last_page?: string | null
+          page_count?: number | null
+          referrer?: string | null
+          session_id?: string
+          started_at?: string | null
+          total_duration_seconds?: number | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       customers: {
         Row: {
           address_1: string | null

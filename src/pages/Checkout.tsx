@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import OrderSummary from "@/components/checkout/OrderSummary";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
 import { Footer } from "@/components/Footer";
@@ -20,6 +21,7 @@ const Checkout = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { trackCheckoutInitiated, trackAddonSelected } = useAnalytics();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [addons, setAddons] = useState<ProductAddon[]>([]);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
@@ -28,6 +30,16 @@ const Checkout = () => {
   const productId = searchParams.get("productId") || "";
   const size = searchParams.get("size") || "100k";
   const price = searchParams.get("price") || "547";
+
+  // Track checkout initiation on mount
+  useEffect(() => {
+    trackCheckoutInitiated({
+      productId,
+      accountType: type,
+      accountSize: size,
+      price,
+    });
+  }, []);
 
   useEffect(() => {
     if (productId) {
@@ -49,6 +61,13 @@ const Checkout = () => {
   };
 
   const toggleAddon = (addonId: string) => {
+    const addon = addons.find(a => a.id === addonId);
+    const isSelected = selectedAddons.includes(addonId);
+    
+    if (addon) {
+      trackAddonSelected(addonId, addon.name, addon.price_value, !isSelected);
+    }
+    
     setSelectedAddons(prev => 
       prev.includes(addonId) 
         ? prev.filter(id => id !== addonId)
