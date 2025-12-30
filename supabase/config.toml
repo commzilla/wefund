@@ -2,3 +2,9 @@ project_id = "kzikopssetqtugtjwhdy"
 
 [functions.import-woo-orders]
 verify_jwt = false
+
+[functions.create-payment]
+verify_jwt = false
+
+[functions.paytiko-webhook]
+verify_jwt = false
